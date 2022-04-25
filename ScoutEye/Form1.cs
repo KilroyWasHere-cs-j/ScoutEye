@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
-using System.IO;
-using System.Threading;
 using System.Windows.Forms;
-using System.Timers;
 using QRCoder;
 
 namespace ScoutEye
@@ -282,5 +279,10 @@ namespace ScoutEye
         #endregion
 
         #endregion
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

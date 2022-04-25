@@ -1,11 +1,11 @@
-﻿using IronBarCode;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using System.Timers;
+using QRCoder;
 
 namespace ScoutEye
 {
@@ -14,6 +14,7 @@ namespace ScoutEye
         private Logger logger;
         private Stopwatch stopwatch;
         private Sheets sheets;
+        private QRCodeGenerator qrGenerator;
         private bool stopWatchStarted = false;
         private int matchNumber = 0;
         private int teamNumber = 5687;
@@ -30,6 +31,7 @@ namespace ScoutEye
             logger = new Logger();
             stopwatch = new Stopwatch();
             sheets = new Sheets();
+            qrGenerator = new QRCodeGenerator();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -50,8 +52,10 @@ namespace ScoutEye
         #region QR
         private void GenerateQRCode(string data)
         {
-            var QRCode = QRCodeWriter.CreateQrCode(data, 260, QRCodeWriter.QrErrorCorrectionLevel.Medium);
-            QRCodePB.Image = QRCode.ToBitmap();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(data, QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new QRCode(qrCodeData);
+            Bitmap qrCodeImage = qrCode.GetGraphic(5);
+            QRCodePB.Image = qrCodeImage;
         }
         #endregion
 
@@ -218,6 +222,7 @@ namespace ScoutEye
             EndgameCB.SelectedIndex = 4;
             DefenceCB.SelectedIndex = 4;
             PointScoredTB.Text = "40";
+            NameTB.Text = "Outliers";
 
             NotesTB.Text = "Random text";
         }

@@ -42,6 +42,7 @@ namespace ScoutEye
 
         private void CompileData()
         {
+            //Should be a function return
             output = matchNumber + ":" + teamNumber + ":" + teamName + ":" + AutoCB.Text + ":" + TeleopCB.Text + ":" + EndgameCB.Text + ":" + DefenceCB.Text + ":" + PointScoredTB.Text + ":" + NotesTB.Text;
             sheets.StoreData(output);
         }

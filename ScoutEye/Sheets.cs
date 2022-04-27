@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ScoutEye
 {
@@ -22,6 +23,7 @@ namespace ScoutEye
         {
             reader = new StreamReader(cvsPath);
             string fileContent = reader.ReadToEnd();
+            MessageBox.Show(fileContent);
             reader.Close();
             writer = new StreamWriter(cvsPath);
             writer.Write(fileContent);

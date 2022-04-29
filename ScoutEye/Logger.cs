@@ -18,6 +18,8 @@ namespace ScoutEye
 
         public void Log(string log)
         {
+            //Write to log file
+            //Try catch is to prevent us from writing to the log file when it's already open
             try
             {
                 reader = new StreamReader(path);

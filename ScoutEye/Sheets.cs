@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ScoutEye
@@ -21,16 +17,25 @@ namespace ScoutEye
 
         public void StoreData(string data)
         {
-            reader = new StreamReader(cvsPath);
-            string fileContent = reader.ReadToEnd();
-            MessageBox.Show(fileContent);
-            reader.Close();
-            writer = new StreamWriter(cvsPath);
-            writer.Write(fileContent);
-            writer.Write("\n");
-            writer.Write(data);
-            writer.Flush();
-            writer.Close();
+            //Write to data output log
+            //Try catch is to handle writeing to the data output file whilst it's already open
+            try
+            {
+                reader = new StreamReader(cvsPath);
+                string fileContent = reader.ReadToEnd();
+                //MessageBox.Show(fileContent);
+                reader.Close();
+                writer = new StreamWriter(cvsPath);
+                writer.Write(fileContent);
+                writer.Write("\n");
+                writer.Write(data);
+                writer.Flush();
+                writer.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

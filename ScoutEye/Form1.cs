@@ -277,13 +277,12 @@ namespace ScoutEye
         {
 
         }
-        #endregion
-
-        #endregion
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
+        #endregion
+
+        #endregion
     }
 }

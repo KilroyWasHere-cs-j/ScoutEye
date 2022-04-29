@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace ScoutEye
@@ -22,9 +23,7 @@ namespace ScoutEye
             //Try catch is to prevent us from writing to the log file when it's already open
             try
             {
-                reader = new StreamReader(path);
-                string fileContent = reader.ReadToEnd();
-                reader.Close();
+                string fileContent = File.ReadAllText(path, Encoding.UTF8);
                 writer = new StreamWriter(path);
                 writer.Write(fileContent);
                 writer.Write(DateTime.Now + ">>" + log + "\n");

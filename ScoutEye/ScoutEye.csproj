@@ -132,6 +132,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Config.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="scoutingicon.ico" />
     <None Include="Data.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

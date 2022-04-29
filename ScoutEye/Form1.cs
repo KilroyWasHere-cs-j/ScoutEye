@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using QRCoder;
 
@@ -12,12 +12,15 @@ namespace ScoutEye
         private Stopwatch stopwatch;
         private Sheets sheets;
         private QRCodeGenerator qrGenerator;
+        private StreamReader configReader;
+        private string APPNAME = "ScoutEye";
         private bool stopWatchStarted = false;
         private int matchNumber = 0;
         private int teamNumber = 5687;
         private string teamName = "Outliers";
         private string scoutName;
         private string output;
+        private int clickCount = 0;
 #pragma warning disable IDE0051
         private readonly string theLink = "http://www.youtube.com/watch?v=oHg5SJYRHA0";
 #pragma warning restore IDE0051
@@ -29,6 +32,7 @@ namespace ScoutEye
             stopwatch = new Stopwatch();
             sheets = new Sheets();
             qrGenerator = new QRCodeGenerator();
+            configReader = new StreamReader("Config.txt");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -38,22 +42,23 @@ namespace ScoutEye
             TeamNumberLB.Text = "Team number: " + teamNumber.ToString();
             MatchNumberLB.Text = "Match number: " + matchNumber.ToString();
             stopWatchUpdater.Enabled = true;
+            LoadUI();
         }
 
         private void CompileData()
         {
             //Should be a function return
-            output = matchNumber + ":" + teamNumber + ":" + teamName + ":" + AutoCB.Text + ":" + TeleopCB.Text + ":" + EndgameCB.Text + ":" + DefenceCB.Text + ":" + PointScoredTB.Text + ":" + NotesTB.Text;
+           // output = matchNumber + ":" + teamNumber + ":" + teamName + ":" + AutoCB.Text + ":" + TeleopCB.Text + ":" + EndgameCB.Text + ":" + DefenceCB.Text + ":" + PointScoredTB.Text + ":" + NotesTB.Text;
             sheets.StoreData(output);
         }
 
         #region QR
         private void GenerateQRCode(string data)
         {
-            QRCodeData qrCodeData = qrGenerator.CreateQrCode(data, QRCodeGenerator.ECCLevel.Q);
-            QRCode qrCode = new QRCode(qrCodeData);
-            Bitmap qrCodeImage = qrCode.GetGraphic(5);
-            QRCodePB.Image = qrCodeImage;
+            //QRCodeData qrCodeData = qrGenerator.CreateQrCode(data, QRCodeGenerator.ECCLevel.Q);
+            //QRCode qrCode = new QRCode(qrCodeData);
+            //Bitmap qrCodeImage = qrCode.GetGraphic(5);
+            //QRCodePB.Image = qrCodeImage;
         }
         #endregion
 
@@ -70,13 +75,43 @@ namespace ScoutEye
             TeamNumberLB.Text = "Team number: " + teamNumber.ToString();
             MatchNumberLB.Text = "Match number: " + matchNumber.ToString();
             TeamNameLB.Text = "Team name: " + teamName.ToString();
-            AutoCB.SelectedIndex = 0;
-            TeleopCB.SelectedIndex = 0;
-            EndgameCB.SelectedIndex = 0;
-            DefenceCB.SelectedIndex = 0;
-            PointScoredTB.Text = "0";
             NotesTB.Text = "Match Notes";
             logger.Log("Match entered");
+        }
+
+        //<summary>
+        //Load UI
+        //<summary>
+        public void LoadUI()
+        {
+            int cout = 1;
+            foreach (string line in System.IO.File.ReadLines(@"Config.txt"))
+            {
+                int index = line.IndexOf('=');
+                string sub = line.Substring(index + 1);
+                switch (cout)
+                {
+                    case 1:
+                        Auto1LB.Text = sub;
+                        break;
+                    case 2:
+                        Auto2LB.Text = sub;
+                        break;
+                    case 3:
+                        Auto3LB.Text = sub;
+                        break;
+                    case 4:
+                        Tele1LB.Text = sub;
+                        break;
+                    case 5:
+                        Tele2LB.Text = sub;
+                        break;
+                    case 6:
+                        Tele3LB.Text = sub;
+                        break;
+                }
+                cout++;
+            }
         }
 
         //<summary>
@@ -85,25 +120,18 @@ namespace ScoutEye
         //<summary>
         private void EnterData()
         {
-            if (AutoCB.SelectedIndex != 0 && TeleopCB.SelectedIndex != 0 && EndgameCB.SelectedIndex != 0 && DefenceCB.SelectedIndex != 0 && NameTB.Text != String.Empty)
+            if(Auto1TB.Text != String.Empty && Auto2TB.Text != String.Empty && Auto3TB.Text != String.Empty && Tele1TB.Text != String.Empty && Tele2TB.Text != String.Empty && Tele3TB.Text != String.Empty && NameTB.Text != String.Empty)
             {
-                DialogResult result = MessageBox.Show("Are you sure you want to enter this match", "Enter match", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    scoutName = NameTB.Text;
-                    CompileData();
-                    GenerateQRCode(output);
-                    matchNumber++;
-                    updateUI();
-                }
-                else if (result == DialogResult.No)
-                {
-                    logger.Log("Match entry canceled");
-                }
+                scoutName = NameTB.Text;
+                CompileData();
+                GenerateQRCode(output);
+                matchNumber++;
+                updateUI();
+                resetUI();
             }
             else
             {
-                MessageBox.Show("Not all fields changed");
+                MessageBox.Show("Missing data");
             }
         }
 
@@ -112,37 +140,6 @@ namespace ScoutEye
         //<summary>
         private void setupComboBoxes()
         {
-            //Fill the combo boxes
-            AutoCB.Items.Add("Empty");
-            AutoCB.Items.Add("Not seen");
-            AutoCB.Items.Add("Low");
-            AutoCB.Items.Add("Mid");
-            AutoCB.Items.Add("High");
-
-            TeleopCB.Items.Add("Empty");
-            TeleopCB.Items.Add("Not seen");
-            TeleopCB.Items.Add("Low");
-            TeleopCB.Items.Add("Mid");
-            TeleopCB.Items.Add("High");
-
-            EndgameCB.Items.Add("Empty");
-            EndgameCB.Items.Add("Not seen");
-            EndgameCB.Items.Add("Low");
-            EndgameCB.Items.Add("Mid");
-            EndgameCB.Items.Add("High");
-
-            DefenceCB.Items.Add("Empty");
-            DefenceCB.Items.Add("Not seen");
-            DefenceCB.Items.Add("Low");
-            DefenceCB.Items.Add("Mid");
-            DefenceCB.Items.Add("High");
-
-            //Set the combo boxes to base setting
-            AutoCB.SelectedIndex = 0;
-            TeleopCB.SelectedIndex = 0;
-            EndgameCB.SelectedIndex = 0;
-            DefenceCB.SelectedIndex = 0;
-
             //Setup the tool tips
             ToolTips();
         }
@@ -157,11 +154,6 @@ namespace ScoutEye
             if (result == DialogResult.Yes)
             {
                 //Set the combo boxes to base setting
-                AutoCB.SelectedIndex = 0;
-                TeleopCB.SelectedIndex = 0;
-                EndgameCB.SelectedIndex = 0;
-                DefenceCB.SelectedIndex = 0;
-                PointScoredTB.Text = "0";
                 NotesTB.Text = "Match Notes";
                 logger.Log("Match reset");
             }
@@ -169,6 +161,71 @@ namespace ScoutEye
             {
                 logger.Log("Match reset canceled");
             }
+        }
+
+        //<summary>
+        //Toggle the stopwatch on and off
+        //<summary>
+
+        public void ToggleStopwatch()
+        {
+            switch (stopWatchStarted)
+            {
+                case false:
+                    stopwatch.Start();
+                    stopWatchStarted = true;
+                    break;
+                case true:
+                    stopwatch.Stop();
+                    stopWatchStarted = false;
+                    break;
+            }
+        }
+
+        //<summary>
+        //Resets the UI
+        //<summary>
+        public void resetUI()
+        {
+            Auto1TB.Text = String.Empty;
+            Auto2TB.Text = String.Empty;
+            Auto3TB.Text = String.Empty;
+            Tele1TB.Text = String.Empty;
+            Tele2TB.Text = String.Empty;
+            Tele3TB.Text = String.Empty;
+            stopwatch.Stop();
+            stopwatch.Reset();
+            ClickCounterLB.Text = String.Empty;
+        }
+
+        //<summary>
+        //Exits the application asks the user if they want to exit the app
+        //<summary>
+        public void exit()
+        {
+            DialogResult result = MessageBox.Show("Are you sure that you want to exit?", "Exit", MessageBoxButtons.YesNo);
+            if(DialogResult.Yes == result)
+            {
+                Environment.Exit(0);
+            }
+        }
+
+        //<summary>
+        //Sets the click counter up
+        //<summary>
+        public void CountUp()
+        {
+            clickCount++;
+            ClickCounterLB.Text = clickCount.ToString();
+        }
+
+        //<summary>
+        //Set the click counter down
+        //<summary>
+        public void CountDown()
+        {
+            clickCount--;
+            ClickCounterLB.Text = clickCount.ToString();
         }
 
         //<summary>
@@ -186,6 +243,7 @@ namespace ScoutEye
             ToolTip defenceTip = new ToolTip();
             ToolTip pointsTip = new ToolTip();
             ToolTip matchData = new ToolTip();
+            ToolTip stopwatchTip = new ToolTip();
             enterTip.ShowAlways = true;
             enterTip.SetToolTip(EnterBTN, "Click to enter match data");
             resetTip.ShowAlways = true;
@@ -193,17 +251,10 @@ namespace ScoutEye
             notesTip.ShowAlways = true;
             notesTip.SetToolTip(NotesTB, "Type in notes about the match");
             autoTip.ShowAlways = true;
-            autoTip.SetToolTip(AutoCB, "Auto score");
-            teleopTip.ShowAlways = true;
-            teleopTip.SetToolTip(TeleopCB, "Teleop score");
-            endgameTip.ShowAlways = true;
-            endgameTip.SetToolTip(EndgameCB, "End game score");
-            defenceTip.ShowAlways = true;
-            defenceTip.SetToolTip(DefenceCB, "Defence score");
-            pointsTip.ShowAlways = true;
-            pointsTip.SetToolTip(PointScoredTB, "The total points scored during the match");
             matchData.ShowAlways = true;
             matchData.SetToolTip(MatchDataPlanel, "You can't change anything here, so you should move along");
+            stopwatchTip.ShowAlways = true;
+            stopwatchTip.SetToolTip(StartTimerBTN, "Toggle Stopwatch and off");
         }
         #endregion
 
@@ -215,11 +266,6 @@ namespace ScoutEye
 
         private void DebugBTN_Click(object sender, EventArgs e)
         {
-            AutoCB.SelectedIndex = 4;
-            TeleopCB.SelectedIndex = 4;
-            EndgameCB.SelectedIndex = 4;
-            DefenceCB.SelectedIndex = 4;
-            PointScoredTB.Text = "40";
             NameTB.Text = "Outliers";
 
             NotesTB.Text = "Random text";
@@ -229,9 +275,19 @@ namespace ScoutEye
         {
             Reset();
         }
+        private void Minus_Click(object sender, EventArgs e)
+        {
+            CountDown();
+        }
         #endregion
 
         #region EventHandlers
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //If the user clicks no don't exit the app
+            var window = MessageBox.Show("Close the window?", "Are you sure?", MessageBoxButtons.YesNo);
+            e.Cancel = (window == DialogResult.No);
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             StopwatchLB.Text = "Stopwatch: " + stopwatch.Elapsed.ToString();
@@ -240,17 +296,12 @@ namespace ScoutEye
 
         private void StartTimerBTN_Click(object sender, EventArgs e)
         {
-            switch (stopWatchStarted)
-            {
-                case false:
-                    stopwatch.Start();
-                    stopWatchStarted = true;
-                    break;
-                case true:
-                    stopwatch.Stop();
-                    stopWatchStarted = false;
-                    break;
-            }
+            ToggleStopwatch();
+        }
+
+        private void PlusBTN_Click(object sender, EventArgs e)
+        {
+            CountUp();
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -262,6 +313,25 @@ namespace ScoutEye
                     break;
                 case Keys.OemMinus:
                     Reset();
+                    break;
+                case Keys.Space:
+                    ToggleStopwatch();
+                    break;
+                case Keys.W:
+                    CountUp();
+                    break;
+                case Keys.S:
+                    CountDown();
+                    break;
+                case Keys.R:
+                    stopwatch.Stop();
+                    ClickCounterLB.Text = "0";
+                    stopwatch.Reset();
+                    StopwatchLB.Text = "0.0000";
+                    clickCount = 0;
+                    break;
+                case Keys.Escape:
+                    exit();
                     break;
             }
         }

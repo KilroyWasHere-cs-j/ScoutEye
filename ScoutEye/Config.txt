@@ -1,0 +1,6 @@
+﻿Auto1Label=High goal
+Auto2Label=Low goal
+Auto3Label=Hatches
+Tele1Label=High goal
+Tele2Label=Low goal
+Tele3Label=Hatches

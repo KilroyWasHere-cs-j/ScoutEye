@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using QRCoder;
@@ -48,17 +49,24 @@ namespace ScoutEye
         private void CompileData()
         {
             //Should be a function return
-           // output = matchNumber + ":" + teamNumber + ":" + teamName + ":" + AutoCB.Text + ":" + TeleopCB.Text + ":" + EndgameCB.Text + ":" + DefenceCB.Text + ":" + PointScoredTB.Text + ":" + NotesTB.Text;
+            output = matchNumber + ":" + teamNumber + ":" + teamName + ":" + Auto1TB.Text + ":" + Auto2TB.Text + ":" + Auto3TB.Text + ":" + Tele1TB.Text + ":" + Tele2TB.Text + ":" + Tele3TB.Text + ":" + StopwatchLB.Text;        
             sheets.StoreData(output);
         }
 
         #region QR
         private void GenerateQRCode(string data)
         {
-            //QRCodeData qrCodeData = qrGenerator.CreateQrCode(data, QRCodeGenerator.ECCLevel.Q);
-            //QRCode qrCode = new QRCode(qrCodeData);
-            //Bitmap qrCodeImage = qrCode.GetGraphic(5);
-            //QRCodePB.Image = qrCodeImage;
+            try
+            {
+                QRCodeData qrCodeData = qrGenerator.CreateQrCode(data, QRCodeGenerator.ECCLevel.Q);
+                QRCode qrCode = new QRCode(qrCodeData);
+                Bitmap qrCodeImage = qrCode.GetGraphic(5);
+                QRCodePB.Image = qrCodeImage;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         #endregion
 
@@ -267,7 +275,12 @@ namespace ScoutEye
         private void DebugBTN_Click(object sender, EventArgs e)
         {
             NameTB.Text = "Outliers";
-
+            Auto1TB.Text = "NULL";
+            Auto2TB.Text = "NULL";
+            Auto3TB.Text = "NULL";
+            Tele1TB.Text = "NULL";
+            Tele2TB.Text = "NULL";
+            Tele3TB.Text = "NULL";
             NotesTB.Text = "Random text";
         }
 
@@ -285,7 +298,7 @@ namespace ScoutEye
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             //If the user clicks no don't exit the app
-            var window = MessageBox.Show("Close the window?", "Are you sure?", MessageBoxButtons.YesNo);
+            var window = MessageBox.Show("Are you sure you want to close?", "Close app", MessageBoxButtons.YesNo);
             e.Cancel = (window == DialogResult.No);
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -338,6 +351,10 @@ namespace ScoutEye
         #endregion
 
         #region RandomShitIShouldRemove
+        private void StopwatchLB_Click(object sender, EventArgs e)
+        {
+
+        }
         private void MatchDataPlanel_Paint(object sender, PaintEventArgs e)
         {
 

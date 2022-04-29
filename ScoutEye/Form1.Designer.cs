@@ -95,6 +95,7 @@
             this.StopwatchLB.Size = new System.Drawing.Size(85, 20);
             this.StopwatchLB.TabIndex = 5;
             this.StopwatchLB.Text = "Stopwatch";
+            this.StopwatchLB.Click += new System.EventHandler(this.StopwatchLB_Click);
             // 
             // TeamNameLB
             // 
@@ -232,14 +233,14 @@
             // 
             // Auto1TB
             // 
-            this.Auto1TB.Location = new System.Drawing.Point(76, 39);
+            this.Auto1TB.Location = new System.Drawing.Point(89, 39);
             this.Auto1TB.Name = "Auto1TB";
             this.Auto1TB.Size = new System.Drawing.Size(144, 26);
             this.Auto1TB.TabIndex = 12;
             // 
             // Auto2TB
             // 
-            this.Auto2TB.Location = new System.Drawing.Point(76, 68);
+            this.Auto2TB.Location = new System.Drawing.Point(89, 68);
             this.Auto2TB.Name = "Auto2TB";
             this.Auto2TB.Size = new System.Drawing.Size(144, 26);
             this.Auto2TB.TabIndex = 13;
@@ -295,7 +296,7 @@
             this.panel3.Controls.Add(this.Tele1LB);
             this.panel3.Location = new System.Drawing.Point(245, 44);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(267, 144);
+            this.panel3.Size = new System.Drawing.Size(237, 144);
             this.panel3.TabIndex = 16;
             // 
             // Tele1LB
@@ -341,7 +342,7 @@
             // 
             // Auto3TB
             // 
-            this.Auto3TB.Location = new System.Drawing.Point(76, 100);
+            this.Auto3TB.Location = new System.Drawing.Point(89, 97);
             this.Auto3TB.Name = "Auto3TB";
             this.Auto3TB.Size = new System.Drawing.Size(144, 26);
             this.Auto3TB.TabIndex = 19;

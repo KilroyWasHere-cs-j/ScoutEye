@@ -1,0 +1,2 @@
+Test
+Wednesday, May 4, 2022->App loaded from settings

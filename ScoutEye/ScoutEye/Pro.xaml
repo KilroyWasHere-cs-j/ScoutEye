@@ -34,15 +34,14 @@
         <Label x:Name="Auto1LB" Content="NULL" HorizontalAlignment="Left" Margin="103,160,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Auto2LB" Content="NULL" HorizontalAlignment="Left" Margin="103,198,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Auto3LB" Content="NULL" HorizontalAlignment="Left" Margin="103,237,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="Auto0" HorizontalAlignment="Left" Margin="147,129,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="Auto1" HorizontalAlignment="Left" Margin="147,164,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="Auto2" HorizontalAlignment="Left" Margin="147,201,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="Auto3" HorizontalAlignment="Left" Margin="147,239,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="Teleop0" HorizontalAlignment="Left" Margin="364,127,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="Teleop1" HorizontalAlignment="Left" Margin="364,162,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="Teleop2" HorizontalAlignment="Left" Margin="364,201,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="Teleop3" HorizontalAlignment="Left" Margin="364,201,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="Teleop4" HorizontalAlignment="Left" Margin="364,237,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Auto0" HorizontalAlignment="Left" Margin="177,127,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Auto1" HorizontalAlignment="Left" Margin="177,164,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Auto2" HorizontalAlignment="Left" Margin="177,201,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Auto3" HorizontalAlignment="Left" Margin="177,239,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Teleop0" HorizontalAlignment="Left" Margin="387,127,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Teleop1" HorizontalAlignment="Left" Margin="387,162,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Teleop2" HorizontalAlignment="Left" Margin="387,202,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Teleop4" HorizontalAlignment="Left" Margin="387,237,0,0" VerticalAlignment="Top" Width="120"/>
         <Image HorizontalAlignment="Left" Height="176" Margin="717,250,0,0" VerticalAlignment="Top" Width="289"/>
     </Grid>
 </Window>

@@ -20,6 +20,16 @@ namespace ScoutEye
             LoadUIFromSettings();
         }
 
+        private void EnterMatch()
+        {
+
+        }
+
+        private void ResetMatch()
+        {
+
+        }
+
         //<summary>
         //Convert bitmap image to a image source so that the image box will show it
         //<summary>
@@ -44,6 +54,22 @@ namespace ScoutEye
         //<summary>
         private void LoadUIFromSettings()
         {
+            Auto0.Items.Add("Empty");
+            Auto0.SelectedIndex = 0;
+            Auto1.Items.Add("Empty");
+            Auto1.SelectedIndex = 0;
+            Auto2.Items.Add("Empty");
+            Auto2.SelectedIndex = 0;
+            Auto3.Items.Add("Empty");
+            Auto3.SelectedIndex = 0;
+            Teleop0.Items.Add("Empty");
+            Teleop0.SelectedIndex = 0;
+            Teleop1.Items.Add("Empty");
+            Teleop1.SelectedIndex = 0;
+            Teleop2.Items.Add("Empty");
+            Teleop2.SelectedIndex = 0;
+            Teleop3.Items.Add("Empty");
+            Teleop3.SelectedIndex = 0;
             try
             {
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
@@ -58,9 +84,11 @@ namespace ScoutEye
                     Auto0LB.Content = node.SelectSingleNode("Auto0").InnerText;
                     Auto1LB.Content = node.SelectSingleNode("Auto1").InnerText;
                     Auto2LB.Content = node.SelectSingleNode("Auto2").InnerText;
+                    Auto3LB.Content = node.SelectSingleNode("Auto3").InnerText;
                     Teleop0LB.Content = node.SelectSingleNode("Teleop0").InnerText;
                     Teleop1LB.Content = node.SelectSingleNode("Teleop1").InnerText;
                     Teleop2LB.Content = node.SelectSingleNode("Teleop2").InnerText;
+                    Teleop3LB.Content = node.SelectSingleNode("Teleop3").InnerText;
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
                 }
                 //logger.Log("App loaded from settings");

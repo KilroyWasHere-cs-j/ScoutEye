@@ -5,7 +5,9 @@
 	<Auto0>High goal</Auto0>
 	<Auto1>Low goal</Auto1>
 	<Auto2></Auto2>
+	<Auto3></Auto3>
 	<Teleop0>High goal</Teleop0>
 	<Teleop1>Low goal</Teleop1>
 	<Teleop2>Climb</Teleop2>
+	<Teleop3></Teleop3>
 </settings>

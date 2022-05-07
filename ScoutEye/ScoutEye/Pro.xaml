@@ -41,7 +41,7 @@
         <ComboBox x:Name="Teleop0" HorizontalAlignment="Left" Margin="387,127,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="Teleop1" HorizontalAlignment="Left" Margin="387,162,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="Teleop2" HorizontalAlignment="Left" Margin="387,202,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="Teleop4" HorizontalAlignment="Left" Margin="387,237,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Teleop3" HorizontalAlignment="Left" Margin="387,237,0,0" VerticalAlignment="Top" Width="120"/>
         <Image HorizontalAlignment="Left" Height="176" Margin="717,250,0,0" VerticalAlignment="Top" Width="289"/>
     </Grid>
 </Window>

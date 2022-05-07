@@ -1,0 +1,48 @@
+﻿<Window x:Class="ScoutEye.Pro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScoutEye"
+        mc:Ignorable="d"
+        Title="Pro" Height="450" Width="1014">
+    <Grid Height="434" VerticalAlignment="Bottom">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Rectangle HorizontalAlignment="Left" Height="343" Margin="308,78,0,0" Stroke="Black" VerticalAlignment="Top" Width="205" Fill="#FF9EB1D0"/>
+        <Button x:Name="EnterBTN" Content="Enter Match" HorizontalAlignment="Left" Margin="717,66,0,0" VerticalAlignment="Top" Height="77" Width="127" Click="EnterBTN_Click"/>
+        <Button x:Name="ResetBTN" Content="Reset Match" HorizontalAlignment="Left" Margin="717,148,0,0" VerticalAlignment="Top" Height="76" Width="127" Click="ResetBTN_Click"/>
+        <Rectangle HorizontalAlignment="Center" Height="61" Stroke="Black" VerticalAlignment="Top" Width="1014" Fill="#FF97999C"/>
+        <Label Content="Match Data" HorizontalAlignment="Left" Margin="24,30,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="MatchNumTB" Content="Match Number" HorizontalAlignment="Left" Margin="177,30,0,0" VerticalAlignment="Top"/>
+        <Label Content="Team Number" HorizontalAlignment="Left" Margin="382,30,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="VersionLB" Content="v1.5" HorizontalAlignment="Left" Margin="973,35,0,0" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Left" Height="38" Margin="308,79,0,0" Stroke="Black" VerticalAlignment="Top" Width="203"/>
+        <Label x:Name="TeleopTitleCard" Content="Teleop" HorizontalAlignment="Left" Margin="308,84,0,0" VerticalAlignment="Top"/>
+        <Rectangle Stroke="Black" Margin="518,78,389,13" Fill="#FFA7BED8"/>
+        <RadioButton x:Name="RobotDiedRB" Content="Robot Died" HorizontalAlignment="Left" Margin="526,130,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Field_Fault" Content="Field Fault" HorizontalAlignment="Left" Margin="526,152,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Teleop0LB" Content="NULL" HorizontalAlignment="Left" Margin="311,125,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Teleop1LB" Content="NULL" HorizontalAlignment="Left" Margin="311,160,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Teleop2LB" Content="NULL" HorizontalAlignment="Left" Margin="311,198,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Teleop3LB" Content="NULL" HorizontalAlignment="Left" Margin="311,237,0,0" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Left" Height="343" Margin="100,78,0,0" Stroke="Black" VerticalAlignment="Top" Width="205" Fill="#FF9EB1D0"/>
+        <Rectangle HorizontalAlignment="Left" Height="38" Margin="100,79,0,0" Stroke="Black" VerticalAlignment="Top" Width="203"/>
+        <Label x:Name="AutoTitleCardLB" Content="Teleop" HorizontalAlignment="Left" Margin="100,84,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Auto0LB" Content="NULL" HorizontalAlignment="Left" Margin="103,125,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Auto1LB" Content="NULL" HorizontalAlignment="Left" Margin="103,160,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Auto2LB" Content="NULL" HorizontalAlignment="Left" Margin="103,198,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Auto3LB" Content="NULL" HorizontalAlignment="Left" Margin="103,237,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="Auto0" HorizontalAlignment="Left" Margin="147,129,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Auto1" HorizontalAlignment="Left" Margin="147,164,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Auto2" HorizontalAlignment="Left" Margin="147,201,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Auto3" HorizontalAlignment="Left" Margin="147,239,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Teleop0" HorizontalAlignment="Left" Margin="364,127,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Teleop1" HorizontalAlignment="Left" Margin="364,162,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Teleop2" HorizontalAlignment="Left" Margin="364,201,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Teleop3" HorizontalAlignment="Left" Margin="364,201,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="Teleop4" HorizontalAlignment="Left" Margin="364,237,0,0" VerticalAlignment="Top" Width="120"/>
+        <Image HorizontalAlignment="Left" Height="176" Margin="717,250,0,0" VerticalAlignment="Top" Width="289"/>
+    </Grid>
+</Window>

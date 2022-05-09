@@ -21,8 +21,6 @@
         <Rectangle HorizontalAlignment="Left" Height="38" Margin="308,79,0,0" Stroke="Black" VerticalAlignment="Top" Width="203"/>
         <Label x:Name="TeleopTitleCard" Content="Teleop" HorizontalAlignment="Left" Margin="308,84,0,0" VerticalAlignment="Top"/>
         <Rectangle Stroke="Black" Margin="518,78,389,13" Fill="#FFA7BED8"/>
-        <RadioButton x:Name="RobotDiedRB" Content="Robot Died" HorizontalAlignment="Left" Margin="526,130,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="Field_Fault" Content="Field Fault" HorizontalAlignment="Left" Margin="526,152,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Teleop0LB" Content="NULL" HorizontalAlignment="Left" Margin="311,125,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Teleop1LB" Content="NULL" HorizontalAlignment="Left" Margin="311,160,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Teleop2LB" Content="NULL" HorizontalAlignment="Left" Margin="311,198,0,0" VerticalAlignment="Top"/>
@@ -43,5 +41,7 @@
         <ComboBox x:Name="Teleop2" HorizontalAlignment="Left" Margin="387,202,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="Teleop3" HorizontalAlignment="Left" Margin="387,237,0,0" VerticalAlignment="Top" Width="120"/>
         <Image HorizontalAlignment="Left" Height="176" Margin="717,250,0,0" VerticalAlignment="Top" Width="289"/>
+        <CheckBox x:Name="RobotDiedCB" Content="Robot Died" HorizontalAlignment="Left" Margin="526,136,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="FieldFaultCB" Content="Field Fault" HorizontalAlignment="Left" Margin="526,160,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

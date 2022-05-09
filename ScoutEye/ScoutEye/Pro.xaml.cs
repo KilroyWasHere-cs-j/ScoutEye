@@ -22,12 +22,12 @@ namespace ScoutEye
 
         private void EnterMatch()
         {
-
+            //Enter the data for the match
         }
 
         private void ResetMatch()
         {
-
+            //Reset the data for the match
         }
 
         //<summary>

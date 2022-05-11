@@ -12,8 +12,6 @@ namespace ScoutEye
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-            pro = new Pro();
-            am = new Am();
         }
 
         private void ScoutOption2_Click(object sender, RoutedEventArgs e)
@@ -21,6 +19,7 @@ namespace ScoutEye
             //Open the professional window and closes the current window
             if(NameTB.Text != "Name")
             {
+                pro = new Pro(NameTB.Text);
                 pro.Show();
                 this.Close();
             }
@@ -35,6 +34,7 @@ namespace ScoutEye
             //Open the amateur window and closes the current window
             if (NameTB.Text != "Name")
             {
+                am = new Am();
                 am.Show();
                 this.Close();
             }

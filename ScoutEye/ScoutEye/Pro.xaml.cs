@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using QRCoder;
+using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 using System.Xml;
 
 namespace ScoutEye
@@ -16,21 +18,80 @@ namespace ScoutEye
     public partial class Pro : Window
     {
         private XmlDocument xml;
-        public Pro()
+        private string comboDefault = "Empty";
+        private int matchNumber = 0;
+        private DispatcherTimer dt;
+        private Stopwatch stopwatch;
+        private bool stopwatchEnabled = false;
+        private int clickCount = 0;
+
+        public Pro(string scoutname)
         {
             InitializeComponent();
             xml = new XmlDocument();
+            stopwatch = new Stopwatch();
+            dt = new DispatcherTimer();
+            dt.Tick += new EventHandler(dt_Tick);
+            dt.Interval = new TimeSpan(0, 0, 0, 0, 1);
+            dt.Start();
             LoadUIFromSettings();
+            ScoutNameLB.Content = "Scout Name: " + scoutname;
         }
 
+        //<summary>
+        //Enter match
+        //<summary>
         private void EnterMatch()
         {
-            //Enter the data for the match
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to enter this match? This action cannot be undone.", "Just checking in.", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                string compiledData = Auto0.Text + "\t" + Auto1.Text + "\t" + Auto2.Text + "\t" + Auto3.Text + "\t" + Teleop0.Text + "\t" + Teleop1.Text + "\t" + Teleop2.Text + "\t" + Teleop3.Text + "\t" + RobotDiedCB.IsChecked.ToString() + "\t" + FieldFaultCB.IsChecked.ToString() + "\t" + stopwatch.Elapsed.ToString() + "\t" + clickCount.ToString();
+                QRCodeDisplayPB.Source = BitmapToImageSource(GenerateQRCode(compiledData));
+                NextMatch();
+            }
         }
 
+        //<summary>
+        //Moves to the next match
+        //<summary>
+        private void NextMatch()
+        {
+            matchNumber++;
+            MatchNumTB.Content = "Match number: " + matchNumber.ToString();
+            ResetMatch();
+        }
+
+        //<summary>
+        //Resets all the match data
+        //<summary>
         private void ResetMatch()
         {
-            //Reset the data for the match
+            foreach (UIElement element in Grid.Children)
+            {
+                if (element is ComboBox)
+                {
+                    ComboBox cb = (ComboBox)element;
+                    cb.SelectedIndex = 0;
+                }
+                if(element is CheckBox)
+                {
+                    CheckBox cb = (CheckBox)element;
+                    cb.IsChecked = false;
+                }
+            }
+        }
+
+        //<summary>
+        //Generate a QR Code from a bit of text
+        //<summary>
+        private Bitmap GenerateQRCode(string data)
+        {
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(data, QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new QRCode(qrCodeData);
+            Bitmap qrCodeImage = qrCode.GetGraphic(20);
+            return qrCodeImage;
         }
 
         //<summary>
@@ -47,7 +108,6 @@ namespace ScoutEye
                 bitmapimage.StreamSource = memory;
                 bitmapimage.CacheOption = BitmapCacheOption.OnLoad;
                 bitmapimage.EndInit();
-
                 return bitmapimage;
             }
         }
@@ -57,9 +117,7 @@ namespace ScoutEye
         //<summary>
         private void LoadUIFromSettings()
         {
-            string comboDefault = "NULL";
-            string auto0Items = string.Empty;
-            List<bool> enabled = new List<bool>();
+            int[] values = Enumerable.Range(0, 500 - 0).ToArray();
             try
             {
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
@@ -68,13 +126,22 @@ namespace ScoutEye
                 XmlNodeList nodeList = xml.DocumentElement.SelectNodes("/settings");
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
+                //Sets every combo box on the screen to say Empty
+                foreach (UIElement element in Grid.Children)
+                {
+                    if (element is ComboBox)
+                    {
+                        ComboBox cb = (ComboBox)element;
+                        cb.Items.Add(comboDefault);
+                        cb.SelectedIndex = 0;
+                    }
+                }
+
                 foreach (XmlNode node in nodeList)
                 {
                     VersionLB.Content = node.SelectSingleNode("AppVersion").InnerText;
                     comboDefault = node.SelectSingleNode("DefaultComboValue").InnerText;
-                    enabled.Add(bool.Parse(node.SelectSingleNode("Auto0Enabled").InnerText));
                     Auto0LB.Content = node.SelectSingleNode("Auto0").InnerText;
-                    auto0Items = node.SelectSingleNode("Auto0Items").InnerText;
                     Auto1LB.Content = node.SelectSingleNode("Auto1").InnerText;
                     Auto2LB.Content = node.SelectSingleNode("Auto2").InnerText;
                     Auto3LB.Content = node.SelectSingleNode("Auto3").InnerText;
@@ -82,32 +149,193 @@ namespace ScoutEye
                     Teleop1LB.Content = node.SelectSingleNode("Teleop1").InnerText;
                     Teleop2LB.Content = node.SelectSingleNode("Teleop2").InnerText;
                     Teleop3LB.Content = node.SelectSingleNode("Teleop3").InnerText;
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
-                }
-                //Sets every combo box on the screen to say Empty
-                int count = 0;
-                int enabledlength = enabled.Count();
-                MessageBox.Show(count + " " + enabledlength);
-                foreach (UIElement element in Grid.Children)
-                {
-                    if (element is ComboBox && count == enabledlength)
-                    {
-                        ComboBox cb = (ComboBox)element;
-                        cb.Items.Add(comboDefault);
-                        cb.SelectedIndex = 0;
-                        MessageBox.Show(enabled[count].ToString());
-                        if (enabled[count] == false)
-                        {
-                            MessageBox.Show("Debug1");
-                            cb.Visibility = Visibility.Hidden;
-                        }
-                        count++;
-                    }
-                }
 
-                foreach (string item in auto0Items.Split(',').ToList())
-                {
-                    Auto0.Items.Add(item);
+                    //Fill all drop down menus and decide if they get shown or stay hidden
+                    foreach (string item in node.SelectSingleNode("Auto0Items").InnerText.Split(',').ToList())
+                    {
+                        if(node.SelectSingleNode("Auto0Hide").InnerText == "true")
+                        {
+                            Auto0.Visibility = Visibility.Hidden;
+                        }
+                        else
+                        {
+                            if (item == "NumFill")
+                            {
+                                foreach (int num in values)
+                                {
+                                    Auto0.IsEditable = true;
+                                    Auto0.Items.Add(num);
+                                }
+                            }
+                            else
+                            {
+                                Auto0.IsEditable = false;
+                                Auto0.Items.Add(item);
+                            }
+                        }
+                    }
+                    foreach (string item in node.SelectSingleNode("Auto1Items").InnerText.Split(',').ToList())
+                    {
+                        if(node.SelectSingleNode("Auto1Hide").InnerText == "true")
+                        {
+                            Auto1.Visibility = Visibility.Hidden;
+                        }
+                        else
+                        {
+                            if (item == "NumFill")
+                            {
+                                foreach (int num in values)
+                                {
+                                    Auto1.IsEditable = true;
+                                    Auto1.Items.Add(num);
+                                }
+                            }
+                            else
+                            {
+                                Auto1.IsEditable = false;
+                                Auto1.Items.Add(item);
+                            }
+                        }
+                    }
+                    foreach (string item in node.SelectSingleNode("Auto2Items").InnerText.Split(',').ToList())
+                    {
+                        if(node.SelectSingleNode("Auto2Hide").InnerText == "true")
+                        {
+                            Auto2.Visibility = Visibility.Hidden;
+                        }
+                        else
+                        {
+                            if (item == "NumFill")
+                            {
+                                foreach (int num in values)
+                                {
+                                    Auto2.IsEditable = true;
+                                    Auto2.Items.Add(num);
+                                }
+                            }
+                            else
+                            {
+                                Auto2.IsEditable = false;
+                                Auto2.Items.Add(item);
+                            }
+                        }
+                    }
+                    foreach (string item in node.SelectSingleNode("Auto3Items").InnerText.Split(',').ToList())
+                    {
+                        if (node.SelectSingleNode("Auto3Hide").InnerText == "true")
+                        {
+                            Auto3.Visibility = Visibility.Hidden;
+                        }
+                        else
+                        {
+                            if (item == "NumFill")
+                            {
+                                foreach (int num in values)
+                                {
+                                    Auto3.IsEditable = true;
+                                    Auto3.Items.Add(num);
+                                }
+                            }
+                            else
+                            {
+                                Auto3.IsEditable = false;
+                                Auto3.Items.Add(item);
+                            }
+                        }
+                    }
+                    foreach (string item in node.SelectSingleNode("Teleop0Items").InnerText.Split(',').ToList())
+                    {
+                        if(node.SelectSingleNode("Teleop0Hide").InnerText == "true")
+                        {
+                            Teleop0.Visibility = Visibility.Hidden;
+                        }
+                        else
+                        {
+                            if (item == "NumFill")
+                            {
+                                foreach (int num in values)
+                                {
+                                    Teleop0.IsEditable = true;
+                                    Teleop0.Items.Add(num);
+                                }
+                            }
+                            else
+                            {
+                                Teleop0.IsEditable = false;
+                                Teleop0.Items.Add(item);
+                            }
+                        }
+                    }
+                    foreach (string item in node.SelectSingleNode("Teleop1Items").InnerText.Split(',').ToList())
+                    {
+                        if(node.SelectSingleNode("Teleop1Hide").InnerText == "true")
+                        {
+                            Teleop1.Visibility = Visibility.Hidden;
+                        }
+                        else
+                        {
+                            if (item == "NumFill")
+                            {
+                                foreach (int num in values)
+                                {
+                                    Teleop1.IsEditable = true;
+                                    Teleop1.Items.Add(num);
+                                }
+                            }
+                            else
+                            {
+                                Teleop1.IsEditable = false;
+                                Teleop1.Items.Add(item);
+                            }
+                        }
+                    }
+                    foreach (string item in node.SelectSingleNode("Teleop2Items").InnerText.Split(',').ToList())
+                    {
+                        if(node.SelectSingleNode("Teleop2Hide").InnerText == "true")
+                        {
+                            Teleop2.Visibility = Visibility.Hidden;
+                        }
+                        else
+                        {
+                            if (item == "NumFill")
+                            {
+                                foreach (int num in values)
+                                {
+                                    Teleop2.IsEditable = true;
+                                    Teleop2.Items.Add(num);
+                                }
+                            }
+                            else
+                            {
+                                Teleop2.IsEditable = false;
+                                Teleop2.Items.Add(item);
+                            }
+                        }
+                    }
+                    foreach (string item in node.SelectSingleNode("Teleop3Items").InnerText.Split(',').ToList())
+                    {
+                        if(node.SelectSingleNode("Teleop3Hide").InnerText == "true")
+                        {
+                            Teleop3.Visibility = Visibility.Hidden;
+                        }
+                        else
+                        {
+                            if (item == "NumFill")
+                            {
+                                foreach (int num in values)
+                                {
+                                    Teleop3.IsEditable = true;
+                                    Teleop3.Items.Add(num);
+                                }
+                            }
+                            else
+                            {
+                                Teleop3.IsEditable = false;
+                                Teleop3.Items.Add(item);
+                            }
+                        }
+                    }
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
                 }
             }
             catch (Exception ex)
@@ -119,14 +347,64 @@ namespace ScoutEye
         }
 
         #region EventHandlers
+        private void dt_Tick(object sender, EventArgs e)
+        {
+            StopwatchLB.Content = "Stopwatch: " + stopwatch.Elapsed.TotalMilliseconds.ToString() + "ms";
+        }
+
         private void EnterBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            EnterMatch();
         }
 
         private void ResetBTN_Click(object sender, RoutedEventArgs e)
         {
+            ResetMatch();
+        }
 
+        //<summary>
+        //Toggle the stopwatch on and off
+        //<summary>
+        private void ToggleStopwatch_Click(object sender, RoutedEventArgs e)
+        {
+            switch (stopwatchEnabled)
+            {
+                case true:
+                    stopwatchEnabled = false;
+                    stopwatch.Stop();
+                    break;
+                case false:
+                    stopwatchEnabled = true;
+                    stopwatch.Start();
+                    break;
+            }
+        }
+
+        //<summary>
+        //Reset Stopwatch
+        //<summary>
+        private void ResetStopwatch_Click(object sender, RoutedEventArgs e)
+        {
+            stopwatch.Stop();
+            stopwatch.Reset();
+        }
+        
+        //<summary>
+        //Click counter up
+        //<summary>
+        private void ClickCounterDown_Click(object sender, RoutedEventArgs e)
+        {
+            clickCount--;
+            ClickCounterCountLB.Content = "Click count " + clickCount.ToString();
+        }
+
+        //<summary>
+        //Click counter down
+        //<summary>
+        private void ClickCounterUp_Click(object sender, RoutedEventArgs e)
+        {
+            clickCount++;
+            ClickCounterCountLB.Content = "Click count " + clickCount.ToString();
         }
         #endregion
     }

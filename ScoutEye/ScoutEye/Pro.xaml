@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ScoutEye"
         mc:Ignorable="d"
         Title="Pro" Height="450" Width="1014">
-    <Grid Height="434" VerticalAlignment="Bottom">
+    <Grid x:Name="Grid" Height="434" VerticalAlignment="Bottom">
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>

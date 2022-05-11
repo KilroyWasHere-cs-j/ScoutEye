@@ -2,7 +2,10 @@
 <settings>
 	<AppName>ScoutEye</AppName>
 	<AppVersion>v0.50</AppVersion>
+	<DefaultComboValue>Empty</DefaultComboValue>
+	<Auto0Enabled>false</Auto0Enabled>
 	<Auto0>High goal</Auto0>
+	<Auto0Items>high, low</Auto0Items>
 	<Auto1>Low goal</Auto1>
 	<Auto2></Auto2>
 	<Auto3></Auto3>

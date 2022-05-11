@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Xml;
 
@@ -54,22 +57,9 @@ namespace ScoutEye
         //<summary>
         private void LoadUIFromSettings()
         {
-            Auto0.Items.Add("Empty");
-            Auto0.SelectedIndex = 0;
-            Auto1.Items.Add("Empty");
-            Auto1.SelectedIndex = 0;
-            Auto2.Items.Add("Empty");
-            Auto2.SelectedIndex = 0;
-            Auto3.Items.Add("Empty");
-            Auto3.SelectedIndex = 0;
-            Teleop0.Items.Add("Empty");
-            Teleop0.SelectedIndex = 0;
-            Teleop1.Items.Add("Empty");
-            Teleop1.SelectedIndex = 0;
-            Teleop2.Items.Add("Empty");
-            Teleop2.SelectedIndex = 0;
-            Teleop3.Items.Add("Empty");
-            Teleop3.SelectedIndex = 0;
+            string comboDefault = "NULL";
+            string auto0Items = string.Empty;
+            List<bool> enabled = new List<bool>();
             try
             {
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
@@ -81,7 +71,10 @@ namespace ScoutEye
                 foreach (XmlNode node in nodeList)
                 {
                     VersionLB.Content = node.SelectSingleNode("AppVersion").InnerText;
+                    comboDefault = node.SelectSingleNode("DefaultComboValue").InnerText;
+                    enabled.Add(bool.Parse(node.SelectSingleNode("Auto0Enabled").InnerText));
                     Auto0LB.Content = node.SelectSingleNode("Auto0").InnerText;
+                    auto0Items = node.SelectSingleNode("Auto0Items").InnerText;
                     Auto1LB.Content = node.SelectSingleNode("Auto1").InnerText;
                     Auto2LB.Content = node.SelectSingleNode("Auto2").InnerText;
                     Auto3LB.Content = node.SelectSingleNode("Auto3").InnerText;
@@ -91,7 +84,31 @@ namespace ScoutEye
                     Teleop3LB.Content = node.SelectSingleNode("Teleop3").InnerText;
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
                 }
-                //logger.Log("App loaded from settings");
+                //Sets every combo box on the screen to say Empty
+                int count = 0;
+                int enabledlength = enabled.Count();
+                MessageBox.Show(count + " " + enabledlength);
+                foreach (UIElement element in Grid.Children)
+                {
+                    if (element is ComboBox && count == enabledlength)
+                    {
+                        ComboBox cb = (ComboBox)element;
+                        cb.Items.Add(comboDefault);
+                        cb.SelectedIndex = 0;
+                        MessageBox.Show(enabled[count].ToString());
+                        if (enabled[count] == false)
+                        {
+                            MessageBox.Show("Debug1");
+                            cb.Visibility = Visibility.Hidden;
+                        }
+                        count++;
+                    }
+                }
+
+                foreach (string item in auto0Items.Split(',').ToList())
+                {
+                    Auto0.Items.Add(item);
+                }
             }
             catch (Exception ex)
             {

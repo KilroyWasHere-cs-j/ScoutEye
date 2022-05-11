@@ -125,9 +125,9 @@
     <Resource Include="scoutingicon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <SplashScreen Include="scoutingicon %281%29.png">
+    <None Include="scoutingicon %281%29.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </SplashScreen>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

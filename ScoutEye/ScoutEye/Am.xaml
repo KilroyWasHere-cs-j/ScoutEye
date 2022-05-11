@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="Am" Height="450" Width="800">
     <Grid>
-        
+        <Image HorizontalAlignment="Left" Height="379" Margin="34,25,0,0" VerticalAlignment="Top" Width="505" Source="/th-3464967258.jpg"/>
     </Grid>
 </Window>

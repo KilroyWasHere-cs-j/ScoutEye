@@ -47,8 +47,8 @@
         <Button x:Name="StopwatchResetBTN" Content="Reset Stopwatch" HorizontalAlignment="Left" Margin="654,111,0,0" VerticalAlignment="Top" Height="40" Width="127" Click="ResetStopwatch_Click"/>
         <Button x:Name="ClickCounterUp" Content="+" HorizontalAlignment="Left" Margin="654,156,0,0" VerticalAlignment="Top" Height="74" Width="63" Click="ClickCounterUp_Click"/>
         <Button x:Name="ClickCounterDown" Content="-" HorizontalAlignment="Left" Margin="722,156,0,0" VerticalAlignment="Top" Height="74" Width="59" Click="ClickCounterDown_Click"/>
-        <Rectangle HorizontalAlignment="Left" Height="100" Margin="449,308,0,0" Stroke="Black" VerticalAlignment="Top" Width="169"/>
+        <Rectangle HorizontalAlignment="Left" Height="100" Margin="449,308,0,0" Stroke="Black" VerticalAlignment="Top" Width="153"/>
         <Label x:Name="ClickCounterCountLB" Content="Click Count 0" HorizontalAlignment="Center" Margin="0,311,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="StopwatchLB" Content="Timer 0.0ms" HorizontalAlignment="Left" Margin="467,332,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="StopwatchLB" Content="Stopwatch 0.0ms" HorizontalAlignment="Center" Margin="0,332,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

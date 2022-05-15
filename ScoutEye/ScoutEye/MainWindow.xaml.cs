@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 namespace ScoutEye
 {
     /// <summary>
@@ -17,9 +18,9 @@ namespace ScoutEye
         private void ScoutOption2_Click(object sender, RoutedEventArgs e)
         {
             //Open the professional window and closes the current window
-            if(NameTB.Text != string.Empty)
+            if(NameTB.Text != string.Empty && CurrentMatchNumberTB.Text != string.Empty)
             {
-                pro = new Pro(NameTB.Text);
+                pro = new Pro(NameTB.Text, Int32.Parse(CurrentMatchNumberTB.Text));
                 pro.Show();
                 this.Close();
             }

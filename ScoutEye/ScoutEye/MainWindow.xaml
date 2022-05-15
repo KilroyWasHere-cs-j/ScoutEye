@@ -17,5 +17,7 @@
         <Label Content="Please Select Scouting Level" HorizontalAlignment="Left" Margin="3,25,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <TextBox x:Name="NameTB" HorizontalAlignment="Left" Margin="22,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="71,179,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="46"/>
+        <TextBox x:Name="CurrentMatchNumberTB" HorizontalAlignment="Left" Margin="22,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="Match Number" HorizontalAlignment="Left" Margin="25,201,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="92"/>
     </Grid>
 </Window>

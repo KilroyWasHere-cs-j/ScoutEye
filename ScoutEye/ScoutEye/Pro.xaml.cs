@@ -25,7 +25,7 @@ namespace ScoutEye
         private bool stopwatchEnabled = false;
         private int clickCount = 0;
 
-        public Pro(string scoutname)
+        public Pro(string scoutname, int currentMatchNumber)
         {
             InitializeComponent();
             xml = new XmlDocument();
@@ -36,6 +36,8 @@ namespace ScoutEye
             dt.Start();
             LoadUIFromSettings();
             ScoutNameLB.Content = "Scout Name: " + scoutname;
+            //Set the current match number so the scout can start at anypoint
+            matchNumber = currentMatchNumber;
         }
 
         //<summary>

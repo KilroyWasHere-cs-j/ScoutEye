@@ -17,7 +17,7 @@ namespace ScoutEye
         private void ScoutOption2_Click(object sender, RoutedEventArgs e)
         {
             //Open the professional window and closes the current window
-            if(NameTB.Text != "Name")
+            if(NameTB.Text != string.Empty)
             {
                 pro = new Pro(NameTB.Text);
                 pro.Show();

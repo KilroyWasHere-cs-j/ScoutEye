@@ -18,7 +18,7 @@ namespace ScoutEye
     public partial class Pro : Window
     {
         private XmlDocument xml;
-        private string comboDefault = "Empty";
+        private string comboDefault = "Please Select Option";
         private int matchNumber = 0;
         private DispatcherTimer dt;
         private Stopwatch stopwatch;
@@ -140,7 +140,6 @@ namespace ScoutEye
                 foreach (XmlNode node in nodeList)
                 {
                     VersionLB.Content = node.SelectSingleNode("AppVersion").InnerText;
-                    comboDefault = node.SelectSingleNode("DefaultComboValue").InnerText;
                     Auto0LB.Content = node.SelectSingleNode("Auto0").InnerText;
                     Auto1LB.Content = node.SelectSingleNode("Auto1").InnerText;
                     Auto2LB.Content = node.SelectSingleNode("Auto2").InnerText;

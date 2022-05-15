@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ScoutEye"
         mc:Ignorable="d"
         Title="ScoutEye" Height="286" Width="361">
-    <Grid Background="#FFFBF9F4" Margin="0,0,0,18">
+    <Grid Background="#FFFBF9F4" Margin="0,0,0,3">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="14*"/>
@@ -15,6 +15,7 @@
         <Button x:Name="ScoutOption2" Content="Professional" HorizontalAlignment="Left" Margin="109,0,0,0" VerticalAlignment="Center" Height="72" Width="117" AutomationProperties.IsColumnHeader="True" Click="ScoutOption2_Click" Grid.Column="1"/>
         <Rectangle HorizontalAlignment="Left" Height="59" Margin="40,10,0,0" VerticalAlignment="Top" Width="281" Stroke="#FF0A0A0A" Fill="#FFA4A3A3" Grid.ColumnSpan="2"/>
         <Label Content="Please Select Scouting Level" HorizontalAlignment="Left" Margin="3,25,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <TextBox x:Name="NameTB" HorizontalAlignment="Left" Margin="22,183,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <TextBox x:Name="NameTB" HorizontalAlignment="Left" Margin="22,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="71,179,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="46"/>
     </Grid>
 </Window>

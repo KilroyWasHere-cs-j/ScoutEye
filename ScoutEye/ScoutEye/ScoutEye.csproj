@@ -125,9 +125,9 @@
     <Resource Include="scoutingicon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="scoutingicon %281%29.png">
+    <SplashScreen Include="scoutingicon %281%29.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </SplashScreen>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="th-3464967258.jpg">

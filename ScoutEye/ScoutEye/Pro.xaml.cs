@@ -38,6 +38,7 @@ namespace ScoutEye
             ScoutNameLB.Content = "Scout Name: " + scoutname;
             //Set the current match number so the scout can start at anypoint
             matchNumber = currentMatchNumber;
+            MatchNumTB.Content = "Match Number: " + matchNumber.ToString();
         }
 
         //<summary>

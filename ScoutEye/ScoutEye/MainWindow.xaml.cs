@@ -9,24 +9,41 @@ namespace ScoutEye
     {
         Pro pro;
         Am am;
+
+        private string userName = "";
+
         public MainWindow()
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            userName = Environment.UserName;
+            NameTB.Text = userName;
         }
 
+        //<summary>
+        //The user has picked the pro level of scouting
+        //<summary>
         private void ScoutOption2_Click(object sender, RoutedEventArgs e)
         {
-            //Open the professional window and closes the current window
-            if(NameTB.Text != string.Empty && CurrentMatchNumberTB.Text != string.Empty)
+            try
             {
-                pro = new Pro(NameTB.Text, Int32.Parse(CurrentMatchNumberTB.Text));
-                pro.Show();
-                this.Close();
+                //If the user entered a valid name and match number
+                if (NameTB.Text != string.Empty && CurrentMatchNumberTB.Text != string.Empty)
+                {
+                    pro = new Pro(NameTB.Text, Int32.Parse(CurrentMatchNumberTB.Text));
+                    pro.Show();
+                    this.Close();
+                }
+                else
+                {
+                    //Something was missing
+                    MessageBox.Show("Please enter your name.", "Missing fields", MessageBoxButton.OK, MessageBoxImage.Hand);
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Please enter your name.", "Missing fields", MessageBoxButton.OK, MessageBoxImage.Hand);
+                //What ever the user entered was not a real number
+                MessageBox.Show("Hey, so that's not a real number. Examples of numbers are like; 1, 2, 3, 4", "Did you really think that would work?", MessageBoxButton.OK, MessageBoxImage.Hand);
             }
         }
 

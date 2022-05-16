@@ -49,16 +49,24 @@ namespace ScoutEye
 
         private void ScoutOption1_Click(object sender, RoutedEventArgs e)
         {
-            //Open the amateur window and closes the current window
-            if (NameTB.Text != "Name")
+            try
             {
-                am = new Am();
-                am.Show();
-                this.Close();
+                //Open the amateur window and closes the current window
+                if (NameTB.Text != "Name")
+                {
+                    am = new Am(NameTB.Text, Int32.Parse(CurrentMatchNumberTB.Text));
+                    am.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter your name.", "Missing fields", MessageBoxButton.OK, MessageBoxImage.Hand);
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Please enter your name.", "Missing fields", MessageBoxButton.OK, MessageBoxImage.Hand);
+                //What ever the user entered was not a real number
+                MessageBox.Show("Hey, so that's not a real number. Examples of numbers are like; 1, 2, 3, 4", "Did you really think that would work?", MessageBoxButton.OK, MessageBoxImage.Hand);
             }
         }
     }

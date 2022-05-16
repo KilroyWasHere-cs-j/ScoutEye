@@ -139,7 +139,7 @@ namespace ScoutEye
             try
             {
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
-                xml.Load("Settings.xml");
+                xml.Load("SettingsProfessional.xml");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 XmlNodeList nodeList = xml.DocumentElement.SelectNodes("/settings");
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.

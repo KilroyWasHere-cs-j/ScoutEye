@@ -20,6 +20,7 @@ C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\obj\Debug\Pro.g.cs
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\obj\Debug\Pro.baml
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\obj\Debug\Am.g.cs
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\obj\Debug\Am.baml
-C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\bin\Debug\Settings.xml
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\bin\Debug\MatchDataLog.txt
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\obj\Debug\ScoutEye_Content.g.cs
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\bin\Debug\SettingsProfessional.xml
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\bin\Debug\SettingsAmateur.xml

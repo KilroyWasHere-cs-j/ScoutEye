@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+
 namespace ScoutEye
 {
     /// <summary>
@@ -15,7 +16,7 @@ namespace ScoutEye
         public MainWindow()
         {
             InitializeComponent();
-            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             userName = Environment.UserName;
             NameTB.Text = userName;
         }

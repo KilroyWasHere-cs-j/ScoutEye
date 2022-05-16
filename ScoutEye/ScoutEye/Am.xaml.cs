@@ -25,6 +25,8 @@ namespace ScoutEye
         private bool stopwatchEnabled = false;
         private int matchNumber = 0;
         private int clickCount = 0;
+        private string name = "";
+        private string scoutingLevel = "Am";
         public Am(string scoutName, int matchNumber)
         {
             InitializeComponent();
@@ -34,7 +36,8 @@ namespace ScoutEye
             dt.Interval = new TimeSpan(0, 0, 0, 0, 1);
             dt.Start();
             stopwatch = new Stopwatch();
-            ScoutNameLB.Content = "Scout Name: " + scoutName;
+            name = scoutName;
+            ScoutNameLB.Content = "Scout Name: " + name;
             MatchNumTB.Content = "Match Number: " + matchNumber;
             LoadUIFromSettings();
         }
@@ -48,8 +51,8 @@ namespace ScoutEye
             if (result == MessageBoxResult.Yes && TeamNumberTB.Text != String.Empty)
             {
                 //This should be fixed
-                string compiledDataForLogging = Auto0.Text + "," + Auto1.Text + "," + Auto2.Text + "," + Auto3.Text + "," + Teleop0.Text + "," + Teleop1.Text + "," + Teleop2.Text + "," + Teleop3.Text + "," + RobotDiedCB.IsChecked.ToString() + "," + FieldFaultCB.IsChecked.ToString() + "," + stopwatch.Elapsed.ToString() + "," + clickCount.ToString();
-                string compiledData = Auto0.Text + "\t" + Auto1.Text + "\t" + Auto2.Text + "\t" + Auto3.Text + "\t" + Teleop0.Text + "\t" + Teleop1.Text + "\t" + Teleop2.Text + "\t" + Teleop3.Text + "\t" + RobotDiedCB.IsChecked.ToString() + "\t" + FieldFaultCB.IsChecked.ToString() + "\t" + stopwatch.Elapsed.ToString() + "\t" + clickCount.ToString();
+                string compiledDataForLogging = name + "," + scoutingLevel + "," + matchNumber.ToString() + "," + TeamNumberTB.Text.ToString() + "," + Auto0.Text + "," + Auto1.Text + "," + Auto2.Text + "," + Auto3.Text + "," + Teleop0.Text + "," + Teleop1.Text + "," + Teleop2.Text + "," + Teleop3.Text + "," + RobotDiedCB.IsChecked.ToString() + "," + FieldFaultCB.IsChecked.ToString() + "," + stopwatch.Elapsed.ToString() + "," + clickCount.ToString();
+                string compiledData = name + "\t" + scoutingLevel + "\t" + matchNumber.ToString() + "\t" + TeamNumberTB.Text.ToString() + "\t" + Auto0.Text + "\t" + Auto1.Text + "\t" + Auto2.Text + "\t" + Auto3.Text + "\t" + Teleop0.Text + "\t" + Teleop1.Text + "\t" + Teleop2.Text + "\t" + Teleop3.Text + "\t" + RobotDiedCB.IsChecked.ToString() + "\t" + FieldFaultCB.IsChecked.ToString() + "\t" + stopwatch.Elapsed.ToString() + "\t" + clickCount.ToString();
                 QRCodeDisplayPB.Source = BitmapToImageSource(GenerateQRCode(compiledData));
                 LogMatchData(compiledDataForLogging);
                 NextMatch();

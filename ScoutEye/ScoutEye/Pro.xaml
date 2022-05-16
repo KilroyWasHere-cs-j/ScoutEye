@@ -15,7 +15,7 @@
         <Button x:Name="ResetBTN" Content="Reset Match" HorizontalAlignment="Left" Margin="832,145,0,0" VerticalAlignment="Top" Height="76" Width="127" Click="ResetBTN_Click"/>
         <Rectangle HorizontalAlignment="Center" Height="61" Stroke="Black" VerticalAlignment="Top" Width="1014" Fill="#FF97999C"/>
         <Label x:Name="MatchNumTB" Content="Match Number" HorizontalAlignment="Left" Margin="272,35,0,0" VerticalAlignment="Top"/>
-        <Label Content="Team Number" HorizontalAlignment="Left" Margin="488,30,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="TeamNumberLB" Content="Team Number" HorizontalAlignment="Left" Margin="488,30,0,0" VerticalAlignment="Top"/>
         <Label x:Name="VersionLB" Content="v1.5" HorizontalAlignment="Left" Margin="928,30,0,0" VerticalAlignment="Top"/>
         <Rectangle HorizontalAlignment="Left" Height="39" Margin="236,65,0,0" Stroke="Black" VerticalAlignment="Top" Width="205"/>
         <Label x:Name="TeleopTitleCard" Content="Teleop" HorizontalAlignment="Left" Margin="236,71,0,0" VerticalAlignment="Top"/>
@@ -26,7 +26,7 @@
         <Label x:Name="Teleop3LB" Content="NULL" HorizontalAlignment="Left" Margin="239,224,0,0" VerticalAlignment="Top"/>
         <Rectangle HorizontalAlignment="Left" Height="343" Margin="25,65,0,0" Stroke="Black" VerticalAlignment="Top" Width="205" Fill="#FF9EB1D0"/>
         <Rectangle HorizontalAlignment="Left" Height="39" Margin="25,65,0,0" Stroke="Black" VerticalAlignment="Top" Width="205"/>
-        <Label x:Name="AutoTitleCardLB" Content="Teleop" HorizontalAlignment="Left" Margin="25,71,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="AutoTitleCardLB" Content="Auto" HorizontalAlignment="Left" Margin="25,71,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Auto0LB" Content="NULL" HorizontalAlignment="Left" Margin="28,112,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Auto1LB" Content="NULL" HorizontalAlignment="Left" Margin="28,147,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Auto2LB" Content="NULL" HorizontalAlignment="Left" Margin="28,185,0,0" VerticalAlignment="Top"/>
@@ -40,8 +40,8 @@
         <ComboBox x:Name="Teleop2" HorizontalAlignment="Left" Margin="315,189,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="Teleop3" HorizontalAlignment="Left" Margin="315,224,0,0" VerticalAlignment="Top" Width="120"/>
         <Image x:Name="QRCodeDisplayPB" HorizontalAlignment="Left" Height="176" Margin="717,250,0,0" VerticalAlignment="Top" Width="289"/>
-        <CheckBox x:Name="RobotDiedCB" Content="Robot Died" HorizontalAlignment="Left" Margin="457,124,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="FieldFaultCB" Content="Field Fault" HorizontalAlignment="Left" Margin="457,148,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="RobotDiedCB" Content="Robot Died" HorizontalAlignment="Left" Margin="457,149,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="FieldFaultCB" Content="Field Fault" HorizontalAlignment="Left" Margin="457,171,0,0" VerticalAlignment="Top"/>
         <Label x:Name="ScoutNameLB" Content="Scout Name" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="233"/>
         <Button x:Name="ToggleStopwatchBTN" Content="Toggle Stopwatch" HorizontalAlignment="Left" Margin="654,66,0,0" VerticalAlignment="Top" Height="43" Width="126" Click="ToggleStopwatch_Click"/>
         <Button x:Name="StopwatchResetBTN" Content="Reset Stopwatch" HorizontalAlignment="Left" Margin="654,111,0,0" VerticalAlignment="Top" Height="40" Width="127" Click="ResetStopwatch_Click"/>
@@ -49,6 +49,8 @@
         <Button x:Name="ClickCounterDown" Content="-" HorizontalAlignment="Left" Margin="722,156,0,0" VerticalAlignment="Top" Height="74" Width="59" Click="ClickCounterDown_Click"/>
         <Rectangle HorizontalAlignment="Left" Height="100" Margin="449,308,0,0" Stroke="Black" VerticalAlignment="Top" Width="153"/>
         <Label x:Name="ClickCounterCountLB" Content="Click Count 0" HorizontalAlignment="Center" Margin="0,311,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="StopwatchLB" Content="Stopwatch 0.0ms" HorizontalAlignment="Center" Margin="0,332,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="StopwatchLB" Content="Stopwatch 0.0ms" HorizontalAlignment="Left" Margin="467,332,0,0" VerticalAlignment="Top"/>
+        <Label Content="Team Number" HorizontalAlignment="Left" Margin="455,70,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TeamNumberTB" HorizontalAlignment="Left" Margin="457,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

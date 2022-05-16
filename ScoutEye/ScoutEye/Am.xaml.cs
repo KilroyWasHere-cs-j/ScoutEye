@@ -32,6 +32,7 @@ namespace ScoutEye
             dt = new DispatcherTimer();
             dt.Tick += new EventHandler(dt_Tick);
             dt.Interval = new TimeSpan(0, 0, 0, 0, 1);
+            dt.Start();
             stopwatch = new Stopwatch();
             ScoutNameLB.Content = "Scout Name: " + scoutName;
             MatchNumTB.Content = "Match Number: " + matchNumber;
@@ -44,7 +45,7 @@ namespace ScoutEye
         private void EnterMatch()
         {
             MessageBoxResult result = MessageBox.Show("Are you sure you want to enter this match? This action cannot be undone.", "Just checking in.", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if (result == MessageBoxResult.Yes)
+            if (result == MessageBoxResult.Yes && TeamNumberTB.Text != String.Empty)
             {
                 //This should be fixed
                 string compiledDataForLogging = Auto0.Text + "," + Auto1.Text + "," + Auto2.Text + "," + Auto3.Text + "," + Teleop0.Text + "," + Teleop1.Text + "," + Teleop2.Text + "," + Teleop3.Text + "," + RobotDiedCB.IsChecked.ToString() + "," + FieldFaultCB.IsChecked.ToString() + "," + stopwatch.Elapsed.ToString() + "," + clickCount.ToString();
@@ -52,6 +53,10 @@ namespace ScoutEye
                 QRCodeDisplayPB.Source = BitmapToImageSource(GenerateQRCode(compiledData));
                 LogMatchData(compiledDataForLogging);
                 NextMatch();
+            }
+            else
+            {
+                MessageBox.Show("When entering data it helps to completely fill out the form. Try again.", "Missing fields", MessageBoxButton.OK, MessageBoxImage.Hand);
             }
         }
 
@@ -70,6 +75,11 @@ namespace ScoutEye
         //<summary>
         private void ResetMatch()
         {
+            TeamNumberTB.Text = String.Empty;
+            stopwatch.Stop();
+            stopwatch.Reset();
+            ClickCounterCountLB.Content = "Click count: 0";
+            clickCount = 0;
             foreach (UIElement element in Grid.Children)
             {
                 if (element is ComboBox)
@@ -363,7 +373,8 @@ namespace ScoutEye
         #region EventHandlers
         private void dt_Tick(object sender, EventArgs e)
         {
-            StopwatchLB.Content = "Stopwatch: " + stopwatch.Elapsed.TotalMilliseconds.ToString() + "ms";
+            TeamNumberLB.Content = "Team Number: " + TeamNumberTB.Text;
+            StopwatchLB.Content = "Stopwatch: " + stopwatch.Elapsed.TotalSeconds.ToString() + "ms";
         }
 
         private void EnterBTN_Click(object sender, RoutedEventArgs e)

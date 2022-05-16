@@ -136,9 +136,9 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="MatchDataLog.txt">
+    <Content Include="MatchDataLog.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

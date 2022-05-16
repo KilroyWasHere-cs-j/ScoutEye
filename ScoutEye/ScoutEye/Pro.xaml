@@ -16,7 +16,7 @@
         <Rectangle HorizontalAlignment="Center" Height="61" Stroke="Black" VerticalAlignment="Top" Width="1014" Fill="#FF97999C"/>
         <Label x:Name="MatchNumTB" Content="Match Number" HorizontalAlignment="Left" Margin="272,35,0,0" VerticalAlignment="Top"/>
         <Label Content="Team Number" HorizontalAlignment="Left" Margin="488,30,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="VersionLB" Content="v1.5" HorizontalAlignment="Left" Margin="973,35,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="VersionLB" Content="v1.5" HorizontalAlignment="Left" Margin="928,30,0,0" VerticalAlignment="Top"/>
         <Rectangle HorizontalAlignment="Left" Height="39" Margin="236,65,0,0" Stroke="Black" VerticalAlignment="Top" Width="205"/>
         <Label x:Name="TeleopTitleCard" Content="Teleop" HorizontalAlignment="Left" Margin="236,71,0,0" VerticalAlignment="Top"/>
         <Rectangle Stroke="Black" Margin="449,66,396,25" Fill="#FFA7BED8"/>

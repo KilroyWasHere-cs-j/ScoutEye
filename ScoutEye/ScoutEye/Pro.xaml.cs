@@ -1,5 +1,6 @@
 ﻿using QRCoder;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -49,8 +50,11 @@ namespace ScoutEye
             MessageBoxResult result = MessageBox.Show("Are you sure you want to enter this match? This action cannot be undone.", "Just checking in.", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
             {
+                //This should be fixed
+                string compiledDataForLogging = Auto0.Text + "," + Auto1.Text + "," + Auto2.Text + "," + Auto3.Text + "," + Teleop0.Text + "," + Teleop1.Text + "," + Teleop2.Text + "," + Teleop3.Text + "," + RobotDiedCB.IsChecked.ToString() + "," + FieldFaultCB.IsChecked.ToString() + "," + stopwatch.Elapsed.ToString() + "," + clickCount.ToString();
                 string compiledData = Auto0.Text + "\t" + Auto1.Text + "\t" + Auto2.Text + "\t" + Auto3.Text + "\t" + Teleop0.Text + "\t" + Teleop1.Text + "\t" + Teleop2.Text + "\t" + Teleop3.Text + "\t" + RobotDiedCB.IsChecked.ToString() + "\t" + FieldFaultCB.IsChecked.ToString() + "\t" + stopwatch.Elapsed.ToString() + "\t" + clickCount.ToString();
                 QRCodeDisplayPB.Source = BitmapToImageSource(GenerateQRCode(compiledData));
+                LogMatchData(compiledDataForLogging);
                 NextMatch();
             }
         }
@@ -95,6 +99,17 @@ namespace ScoutEye
             QRCode qrCode = new QRCode(qrCodeData);
             Bitmap qrCodeImage = qrCode.GetGraphic(20);
             return qrCodeImage;
+        }
+
+        //<summary>
+        //Logs the match data to a textfile
+        //<summary>
+        private void LogMatchData(string matchData)
+        {
+            string[] lines = File.ReadAllLines("MatchDataLog.txt");
+            List<string> text = new List<string>(lines.ToList());
+            text.Add(matchData);
+            File.WriteAllLines("MatchDataLog.txt", text);
         }
 
         //<summary>

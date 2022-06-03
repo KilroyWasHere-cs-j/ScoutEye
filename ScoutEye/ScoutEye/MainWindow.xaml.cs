@@ -12,6 +12,7 @@ namespace ScoutEye
         Am am;
 
         private string userName = "";
+        private string currentMatchNumber = "0";
 
         public MainWindow()
         {
@@ -19,6 +20,7 @@ namespace ScoutEye
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             userName = Environment.UserName;
             NameTB.Text = userName;
+            CurrentMatchNumberTB.Text = currentMatchNumber;
         }
 
         //<summary>

@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Release\
 ScoutEye
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\App.xaml
 3777900184
 1231496665

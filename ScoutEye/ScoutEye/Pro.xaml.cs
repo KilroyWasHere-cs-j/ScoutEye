@@ -18,15 +18,12 @@ namespace ScoutEye
     /// </summary>
     public partial class Pro : Window
     {
-        private XmlDocument xml;
-        private string comboDefault = "Please Select Option";
-        private int matchNumber = 0;
+        private XmlDocument xml; 
         private DispatcherTimer dt;
         private Stopwatch stopwatch;
         private bool stopwatchEnabled = false;
-        private int clickCount = 0;
-        private string name = "";
-        private string scoutingLevel = "Pro";
+        private int clickCount = 0, matchNumber = 0;
+        private string name = "", scoutingLevel = "Pro", comboDefault = "Please Select Option";
 
         public Pro(string scoutname, int currentMatchNumber)
         {

@@ -24,3 +24,6 @@ C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\bin\Debug\MatchDataLog.txt
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\obj\Debug\ScoutEye_Content.g.cs
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\bin\Debug\SettingsProfessional.xml
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\bin\Debug\SettingsAmateur.xml
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\obj\Debug\APIInterface.g.cs
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\obj\Debug\APIInterface.baml
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\bin\Debug\APIOutputLog.txt

@@ -18,6 +18,7 @@ namespace ScoutEye
     /// </summary>
     public partial class Pro : Window
     {
+        private APIInterface apiInterface;
         private XmlDocument xml; 
         private DispatcherTimer dt;
         private Stopwatch stopwatch;
@@ -28,6 +29,7 @@ namespace ScoutEye
         public Pro(string scoutname, int currentMatchNumber)
         {
             InitializeComponent();
+            apiInterface = new APIInterface();
             xml = new XmlDocument();
             stopwatch = new Stopwatch();
             dt = new DispatcherTimer();
@@ -377,6 +379,11 @@ namespace ScoutEye
         {
             TeamNumberLB.Content = "Team Number: " + TeamNumberTB.Text;
             StopwatchLB.Content = "Stopwatch: " + stopwatch.Elapsed.TotalSeconds.ToString() + "ms";
+        }
+
+        private void APIBTN_Click(object sender, RoutedEventArgs e)
+        {
+            apiInterface.Show();
         }
 
         private void EnterBTN_Click(object sender, RoutedEventArgs e)

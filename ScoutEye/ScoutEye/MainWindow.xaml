@@ -6,13 +6,37 @@
         xmlns:local="clr-namespace:ScoutEye"
         mc:Ignorable="d"
         Title="ScoutEye" Height="286" Width="361" Background="#FFF5EDED">
-    <Grid Background="#FFEFE8E2" Margin="0,0,0,3">
+    <Grid Background="#FF383333" Margin="0,0,0,3">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="14*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="ScoutOption1" Content="Amateur" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" Height="72" Width="117" RenderTransformOrigin="0.478,0.379" Click="ScoutOption1_Click" Grid.ColumnSpan="2"/>
-        <Button x:Name="ScoutOption2" Content="Professional" HorizontalAlignment="Left" Margin="109,0,0,0" VerticalAlignment="Center" Height="72" Width="117" AutomationProperties.IsColumnHeader="True" Click="ScoutOption2_Click" Grid.Column="1"/>
+        <Button x:Name="ScoutOption1" Content="Amateur" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" Height="72" Width="117" RenderTransformOrigin="0.478,0.379" Click="ScoutOption1_Click" Grid.ColumnSpan="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+            <Button.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
+                    <GradientStop Color="Red" Offset="0" />
+                    <GradientStop Color="Red" Offset="1.0" />
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="ScoutOption2" Content="Professional" HorizontalAlignment="Left" Margin="109,0,0,0" VerticalAlignment="Center" Height="72" Width="117" AutomationProperties.IsColumnHeader="True" Click="ScoutOption2_Click" Grid.Column="1">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+            <Button.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
+                    <GradientStop Color="Red" Offset="0" />
+                    <GradientStop Color="Red" Offset="1.0" />
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
         <Rectangle HorizontalAlignment="Left" Height="59" Margin="40,10,0,0" VerticalAlignment="Top" Width="281" Stroke="#FF0A0A0A" Fill="#FFA4A3A3" Grid.ColumnSpan="2"/>
         <Label Content="Please Select Scouting Level" HorizontalAlignment="Left" Margin="3,25,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="158"/>
         <TextBox x:Name="NameTB" HorizontalAlignment="Left" Margin="22,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" Height="18"/>

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Media;
 using System.Windows;
 
 namespace ScoutEye
@@ -11,11 +13,13 @@ namespace ScoutEye
         Pro pro;
         Am am;
 
+        private SoundPlayer player;
         private string userName = "";
 
         public MainWindow()
         {
             InitializeComponent();
+            player = new SoundPlayer(Directory.GetCurrentDirectory() + "/wavs/taco.wav");
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             userName = Environment.UserName;
             NameTB.Text = userName;
@@ -31,6 +35,7 @@ namespace ScoutEye
                 //If the user entered a valid name and match number
                 if (NameTB.Text != string.Empty && CurrentMatchNumberTB.Text != string.Empty)
                 {
+                    player.Play();
                     pro = new Pro(NameTB.Text, Int32.Parse(CurrentMatchNumberTB.Text));
                     pro.Show();
                     this.Close();
@@ -55,6 +60,8 @@ namespace ScoutEye
                 //Open the amateur window and closes the current window
                 if (NameTB.Text != "Name")
                 {
+                    //Might need different sound
+                    player.Play();
                     am = new Am(NameTB.Text, Int32.Parse(CurrentMatchNumberTB.Text));
                     am.Show();
                     this.Close();

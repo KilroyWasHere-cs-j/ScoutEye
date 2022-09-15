@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -22,6 +23,7 @@ namespace ScoutEye
         private XmlDocument xml; 
         private DispatcherTimer dt;
         private Stopwatch stopwatch;
+        private SoundPlayer player;
         private bool stopwatchEnabled = false;
         private int clickCount = 0, matchNumber = 0;
         private string name = "", scoutingLevel = "Pro", comboDefault = "Please Select Option";
@@ -368,7 +370,10 @@ namespace ScoutEye
             }
             catch (Exception ex)
             {
-               // logger.Log("Could not load settings. " + ex.Message);
+                // logger.Log("Could not load settings. " + ex.Message);
+                player = new SoundPlayer(Directory.GetCurrentDirectory() + "/wavs/xfiles.wav");
+                player.Play();
+                player.Dispose();
                 MessageBox.Show("Could not load settings. Failed with exception. " + ex.Message, "Fatal error", MessageBoxButton.OK, MessageBoxImage.Error);
                 Environment.Exit(0);
             }

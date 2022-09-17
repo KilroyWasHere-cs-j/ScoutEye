@@ -119,10 +119,10 @@ namespace ScoutEye
         //<summary>
         private void LogMatchData(string matchData)
         {
-            string[] lines = File.ReadAllLines("MatchDataLog.txt");
+            string[] lines = File.ReadAllLines(Directory.GetCurrentDirectory() + "/logs/MatchDataLog.txt");
             List<string> text = new List<string>(lines.ToList());
             text.Add(matchData);
-            File.WriteAllLines("MatchDataLog.txt", text);
+            File.WriteAllLines(Directory.GetCurrentDirectory() + "/logs/MatchDataLog.txt", text);
         }
 
         //<summary>

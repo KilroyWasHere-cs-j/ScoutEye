@@ -53,7 +53,7 @@ namespace QSOLogger
             }
             else
             {
-                MessageBox.Show("Missing data", "Missing vital QSO data");
+                MessageBox.Show("Missing data", "Missing vital QSO data"); 
             }
         }
 

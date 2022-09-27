@@ -46,13 +46,14 @@ namespace ScoutEye
                     MessageBox.Show("Please enter your name.", "Missing fields", MessageBoxButton.OK, MessageBoxImage.Hand);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                //What ever the user entered was not a real number
-                MessageBox.Show("Hey, so that's not a real number. Examples of numbers are like; 1, 2, 3, 4", "Did you really think that would work?", MessageBoxButton.OK, MessageBoxImage.Hand);
+                MessageBox.Show(ex.Message);
             }
         }
-
+        //<summary>
+        //The user has picked the amateur level of scouting
+        //<summary>
         private void ScoutOption1_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -71,10 +72,9 @@ namespace ScoutEye
                     MessageBox.Show("Please enter your name.", "Missing fields", MessageBoxButton.OK, MessageBoxImage.Hand);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                //What ever the user entered was not a real number
-                MessageBox.Show("Hey, so that's not a real number. Examples of numbers are like; 1, 2, 3, 4", "Did you really think that would work?", MessageBoxButton.OK, MessageBoxImage.Hand);
+                MessageBox.Show(ex.Message);
             }
         }
     }

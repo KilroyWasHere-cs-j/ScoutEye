@@ -82,22 +82,26 @@ namespace ScoutEye
         //<summary>
         private void ResetMatch()
         {
-            TeamNumberTB.Text = String.Empty;
-            stopwatch.Stop();
-            stopwatch.Reset();
-            ClickCounterCountLB.Content = "Click count: 0";
-            clickCount = 0;
-            foreach (UIElement element in Grid.Children)
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to reset this match? This action cannot be undone.", "Just checking in.", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
             {
-                if (element is ComboBox)
+                TeamNumberTB.Text = String.Empty;
+                stopwatch.Stop();
+                stopwatch.Reset();
+                ClickCounterCountLB.Content = "Click count: 0";
+                clickCount = 0;
+                foreach (UIElement element in Grid.Children)
                 {
-                    ComboBox cb = (ComboBox)element;
-                    cb.SelectedIndex = 0;
-                }
-                if(element is CheckBox)
-                {
-                    CheckBox cb = (CheckBox)element;
-                    cb.IsChecked = false;
+                    if (element is ComboBox)
+                    {
+                        ComboBox cb = (ComboBox)element;
+                        cb.SelectedIndex = 0;
+                    }
+                    if (element is CheckBox)
+                    {
+                        CheckBox cb = (CheckBox)element;
+                        cb.IsChecked = false;
+                    }
                 }
             }
         }
@@ -417,6 +421,17 @@ namespace ScoutEye
                     stopwatch.Start();
                     break;
             }
+        }
+
+        private void TeamNumberTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void ResetClickCounterBTN_Click(object sender, RoutedEventArgs e)
+        {
+            clickCount = 0;
+            ClickCounterCountLB.Content = "Click count " + clickCount.ToString();
         }
 
         //<summary>

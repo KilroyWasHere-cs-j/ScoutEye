@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:ScoutEye"
         mc:Ignorable="d"
         Title="Pro" Height="450" Width="1014">
-    <Grid x:Name="Grid" Height="434" VerticalAlignment="Bottom" Background="#FF383333">
+    <Grid x:Name="Grid" Height="479" VerticalAlignment="Bottom" Background="#FF383333" Margin="0,0,-61,-45">
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Rectangle HorizontalAlignment="Left" Height="343" Margin="236,65,0,0" Stroke="Red" VerticalAlignment="Top" Width="205" Fill="#FF9EB1D0"/>
-        <Button x:Name="EnterBTN" Content="Enter Match" HorizontalAlignment="Left" Margin="832,65,0,0" VerticalAlignment="Top" Height="77" Width="127" Click="EnterBTN_Click" ToolTip="Submit the match data and generate a QR code" ClipToBounds="True">
+        <Button x:Name="EnterBTN" Content="Enter Match" HorizontalAlignment="Left" Margin="786,63,0,0" VerticalAlignment="Top" Height="77" Width="127" Click="EnterBTN_Click" ToolTip="Submit the match data and generate a QR code" ClipToBounds="True">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -25,7 +25,7 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="ResetBTN" Content="Reset Match" HorizontalAlignment="Left" Margin="832,145,0,0" VerticalAlignment="Top" Height="76" Width="127" Click="ResetBTN_Click" ToolTip="Clear all of the match data" ClipToBounds="True">
+        <Button x:Name="ResetBTN" Content="Reset Match" HorizontalAlignment="Left" Margin="786,145,0,0" VerticalAlignment="Top" Height="76" Width="127" Click="ResetBTN_Click" ToolTip="Clear all of the match data" ClipToBounds="True">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -38,13 +38,13 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Rectangle HorizontalAlignment="Center" Height="61" Stroke="Red" VerticalAlignment="Top" Width="1014" Fill="#FFE8DCDC"/>
+        <Rectangle HorizontalAlignment="Center" Height="61" Stroke="Red" VerticalAlignment="Top" Width="1076" Fill="#FFE8DCDC"/>
         <Label x:Name="MatchNumTB" Content="Match Number" HorizontalAlignment="Left" Margin="272,35,0,0" VerticalAlignment="Top" Cursor="No"/>
         <Label x:Name="TeamNumberLB" Content="Team Number" HorizontalAlignment="Left" Margin="488,30,0,0" VerticalAlignment="Top" Cursor="No" ToolTip="I'm a teapot"/>
         <Label x:Name="VersionLB" Content="v1.5" HorizontalAlignment="Left" Margin="928,30,0,0" VerticalAlignment="Top" Cursor="No"/>
         <Rectangle HorizontalAlignment="Left" Height="39" Margin="236,65,0,0" Stroke="Red" VerticalAlignment="Top" Width="205"/>
         <Label x:Name="TeleopTitleCard" Content="Teleop" HorizontalAlignment="Left" Margin="236,71,0,0" VerticalAlignment="Top"/>
-        <Rectangle Stroke="Red" Margin="449,66,396,25" Fill="#FFA7BED8"/>
+        <Rectangle Stroke="Red" Margin="449,66,421,71" Fill="#FFA7BED8"/>
         <Label x:Name="Teleop0LB" Content="NULL" HorizontalAlignment="Left" Margin="239,112,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Teleop1LB" Content="NULL" HorizontalAlignment="Left" Margin="239,147,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Teleop2LB" Content="NULL" HorizontalAlignment="Left" Margin="239,185,0,0" VerticalAlignment="Top"/>
@@ -64,7 +64,7 @@
         <ComboBox x:Name="Teleop1" HorizontalAlignment="Left" Margin="315,149,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="Teleop2" HorizontalAlignment="Left" Margin="315,189,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="Teleop3" HorizontalAlignment="Left" Margin="315,224,0,0" VerticalAlignment="Top" Width="120"/>
-        <Image x:Name="QRCodeDisplayPB" HorizontalAlignment="Left" Height="176" Margin="717,250,0,0" VerticalAlignment="Top" Width="289" ToolTip="The truth is out there"/>
+        <Image x:Name="QRCodeDisplayPB" HorizontalAlignment="Left" Height="158" Margin="797,254,0,0" VerticalAlignment="Top" Width="254" ToolTip="The truth is out there"/>
         <CheckBox x:Name="RobotDiedCB" Content="Robot Died" HorizontalAlignment="Left" Margin="457,149,0,0" VerticalAlignment="Top" ClipToBounds="True"/>
         <CheckBox x:Name="FieldFaultCB" Content="Field Fault" HorizontalAlignment="Left" Margin="457,171,0,0" VerticalAlignment="Top" ClipToBounds="True"/>
         <Label x:Name="ScoutNameLB" Content="Scout Name" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="233" Cursor="No"/>
@@ -120,12 +120,24 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Rectangle HorizontalAlignment="Left" Height="100" Margin="449,308,0,0" Stroke="Red" VerticalAlignment="Top" Width="153"/>
-        <Label x:Name="ClickCounterCountLB" Content="Click Count 0" HorizontalAlignment="Center" Margin="0,311,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="StopwatchLB" Content="Stopwatch 0.0ms" HorizontalAlignment="Left" Margin="467,332,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="ClickCounterCountLB" Content="Click Count 0" HorizontalAlignment="Left" Margin="457,250,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="StopwatchLB" Content="Stopwatch 0.0ms" HorizontalAlignment="Left" Margin="457,312,0,0" VerticalAlignment="Top"/>
         <Label Content="Team Number" HorizontalAlignment="Left" Margin="455,70,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TeamNumberTB" HorizontalAlignment="Left" Margin="457,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="APIBTN" Content="API" HorizontalAlignment="Left" Margin="964,71,0,0" VerticalAlignment="Top" Height="44" Width="33" Click="APIBTN_Click" RenderTransformOrigin="0.5,0.5" ToolTip="Toggle stopwatch on and off" ClipToBounds="True">
+        <Button x:Name="APIBTN" Content="API" HorizontalAlignment="Left" Margin="786,228,0,0" VerticalAlignment="Top" Height="44" Width="33" Click="APIBTN_Click" RenderTransformOrigin="0.5,0.5" ToolTip="Toggle stopwatch on and off" ClipToBounds="True">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+            <Button.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
+                    <GradientStop Color="Red" Offset="0" />
+                    <GradientStop Color="Red" Offset="1.0" />
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="ResetClickCounterBTN" Content="Reset Click Counter" HorizontalAlignment="Left" Margin="659,233,0,0" VerticalAlignment="Top" Height="43" Width="122" Click="ResetClickCounterBTN_Click" ToolTip="Clear all of the match data" ClipToBounds="True">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

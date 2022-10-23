@@ -59,7 +59,7 @@ namespace ScoutEye
             try
             {
                 //Open the amateur window and closes the current window
-                if (NameTB.Text != "Name")
+                if (NameTB.Text != string.Empty && CurrentMatchNumberTB.Text != string.Empty)
                 {
                     //Might need different sound
                     player.Play();

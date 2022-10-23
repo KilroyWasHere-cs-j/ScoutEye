@@ -38,7 +38,6 @@ C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\QRCoder.dll
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye.csproj.AssemblyReference.cache
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye.csproj.SuggestedBindingRedirects.cache
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\Am.g.cs
-C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\APIInterface.g.cs
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\MainWindow.g.cs
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\Pro.g.cs
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\App.g.cs
@@ -46,7 +45,6 @@ C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye_Conten
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye_MarkupCompile.cache
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye_MarkupCompile.lref
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\Am.baml
-C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\APIInterface.baml
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\MainWindow.baml
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\Pro.baml
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye.g.resources

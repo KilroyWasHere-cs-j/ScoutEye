@@ -65,8 +65,8 @@
         <ComboBox x:Name="Teleop2" HorizontalAlignment="Left" Margin="315,189,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="Teleop3" HorizontalAlignment="Left" Margin="315,224,0,0" VerticalAlignment="Top" Width="120"/>
         <Image x:Name="QRCodeDisplayPB" HorizontalAlignment="Left" Height="158" Margin="797,254,0,0" VerticalAlignment="Top" Width="254" ToolTip="The truth is out there"/>
-        <CheckBox x:Name="RobotDiedCB" Content="Robot Died" HorizontalAlignment="Left" Margin="457,149,0,0" VerticalAlignment="Top" ClipToBounds="True"/>
-        <CheckBox x:Name="FieldFaultCB" Content="Field Fault" HorizontalAlignment="Left" Margin="457,171,0,0" VerticalAlignment="Top" ClipToBounds="True"/>
+        <CheckBox x:Name="RobotDiedCB" Content="Robot Died" HorizontalAlignment="Left" Margin="457,191,0,0" VerticalAlignment="Top" ClipToBounds="True"/>
+        <CheckBox x:Name="FieldFaultCB" Content="Field Fault" HorizontalAlignment="Left" Margin="457,209,0,0" VerticalAlignment="Top" ClipToBounds="True"/>
         <Label x:Name="ScoutNameLB" Content="Scout Name" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="233" Cursor="No"/>
         <Button x:Name="ToggleStopwatchBTN" Content="Toggle Stopwatch" HorizontalAlignment="Left" Margin="654,66,0,0" VerticalAlignment="Top" Height="43" Width="126" Click="ToggleStopwatch_Click" RenderTransformOrigin="0.5,0.5" ToolTip="Toggle stopwatch on and off" ClipToBounds="True">
             <Button.Resources>
@@ -122,21 +122,8 @@
         </Button>
         <Label x:Name="ClickCounterCountLB" Content="Click Count 0" HorizontalAlignment="Left" Margin="457,250,0,0" VerticalAlignment="Top"/>
         <Label x:Name="StopwatchLB" Content="Stopwatch 0.0ms" HorizontalAlignment="Left" Margin="457,312,0,0" VerticalAlignment="Top"/>
-        <Label Content="Team Number" HorizontalAlignment="Left" Margin="455,70,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TeamNumberTB" HorizontalAlignment="Left" Margin="457,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="APIBTN" Content="API" HorizontalAlignment="Left" Margin="786,228,0,0" VerticalAlignment="Top" Height="44" Width="33" Click="APIBTN_Click" RenderTransformOrigin="0.5,0.5" ToolTip="Toggle stopwatch on and off" ClipToBounds="True">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="10"/>
-                </Style>
-            </Button.Resources>
-            <Button.BorderBrush>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
-                    <GradientStop Color="Red" Offset="0" />
-                    <GradientStop Color="Red" Offset="1.0" />
-                </LinearGradientBrush>
-            </Button.BorderBrush>
-        </Button>
+        <Label x:Name="TeamNumberChangerLB" Content="Team Number" HorizontalAlignment="Left" Margin="455,70,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TeamNumberTB" HorizontalAlignment="Left" Margin="457,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TeamNumberTB_TextChanged_1"/>
         <Button x:Name="ResetClickCounterBTN" Content="Reset Click Counter" HorizontalAlignment="Left" Margin="659,233,0,0" VerticalAlignment="Top" Height="43" Width="122" Click="ResetClickCounterBTN_Click" ToolTip="Clear all of the match data" ClipToBounds="True">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -150,5 +137,7 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
+        <Label x:Name="MatchNumberChangerLB" Content="Match Number" HorizontalAlignment="Left" Margin="455,113,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="MatchNumberChangerTB" HorizontalAlignment="Left" Margin="457,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

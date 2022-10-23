@@ -48,7 +48,7 @@ namespace ScoutEye
         private void EnterMatch()
         {
             MessageBoxResult result = MessageBox.Show("Are you sure you want to enter this match? This action cannot be undone.", "Just checking in.", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if (result == MessageBoxResult.Yes && TeamNumberTB.Text != String.Empty)
+            if (result == MessageBoxResult.Yes && TeamNumberTB.Text != String.Empty && MatchNumberChangerTB.Text != String.Empty)
             {
                 //This should be fixed
                 string compiledDataForLogging = name + "," + scoutingLevel + "," + matchNumber.ToString() + "," + TeamNumberTB.Text.ToString() + "," + Auto0.Text + "," + Auto1.Text + "," + Auto2.Text + "," + Auto3.Text + "," + Teleop0.Text + "," + Teleop1.Text + "," + Teleop2.Text + "," + Teleop3.Text + "," + RobotDiedCB.IsChecked.ToString() + "," + FieldFaultCB.IsChecked.ToString() + "," + stopwatch.Elapsed.ToString() + "," + clickCount.ToString();
@@ -376,6 +376,7 @@ namespace ScoutEye
         #region EventHandlers
         private void dt_Tick(object sender, EventArgs e)
         {
+            MatchNumTB.Content = "Match Number: " + MatchNumberChangerTB.Text;
             TeamNumberLB.Content = "Team Number: " + TeamNumberTB.Text;
             StopwatchLB.Content = "Stopwatch: " + stopwatch.Elapsed.TotalSeconds.ToString() + "ms";
         }
@@ -418,6 +419,15 @@ namespace ScoutEye
         }
 
         //<summary>
+        //Reset click counter to zero
+        //<summary>
+        public void ResetClickCounter_Click(object sender, RoutedEventArgs e)
+        {
+            clickCount = 0;
+            ClickCounterCountLB.Content = "Click count " + clickCount.ToString();
+        }
+
+        //<summary>
         //Click counter up
         //<summary>
         private void ClickCounterDown_Click(object sender, RoutedEventArgs e)
@@ -435,5 +445,10 @@ namespace ScoutEye
             ClickCounterCountLB.Content = "Click count " + clickCount.ToString();
         }
         #endregion
+
+        private void MatchNumberChangerTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -19,7 +19,6 @@ namespace ScoutEye
     /// </summary>
     public partial class Pro : Window
     {
-        private APIInterface apiInterface;
         private XmlDocument xml; 
         private DispatcherTimer dt;
         private Stopwatch stopwatch;
@@ -31,7 +30,6 @@ namespace ScoutEye
         public Pro(string scoutname, int currentMatchNumber)
         {
             InitializeComponent();
-            apiInterface = new APIInterface();
             xml = new XmlDocument();
             stopwatch = new Stopwatch();
             dt = new DispatcherTimer();
@@ -52,7 +50,7 @@ namespace ScoutEye
         private void EnterMatch()
         {
             MessageBoxResult result = MessageBox.Show("Are you sure you want to enter this match? This action cannot be undone.", "Just checking in.", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if (result == MessageBoxResult.Yes && TeamNumberTB.Text != String.Empty)
+            if (result == MessageBoxResult.Yes && TeamNumberTB.Text != String.Empty && MatchNumberChangerTB.Text != String.Empty)
             {
                 //This should be fixed
                 string compiledDataForLogging = name + "," + scoutingLevel + "," + matchNumber.ToString() + "," + TeamNumberTB.Text.ToString() + "," + Auto0.Text + "," + Auto1.Text + "," + Auto2.Text + "," + Auto3.Text + "," + Teleop0.Text + "," + Teleop1.Text + "," + Teleop2.Text + "," + Teleop3.Text + "," + RobotDiedCB.IsChecked.ToString() + "," + FieldFaultCB.IsChecked.ToString() + "," + stopwatch.Elapsed.ToString() + "," + clickCount.ToString();
@@ -386,13 +384,9 @@ namespace ScoutEye
         #region EventHandlers
         private void dt_Tick(object sender, EventArgs e)
         {
+            MatchNumTB.Content = "Match Number: " + MatchNumberChangerTB.Text;
             TeamNumberLB.Content = "Team Number: " + TeamNumberTB.Text;
             StopwatchLB.Content = "Stopwatch: " + stopwatch.Elapsed.TotalSeconds.ToString() + "ms";
-        }
-
-        private void APIBTN_Click(object sender, RoutedEventArgs e)
-        {
-            apiInterface.Show();
         }
 
         private void EnterBTN_Click(object sender, RoutedEventArgs e)
@@ -432,6 +426,11 @@ namespace ScoutEye
         {
             clickCount = 0;
             ClickCounterCountLB.Content = "Click count " + clickCount.ToString();
+        }
+
+        private void TeamNumberTB_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
         }
 
         //<summary>

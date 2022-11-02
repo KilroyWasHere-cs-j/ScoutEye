@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoutEye"
         mc:Ignorable="d"
-        Title="Pro" Height="450" Width="1014">
+        Title="Pro" Height="450" Width="1014" KeyDown="Pro_Keypressed">
     <Grid x:Name="Grid" Height="479" VerticalAlignment="Bottom" Background="#FF383333" Margin="0,0,-61,-45">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -41,7 +41,7 @@
         <Rectangle HorizontalAlignment="Center" Height="61" Stroke="Red" VerticalAlignment="Top" Width="1076" Fill="#FFE8DCDC"/>
         <Label x:Name="MatchNumTB" Content="Match Number" HorizontalAlignment="Left" Margin="272,35,0,0" VerticalAlignment="Top" Cursor="No"/>
         <Label x:Name="TeamNumberLB" Content="Team Number" HorizontalAlignment="Left" Margin="488,30,0,0" VerticalAlignment="Top" Cursor="No" ToolTip="I'm a teapot"/>
-        <Label x:Name="VersionLB" Content="v1.5" HorizontalAlignment="Left" Margin="928,30,0,0" VerticalAlignment="Top" Cursor="No"/>
+        <Label x:Name="VersionLB" Content="v0.0" HorizontalAlignment="Left" Margin="928,30,0,0" VerticalAlignment="Top" Cursor="No"/>
         <Rectangle HorizontalAlignment="Left" Height="39" Margin="236,65,0,0" Stroke="Red" VerticalAlignment="Top" Width="205"/>
         <Label x:Name="TeleopTitleCard" Content="Teleop" HorizontalAlignment="Left" Margin="236,71,0,0" VerticalAlignment="Top"/>
         <Rectangle Stroke="Red" Margin="449,66,421,71" Fill="#FFA7BED8"/>
@@ -121,7 +121,7 @@
             </Button.BorderBrush>
         </Button>
         <Label x:Name="ClickCounterCountLB" Content="Click Count 0" HorizontalAlignment="Left" Margin="457,250,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="StopwatchLB" Content="Stopwatch 0.0ms" HorizontalAlignment="Left" Margin="457,312,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="StopwatchLB" Content="Stopwatch 0.0ms" HorizontalAlignment="Left" Margin="457,281,0,0" VerticalAlignment="Top"/>
         <Label x:Name="TeamNumberChangerLB" Content="Team Number" HorizontalAlignment="Left" Margin="455,70,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TeamNumberTB" HorizontalAlignment="Left" Margin="457,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TeamNumberTB_TextChanged_1"/>
         <Button x:Name="ResetClickCounterBTN" Content="Reset Click Counter" HorizontalAlignment="Left" Margin="659,233,0,0" VerticalAlignment="Top" Height="43" Width="122" Click="ResetClickCounterBTN_Click" ToolTip="Clear all of the match data" ClipToBounds="True">

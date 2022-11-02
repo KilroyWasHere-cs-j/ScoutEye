@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\gmtow\source\repos\ScoutEye\QSOLogger\QSOLogger\obj\Debug\net6.0-windows\
+C:\Users\gmtow\source\repos\ScoutEye\QSOLogger\QSOLogger\obj\Release\net6.0-windows\
 QSOLogger
 none
 false
-TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+TRACE;RELEASE;NET;NET6_0;NETCOREAPP
 C:\Users\gmtow\source\repos\ScoutEye\QSOLogger\QSOLogger\App.xaml
 11407045341
 

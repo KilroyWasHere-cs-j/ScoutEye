@@ -69,6 +69,7 @@ namespace ScoutEye
         private void NextMatch()
         {
             matchNumber++;
+            MatchNumberChangerTB.Text = matchNumber.ToString();
             MatchNumTB.Content = "Match number: " + matchNumber.ToString();
             ResetMatch();
         }

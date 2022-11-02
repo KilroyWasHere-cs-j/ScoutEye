@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ScoutEye",
+    "\\ScoutEye\\ScoutEye"
   ],
-  "SelectedNode": "\\ScoutEye.sln",
+  "SelectedNode": "\\ScoutEye\\ScoutEye\\MainWindow.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

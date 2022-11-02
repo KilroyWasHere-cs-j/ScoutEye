@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Media;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using System.Xml;
@@ -71,6 +73,7 @@ namespace ScoutEye
         private void NextMatch()
         {
             matchNumber++;
+            MatchNumberChangerTB.Text = matchNumber.ToString();
             MatchNumTB.Content = "Match number: " + matchNumber.ToString();
             ResetMatch();
         }
@@ -80,26 +83,22 @@ namespace ScoutEye
         //<summary>
         private void ResetMatch()
         {
-            MessageBoxResult result = MessageBox.Show("Are you sure you want to reset this match? This action cannot be undone.", "Just checking in.", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if (result == MessageBoxResult.Yes)
+            TeamNumberTB.Text = String.Empty;
+            stopwatch.Stop();
+            stopwatch.Reset();
+            ClickCounterCountLB.Content = "Click count: 0";
+            clickCount = 0;
+            foreach (UIElement element in Grid.Children)
             {
-                TeamNumberTB.Text = String.Empty;
-                stopwatch.Stop();
-                stopwatch.Reset();
-                ClickCounterCountLB.Content = "Click count: 0";
-                clickCount = 0;
-                foreach (UIElement element in Grid.Children)
+                if (element is ComboBox)
                 {
-                    if (element is ComboBox)
-                    {
-                        ComboBox cb = (ComboBox)element;
-                        cb.SelectedIndex = 0;
-                    }
-                    if (element is CheckBox)
-                    {
-                        CheckBox cb = (CheckBox)element;
-                        cb.IsChecked = false;
-                    }
+                    ComboBox cb = (ComboBox)element;
+                    cb.SelectedIndex = 0;
+                }
+                if (element is CheckBox)
+                {
+                    CheckBox cb = (CheckBox)element;
+                    cb.IsChecked = false;
                 }
             }
         }
@@ -381,6 +380,20 @@ namespace ScoutEye
             }
         }
 
+        #region ClickCounter
+        public void increaseClickCounter()
+        {
+            clickCount++;
+            ClickCounterCountLB.Content = "Click count " + clickCount.ToString();
+        }
+
+        public void decreaseClickCounter()
+        {
+            clickCount--;
+            ClickCounterCountLB.Content = "Click count " + clickCount.ToString();
+        }
+        #endregion
+
         #region EventHandlers
         private void dt_Tick(object sender, EventArgs e)
         {
@@ -399,10 +412,7 @@ namespace ScoutEye
             ResetMatch();
         }
 
-        //<summary>
-        //Toggle the stopwatch on and off
-        //<summary>
-        private void ToggleStopwatch_Click(object sender, RoutedEventArgs e)
+        private void ToggleStopwatch()
         {
             switch (stopwatchEnabled)
             {
@@ -415,6 +425,14 @@ namespace ScoutEye
                     stopwatch.Start();
                     break;
             }
+        }
+
+        //<summary>
+        //Toggle the stopwatch on and off
+        //<summary>
+        private void ToggleStopwatch_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleStopwatch();
         }
 
         private void TeamNumberTB_TextChanged(object sender, TextChangedEventArgs e)
@@ -447,8 +465,7 @@ namespace ScoutEye
         //<summary>
         private void ClickCounterDown_Click(object sender, RoutedEventArgs e)
         {
-            clickCount--;
-            ClickCounterCountLB.Content = "Click count " + clickCount.ToString();
+            decreaseClickCounter();
         }
 
         //<summary>
@@ -456,8 +473,28 @@ namespace ScoutEye
         //<summary>
         private void ClickCounterUp_Click(object sender, RoutedEventArgs e)
         {
-            clickCount++;
-            ClickCounterCountLB.Content = "Click count " + clickCount.ToString();
+            increaseClickCounter();
+        }
+
+        public void Pro_Keypressed(object sender, KeyEventArgs e) {
+            switch (e.Key)
+            {
+                case (Key.Up):
+                    increaseClickCounter();
+                    break;
+                case (Key.Down):
+                    decreaseClickCounter();
+                    break;
+                case (Key.Home):
+                    EnterMatch();
+                    break;
+                case (Key.End):
+                    ResetMatch();
+                    break;
+                case (Key.OemPeriod):
+                    ToggleStopwatch();
+                    break;
+            }
         }
         #endregion
     }

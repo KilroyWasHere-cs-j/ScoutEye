@@ -64,7 +64,7 @@
         <ComboBox x:Name="Teleop1" HorizontalAlignment="Left" Margin="315,149,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="Teleop2" HorizontalAlignment="Left" Margin="315,189,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="Teleop3" HorizontalAlignment="Left" Margin="315,224,0,0" VerticalAlignment="Top" Width="120"/>
-        <Image x:Name="QRCodeDisplayPB" HorizontalAlignment="Left" Height="158" Margin="797,254,0,0" VerticalAlignment="Top" Width="254" ToolTip="The truth is out there"/>
+        <Image x:Name="QRCodeDisplayPB" HorizontalAlignment="Left" Height="158" Margin="798,255,0,0" VerticalAlignment="Top" Width="254" ToolTip="The truth is out there"/>
         <CheckBox x:Name="RobotDiedCB" Content="Robot Died" HorizontalAlignment="Left" Margin="457,191,0,0" VerticalAlignment="Top" ClipToBounds="True"/>
         <CheckBox x:Name="FieldFaultCB" Content="Field Fault" HorizontalAlignment="Left" Margin="457,209,0,0" VerticalAlignment="Top" ClipToBounds="True"/>
         <Label x:Name="ScoutNameLB" Content="Scout Name" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="233" Cursor="No"/>

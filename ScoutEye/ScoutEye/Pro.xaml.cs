@@ -29,7 +29,7 @@ namespace ScoutEye
         private int clickCount = 0, matchNumber = 0;
         private string name = "", scoutingLevel = "Pro", comboDefault = "Please Select Option";
 
-        public Pro(string scoutname, int currentMatchNumber)
+        public Pro(string scoutname)
         {
             InitializeComponent();
             xml = new XmlDocument();
@@ -42,8 +42,8 @@ namespace ScoutEye
             name = scoutname;
             ScoutNameLB.Content = "Scout Name: " + name;
             //Set the current match number so the scout can start at anypoint
-            matchNumber = currentMatchNumber;
-            MatchNumTB.Content = "Match Number: " + matchNumber.ToString();
+            matchNumber = 0;
+            MatchNumTB.Content = "Match Number: " + 0;
         }
 
         //<summary>

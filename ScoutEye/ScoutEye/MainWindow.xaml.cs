@@ -33,10 +33,10 @@ namespace ScoutEye
             try
             {
                 //If the user entered a valid name and match number
-                if (NameTB.Text != string.Empty && CurrentMatchNumberTB.Text != string.Empty)
+                if (NameTB.Text != string.Empty)
                 {
                     player.Play();
-                    pro = new Pro(NameTB.Text, Int32.Parse(CurrentMatchNumberTB.Text));
+                    pro = new Pro(NameTB.Text);
                     pro.Show();
                     this.Close();
                 }
@@ -59,11 +59,11 @@ namespace ScoutEye
             try
             {
                 //Open the amateur window and closes the current window
-                if (NameTB.Text != string.Empty && CurrentMatchNumberTB.Text != string.Empty)
+                if (NameTB.Text != string.Empty)
                 {
                     //Might need different sound
                     player.Play();
-                    am = new Am(NameTB.Text, Int32.Parse(CurrentMatchNumberTB.Text));
+                    am = new Am(NameTB.Text);
                     am.Show();
                     this.Close();
                 }

@@ -27,7 +27,7 @@ namespace ScoutEye
         private int clickCount = 0;
         private string name = "";
         private string scoutingLevel = "Am";
-        public Am(string scoutName, int matchNumber)
+        public Am(string scoutName)
         {
             InitializeComponent();
             xml = new XmlDocument();
@@ -38,7 +38,7 @@ namespace ScoutEye
             stopwatch = new Stopwatch();
             name = scoutName;
             ScoutNameLB.Content = "Scout Name: " + name;
-            MatchNumTB.Content = "Match Number: " + matchNumber;
+            MatchNumTB.Content = "Match Number: " + 0;
             LoadUIFromSettings();
         }
 

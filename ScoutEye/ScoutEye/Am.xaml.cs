@@ -21,12 +21,9 @@ namespace ScoutEye
         private XmlDocument xml;
         private DispatcherTimer dt;
         private Stopwatch stopwatch;
-        private string comboDefault = "Please Select An Option";
         private bool stopwatchEnabled = false;
-        private int matchNumber = 0;
-        private int clickCount = 0;
-        private string name = "";
-        private string scoutingLevel = "Am";
+        private int matchNumber = 0, clickCount = 0;
+        private string scoutingLevel = "Am", name = "", comboDefault = "Please Select An Option";
         public Am(string scoutName)
         {
             InitializeComponent();

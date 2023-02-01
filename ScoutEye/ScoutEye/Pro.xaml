@@ -8,8 +8,8 @@
         Title="Pro" Height="441" Width="712" KeyDown="Pro_Keypressed">
     <Grid x:Name="Grid" Height="427" VerticalAlignment="Top" Background="#FFF9F9F9" HorizontalAlignment="Left" Width="973">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="720*"/>
+            <ColumnDefinition Width="253*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>

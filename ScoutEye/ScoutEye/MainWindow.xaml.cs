@@ -51,6 +51,7 @@ namespace ScoutEye
                 MessageBox.Show(ex.Message);
             }
         }
+
         //<summary>
         //The user has picked the amateur level of scouting
         //<summary>
@@ -77,5 +78,25 @@ namespace ScoutEye
                 MessageBox.Show(ex.Message);
             }
         }
+
+        #region EventHandlers
+        private void contactBTN_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Outliers 5687: outliers5687@baxter-academy.org \n Developer Gabriel Tower: gmtower1@gmail.com", "Contact Us");
+        }
+
+        private void helpBTN_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string file = File.ReadAllText(Directory.GetCurrentDirectory() + "/Documentation.txt.txt");
+                MessageBox.Show(file, "Help");
+            }
+            catch
+            {
+                MessageBox.Show("Help info was found to be missing. Please contact dev");
+            }
+        }
+        #endregion
     }
 }

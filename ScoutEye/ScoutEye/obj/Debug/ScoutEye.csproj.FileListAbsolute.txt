@@ -54,3 +54,7 @@ C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye.csproj
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye.csproj.CopyComplete
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye.exe
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye.pdb
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\ScoutEye.exe.manifest
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\ScoutEye.application
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye.exe.manifest
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye.application

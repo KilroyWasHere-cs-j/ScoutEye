@@ -1,5 +1,4 @@
 ﻿using System;
-using System.CodeDom;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -27,7 +26,7 @@ namespace ScoutEye
         private SoundPlayer player;
         private bool stopwatchEnabled = false;
         private int clickCount = 0, matchNumber = 0;
-        private string name = "", scoutingLevel = "Pro", comboDefault = "Please Select Option";
+        private string name = "", scoutingLevel = "Pro", comboDefault = "Null";
 
         public Pro(string scoutname)
         {
@@ -54,7 +53,7 @@ namespace ScoutEye
             MessageBoxResult result = MessageBox.Show("Are you sure you want to enter this match? This action cannot be undone.", "Just checking in.", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes && TeamNumberTB.Text != String.Empty && MatchNumberChangerTB.Text != String.Empty)
             {
-                //This should be fixed
+                //This should be fixed there has got to be a better way to do this. Let's be real I'm never going to fix it...
                 string compiledDataForLogging = name + "," + scoutingLevel + "," + matchNumber.ToString() + "," + TeamNumberTB.Text.ToString() + "," + Auto0.Text + "," + Auto1.Text + "," + Auto2.Text + "," + Auto3.Text + "," + Teleop0.Text + "," + Teleop1.Text + "," + Teleop2.Text + "," + Teleop3.Text + "," + RobotDiedCB.IsChecked.ToString() + "," + FieldFaultCB.IsChecked.ToString() + "," + stopwatch.Elapsed.ToString() + "," + clickCount.ToString();
                 string compiledData = name + "\t" + scoutingLevel + "\t" + matchNumber.ToString() + "\t" + TeamNumberTB.Text.ToString() + "\t" + Auto0.Text + "\t" + Auto1.Text + "\t" + Auto2.Text + "\t" + Auto3.Text + "\t" + Teleop0.Text + "\t" + Teleop1.Text + "\t" + Teleop2.Text + "\t" + Teleop3.Text + "\t" + RobotDiedCB.IsChecked.ToString() + "\t" + FieldFaultCB.IsChecked.ToString() + "\t" + stopwatch.Elapsed.ToString() + "\t" + clickCount.ToString();
                 QRCodeDisplayPB.Source = BitmapToImageSource(GenerateQRCode(compiledData));

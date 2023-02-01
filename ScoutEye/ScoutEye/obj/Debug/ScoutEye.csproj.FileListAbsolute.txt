@@ -58,3 +58,5 @@ C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\ScoutEye.exe.ma
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\ScoutEye.application
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye.exe.manifest
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye.application
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\Configurer.g.cs
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\Configurer.baml

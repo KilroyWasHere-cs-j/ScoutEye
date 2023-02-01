@@ -12,6 +12,7 @@ namespace ScoutEye
     {
         Pro pro;
         Am am;
+        Configurer configer;
 
         private SoundPlayer player;
         private string userName = "";
@@ -96,6 +97,11 @@ namespace ScoutEye
             {
                 MessageBox.Show("Help info was found to be missing. Please contact dev");
             }
+        }
+        private void configureBTN_Click(object sender, RoutedEventArgs e)
+        {
+            configer = new Configurer();
+            configer.Show();
         }
         #endregion
     }

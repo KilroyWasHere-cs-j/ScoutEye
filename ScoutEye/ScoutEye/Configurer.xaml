@@ -21,5 +21,11 @@
             </Button.BorderBrush>
         </Button>
         <Label x:Name="SelectedFilePathLB" Content="Path" HorizontalAlignment="Left" Height="27" Margin="45,26,0,0" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="A0labelTB" HorizontalAlignment="Left" Height="25" Margin="44,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="A0contentsTB" HorizontalAlignment="Left" Height="25" Margin="44,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <RadioButton x:Name="A0VisableRB" Content="Show" HorizontalAlignment="Left" Margin="44,217,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="A1labelTB" HorizontalAlignment="Left" Height="25" Margin="191,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="A1contentsTB" HorizontalAlignment="Left" Height="25" Margin="191,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <RadioButton x:Name="A1VisableRB" Content="Show" HorizontalAlignment="Left" Margin="191,220,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

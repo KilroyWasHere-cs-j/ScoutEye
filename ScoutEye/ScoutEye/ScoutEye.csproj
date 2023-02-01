@@ -162,14 +162,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="scoutingicon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <SplashScreen Include="scoutingicon %281%29.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </SplashScreen>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="APIOutputLog.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

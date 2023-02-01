@@ -42,6 +42,9 @@ namespace ScoutEye
             string filePath = fdlg.FileName;
             xmlReader = new XmlTextReader(filePath);
             SelectedFilePathLB.Content = filePath;
+            xmlReader.Read();
+
+            A0labelTB.Text = xmlReader.Value.ToString();
         }
         #endregion
     }

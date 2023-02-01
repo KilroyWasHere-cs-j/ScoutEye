@@ -3,7 +3,7 @@
 	<!--Basic app config-->
 	<AppName>ScoutEye</AppName>
 	<AppVersion>v1.9</AppVersion>
-	<DefaultComboValue>Empty</DefaultComboValue>
+	<DefaultComboValue>Empty</DefaultComboValue> <!--Currently dosen't do anything-->
 	
 	<!--Config for first auto tracker-->
 	<Auto0>High goal</Auto0>

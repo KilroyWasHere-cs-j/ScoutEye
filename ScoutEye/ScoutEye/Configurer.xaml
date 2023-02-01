@@ -20,12 +20,31 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Label x:Name="SelectedFilePathLB" Content="Path" HorizontalAlignment="Left" Height="27" Margin="45,26,0,0" VerticalAlignment="Top" Width="159"/>
+        <Label x:Name="SelectedFilePathLB" Content="Path" HorizontalAlignment="Left" Height="27" Margin="45,26,0,0" VerticalAlignment="Top" Width="732"/>
         <TextBox x:Name="A0labelTB" HorizontalAlignment="Left" Height="25" Margin="44,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
         <TextBox x:Name="A0contentsTB" HorizontalAlignment="Left" Height="25" Margin="44,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <RadioButton x:Name="A0VisableRB" Content="Show" HorizontalAlignment="Left" Margin="44,217,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="A0VisableRB" Content="Show" HorizontalAlignment="Left" Margin="44,221,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="A1labelTB" HorizontalAlignment="Left" Height="25" Margin="191,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
         <TextBox x:Name="A1contentsTB" HorizontalAlignment="Left" Height="25" Margin="191,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <RadioButton x:Name="A1VisableRB" Content="Show" HorizontalAlignment="Left" Margin="191,220,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="A1VisableRB" Content="Show" HorizontalAlignment="Left" Margin="191,222,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="VersionTB" Content="v.0.0" HorizontalAlignment="Left" Height="27" Margin="215,58,0,0" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="A2labelTB" HorizontalAlignment="Left" Height="25" Margin="332,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="A2contentsTB" HorizontalAlignment="Left" Height="25" Margin="332,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <RadioButton x:Name="A2VisableRB" Content="Show" HorizontalAlignment="Left" Margin="332,224,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="A3labelTB" HorizontalAlignment="Left" Height="25" Margin="466,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="A3contentsTB" HorizontalAlignment="Left" Height="25" Margin="466,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <RadioButton x:Name="A3VisableRB" Content="Show" HorizontalAlignment="Left" Margin="469,221,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="T0labelTB" HorizontalAlignment="Left" Height="25" Margin="44,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="T0contentsTB" HorizontalAlignment="Left" Height="25" Margin="44,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <RadioButton x:Name="T0VisableRB" Content="Show" HorizontalAlignment="Left" Margin="44,344,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="T1labelTB" HorizontalAlignment="Left" Height="25" Margin="191,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="T1contentsTB" HorizontalAlignment="Left" Height="25" Margin="191,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <RadioButton x:Name="T1VisableRB" Content="Show" HorizontalAlignment="Left" Margin="191,345,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="T2labelTB" HorizontalAlignment="Left" Height="25" Margin="332,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="T2contentsTB" HorizontalAlignment="Left" Height="25" Margin="332,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <RadioButton x:Name="T2VisableRB" Content="Show" HorizontalAlignment="Left" Margin="332,345,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="T3labelTB" HorizontalAlignment="Left" Height="25" Margin="466,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="T3contentsTB" HorizontalAlignment="Left" Height="25" Margin="466,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <RadioButton x:Name="T3VisableRB" Content="Show" HorizontalAlignment="Left" Margin="466,345,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

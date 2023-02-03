@@ -6,15 +6,14 @@
         xmlns:local="clr-namespace:ScoutEye"
         mc:Ignorable="d"
         Title="Pro" Height="441" Width="712" KeyDown="Pro_Keypressed">
-    <Grid x:Name="Grid" Height="427" VerticalAlignment="Top" Background="#FFF9F9F9" HorizontalAlignment="Left" Width="973">
+    <Grid x:Name="Grid" Height="427" VerticalAlignment="Top" Background="#FFF9F9F9" HorizontalAlignment="Center" Width="712">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="720*"/>
-            <ColumnDefinition Width="253*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Rectangle HorizontalAlignment="Left" Height="63" Margin="401,2,0,0" Stroke="#FFE60F0F" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10"/>
+        <Rectangle HorizontalAlignment="Left" Height="63" Margin="401,2,0,0" Stroke="#FFEA1C1C" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10"/>
         <Rectangle HorizontalAlignment="Left" Height="63" Margin="206,2,0,0" Stroke="#FFEA1C1C" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10"/>
         <Rectangle HorizontalAlignment="Left" Height="63" Margin="10,2,0,0" Stroke="#FFF71818" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10"/>
         <Rectangle HorizontalAlignment="Left" Height="163" Margin="10,81,0,0" Stroke="#FFEA1C1C" VerticalAlignment="Top" Width="666"/>
@@ -46,7 +45,7 @@
             </Button.BorderBrush>
         </Button>
         <Label x:Name="MatchNumTB" Content="Match Number" HorizontalAlignment="Left" Margin="211,8,0,0" VerticalAlignment="Top" Cursor="No" Height="26" Width="90"/>
-        <Label x:Name="TeamNumberLB" Content="Team Number" HorizontalAlignment="Left" Margin="409,10,0,0" VerticalAlignment="Top" Cursor="No" ToolTip="I'm a teapot" Height="26" Width="85"/>
+        <Label x:Name="TeamNumberLB" Content="Team Number" HorizontalAlignment="Left" Margin="412,10,0,0" VerticalAlignment="Top" Cursor="No" ToolTip="I'm a teapot" Height="26" Width="84"/>
         <Label x:Name="VersionLB" Content="v0.0" HorizontalAlignment="Left" Margin="597,0,0,0" VerticalAlignment="Top" Cursor="No" Height="26" Width="31"/>
         <Label x:Name="TeleopTitleCard" Content="Teleop" HorizontalAlignment="Left" Margin="364,86,0,0" VerticalAlignment="Top" Height="26" Width="45"/>
         <Label x:Name="Teleop0LB" Content="NULL" HorizontalAlignment="Left" Margin="365,114,0,0" VerticalAlignment="Top" Height="26" Width="71"/>
@@ -148,7 +147,7 @@
             </Button.BorderBrush>
         </Button>
         <Label x:Name="MatchNumberChangerLB" Content="Match Number" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Height="26" Width="90"/>
-        <TextBox x:Name="MatchNumberChangerTB" HorizontalAlignment="Left" Margin="15,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18"/>
+        <TextBox x:Name="MatchNumberChangerTB" HorizontalAlignment="Left" Margin="15,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" TextChanged="MatchNumberChangerTB_TextChanged"/>
         <Rectangle HorizontalAlignment="Left" Height="146" Margin="10,249,0,0" Stroke="#FFF52020" VerticalAlignment="Top" Width="233"/>
         <Image HorizontalAlignment="Left" Height="146" Margin="576,249,0,0" VerticalAlignment="Top" Width="118" Source="/scoutingicon (1).png"/>
     </Grid>

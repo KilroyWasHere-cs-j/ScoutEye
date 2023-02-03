@@ -6,8 +6,13 @@
         xmlns:local="clr-namespace:ScoutEye"
         mc:Ignorable="d"
         Title="Configurer" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="LoadConfigFileBTN" Content="Load Configuration File" HorizontalAlignment="Left" Height="54" Margin="44,58,0,0" VerticalAlignment="Top" Width="160" Click="LoadConfigFileBTN_Click">
+    <Grid x:Name="Grid">
+        <!--Needed a name to iterate through it-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="178*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="LoadConfigFileBTN" Content="Load Configuration" HorizontalAlignment="Left" Height="54" Margin="44,69,0,0" VerticalAlignment="Top" Width="160" Click="LoadConfigFileBTN_Click" Grid.RowSpan="2">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -20,31 +25,57 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Label x:Name="SelectedFilePathLB" Content="Path" HorizontalAlignment="Left" Height="27" Margin="45,26,0,0" VerticalAlignment="Top" Width="732"/>
-        <TextBox x:Name="A0labelTB" HorizontalAlignment="Left" Height="25" Margin="44,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="A0contentsTB" HorizontalAlignment="Left" Height="25" Margin="44,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <RadioButton x:Name="A0VisableRB" Content="Show" HorizontalAlignment="Left" Margin="44,221,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="A1labelTB" HorizontalAlignment="Left" Height="25" Margin="191,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="A1contentsTB" HorizontalAlignment="Left" Height="25" Margin="191,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <RadioButton x:Name="A1VisableRB" Content="Show" HorizontalAlignment="Left" Margin="191,222,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="VersionTB" Content="v.0.0" HorizontalAlignment="Left" Height="27" Margin="215,58,0,0" VerticalAlignment="Top" Width="159"/>
-        <TextBox x:Name="A2labelTB" HorizontalAlignment="Left" Height="25" Margin="332,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="A2contentsTB" HorizontalAlignment="Left" Height="25" Margin="332,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <RadioButton x:Name="A2VisableRB" Content="Show" HorizontalAlignment="Left" Margin="332,224,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="A3labelTB" HorizontalAlignment="Left" Height="25" Margin="466,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="A3contentsTB" HorizontalAlignment="Left" Height="25" Margin="466,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <RadioButton x:Name="A3VisableRB" Content="Show" HorizontalAlignment="Left" Margin="469,221,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="T0labelTB" HorizontalAlignment="Left" Height="25" Margin="44,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="T0contentsTB" HorizontalAlignment="Left" Height="25" Margin="44,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <RadioButton x:Name="T0VisableRB" Content="Show" HorizontalAlignment="Left" Margin="44,344,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="T1labelTB" HorizontalAlignment="Left" Height="25" Margin="191,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="T1contentsTB" HorizontalAlignment="Left" Height="25" Margin="191,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <RadioButton x:Name="T1VisableRB" Content="Show" HorizontalAlignment="Left" Margin="191,345,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="T2labelTB" HorizontalAlignment="Left" Height="25" Margin="332,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="T2contentsTB" HorizontalAlignment="Left" Height="25" Margin="332,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <RadioButton x:Name="T2VisableRB" Content="Show" HorizontalAlignment="Left" Margin="332,345,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="T3labelTB" HorizontalAlignment="Left" Height="25" Margin="466,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="T3contentsTB" HorizontalAlignment="Left" Height="25" Margin="466,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <RadioButton x:Name="T3VisableRB" Content="Show" HorizontalAlignment="Left" Margin="466,345,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="SelectedFilePathLB" Content="Path" HorizontalAlignment="Left" Height="27" Margin="45,0,0,0" VerticalAlignment="Center" Width="732"/>
+        <TextBox x:Name="A0labelTB" HorizontalAlignment="Left" Height="25" Margin="44,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Grid.Row="1"/>
+        <TextBox x:Name="A0contentsTB" HorizontalAlignment="Left" Height="25" Margin="44,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Grid.Row="1"/>
+        <TextBox x:Name="A1labelTB" HorizontalAlignment="Left" Height="25" Margin="191,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Grid.Row="1"/>
+        <TextBox x:Name="A1contentsTB" HorizontalAlignment="Left" Height="25" Margin="191,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Grid.Row="1"/>
+        <Label x:Name="VersionTB" Content="v.0.0" HorizontalAlignment="Left" Height="27" Margin="631,53,0,0" VerticalAlignment="Top" Width="159" Grid.RowSpan="2"/>
+        <TextBox x:Name="A2labelTB" HorizontalAlignment="Left" Height="25" Margin="332,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Grid.Row="1"/>
+        <TextBox x:Name="A2contentsTB" HorizontalAlignment="Left" Height="25" Margin="332,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Grid.Row="1"/>
+        <TextBox x:Name="A3labelTB" HorizontalAlignment="Left" Height="25" Margin="466,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Grid.Row="1"/>
+        <TextBox x:Name="A3contentsTB" HorizontalAlignment="Left" Height="25" Margin="466,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Grid.Row="1"/>
+        <TextBox x:Name="T0labelTB" HorizontalAlignment="Left" Height="25" Margin="44,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Grid.Row="1"/>
+        <TextBox x:Name="T0contentsTB" HorizontalAlignment="Left" Height="25" Margin="44,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Grid.Row="1"/>
+        <TextBox x:Name="T1labelTB" HorizontalAlignment="Left" Height="25" Margin="191,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Grid.Row="1"/>
+        <TextBox x:Name="T1contentsTB" HorizontalAlignment="Left" Height="25" Margin="191,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Grid.Row="1"/>
+        <TextBox x:Name="T2labelTB" HorizontalAlignment="Left" Height="25" Margin="332,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Grid.Row="1"/>
+        <TextBox x:Name="T2contentsTB" HorizontalAlignment="Left" Height="25" Margin="332,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Grid.Row="1"/>
+        <TextBox x:Name="T3labelTB" HorizontalAlignment="Left" Height="25" Margin="466,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Grid.Row="1"/>
+        <TextBox x:Name="T3contentsTB" HorizontalAlignment="Left" Height="25" Margin="466,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Grid.Row="1"/>
+        <Button x:Name="SetConfigBTN" Content="Set Configuration" HorizontalAlignment="Left" Height="54" Margin="220,68,0,0" VerticalAlignment="Top" Width="160" Click="SetConfigBTN_Click" Grid.RowSpan="2">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+            <Button.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
+                    <GradientStop Color="Red" Offset="0" />
+                    <GradientStop Color="Red" Offset="1.0" />
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="ClearBTN" Content="Clear" HorizontalAlignment="Left" Height="54" Margin="400,69,0,0" VerticalAlignment="Top" Width="160" Click="ClearBTN_Click" Grid.RowSpan="2">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+            <Button.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
+                    <GradientStop Color="Red" Offset="0" />
+                    <GradientStop Color="Red" Offset="1.0" />
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <CheckBox x:Name="A0VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="44,151,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True"/>
+        <CheckBox x:Name="A1VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="204,153,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True"/>
+        <CheckBox x:Name="A2VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="343,153,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True"/>
+        <CheckBox x:Name="A3VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="466,153,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True"/>
+        <CheckBox x:Name="T0VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="44,274,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True"/>
+        <CheckBox x:Name="T1VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="191,274,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True"/>
+        <CheckBox x:Name="T2VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="332,274,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True"/>
+        <CheckBox x:Name="T3VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="466,274,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True"/>
     </Grid>
 </Window>

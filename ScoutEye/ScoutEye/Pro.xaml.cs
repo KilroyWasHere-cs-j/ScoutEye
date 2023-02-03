@@ -148,7 +148,7 @@ namespace ScoutEye
         //<summary>
         private void LoadUIFromSettings()
         {
-            int[] values = Enumerable.Range(0, 500 - 0).ToArray();
+            int[] values = Enumerable.Range(0, 500 - 0).ToArray(); // Make this it's own function for lazy evel
             try
             {
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
@@ -445,11 +445,6 @@ namespace ScoutEye
             ClickCounterCountLB.Content = "Click count " + clickCount.ToString();
         }
 
-        private void TeamNumberTB_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         //<summary>
         //Reset Stopwatch
         //<summary>
@@ -493,6 +488,23 @@ namespace ScoutEye
                 case (Key.OemPeriod):
                     ToggleStopwatch();
                     break;
+            }
+        }
+
+        private void TeamNumberTB_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(TeamNumberTB.Text, "[^0-9]"))
+            {
+                TeamNumberTB.Text = TeamNumberTB.Text.Remove(TeamNumberTB.Text.Length - 1);
+                MessageBox.Show("Please enter only numbers.");
+            }
+        }
+        private void MatchNumberChangerTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(MatchNumberChangerTB.Text, "[^0-9]"))
+            {
+                MatchNumberChangerTB.Text = MatchNumberChangerTB.Text.Remove(MatchNumberChangerTB.Text.Length - 1);
+                MessageBox.Show("Please enter only numbers.");
             }
         }
         #endregion

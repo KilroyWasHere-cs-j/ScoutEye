@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:ScoutEye"
         mc:Ignorable="d"
         Title="Am" Height="477" Width="794">
-    <Grid x:Name="Grid" Margin="0,0,0,2" Background="#FFFBEBEB">
-        <Rectangle HorizontalAlignment="Left" Height="161" Margin="13,80,0,0" Stroke="#FFF31414" VerticalAlignment="Top" Width="744"/>
-        <Rectangle HorizontalAlignment="Left" Height="63" Margin="416,2,0,0" Stroke="#FFF71818" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10"/>
-        <Rectangle HorizontalAlignment="Left" Height="63" Margin="208,2,0,0" Stroke="#FFF71818" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10"/>
-        <Rectangle HorizontalAlignment="Left" Height="63" Margin="10,2,0,0" Stroke="#FFF71818" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10"/>
+    <Grid x:Name="Grid" Margin="0,0,0,2" Background="#FFF9F9F9">
+        <Rectangle HorizontalAlignment="Left" Height="161" Margin="13,80,0,0" Stroke="#805df0" VerticalAlignment="Top" Width="744"/>
+        <Rectangle HorizontalAlignment="Left" Height="63" Margin="416,2,0,0" Stroke="#805df0" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10"/>
+        <Rectangle HorizontalAlignment="Left" Height="63" Margin="208,2,0,0" Stroke="#805df0" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10"/>
+        <Rectangle HorizontalAlignment="Left" Height="63" Margin="10,2,0,0" Stroke="#805df0" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10"/>
         <Rectangle HorizontalAlignment="Left" Height="157" Margin="10,256,0,0" Stroke="Black" VerticalAlignment="Top" Width="233"/>
         <Button x:Name="EnterBTN" Content="Enter Match" HorizontalAlignment="Left" Margin="248,255,0,0" VerticalAlignment="Top" Height="77" Width="127" Click="EnterBTN_Click">
             <Button.Resources>

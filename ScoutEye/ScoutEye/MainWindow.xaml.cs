@@ -44,7 +44,7 @@ namespace ScoutEye
                 else
                 {
                     //Something was missing
-                    MessageBox.Show("Please enter your name.", "Missing fields", MessageBoxButton.OK, MessageBoxImage.Hand);
+                    MessageBox.Show("Name field found to be missing of invalid.", "Missing fields", MessageBoxButton.OK, MessageBoxImage.Hand);
                 }
             }
             catch (Exception ex)
@@ -71,7 +71,7 @@ namespace ScoutEye
                 }
                 else
                 {
-                    MessageBox.Show("Please enter your name.", "Missing fields", MessageBoxButton.OK, MessageBoxImage.Hand);
+                    MessageBox.Show("Name field found to be missing of invalid.", "Missing fields", MessageBoxButton.OK, MessageBoxImage.Hand);
                 }
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace ScoutEye
         #region EventHandlers
         private void contactBTN_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Outliers 5687: outliers5687@baxter-academy.org \n Developer Gabriel Tower: gmtower1@gmail.com", "Contact Us");
+            System.Diagnostics.Process.Start("http://scout-eye.com/documentation");
         }
 
         private void helpBTN_Click(object sender, RoutedEventArgs e)
@@ -95,7 +95,7 @@ namespace ScoutEye
             }
             catch
             {
-                MessageBox.Show("Help info was found to be missing. Please contact dev");
+                MessageBox.Show("Help info was found to be missing.");
             }
         }
         private void configureBTN_Click(object sender, RoutedEventArgs e)
@@ -104,5 +104,14 @@ namespace ScoutEye
             configer.Show();
         }
         #endregion
+
+        private void NameTB_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(NameTB.Text, "[^a-z]"))
+            {
+                NameTB.Text = NameTB.Text.Remove(NameTB.Text.Length - 1);
+                MessageBox.Show("Please enter only letters.");
+            }
+        }
     }
 }

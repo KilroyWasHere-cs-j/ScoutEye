@@ -88,15 +88,7 @@ namespace ScoutEye
 
         private void helpBTN_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                string file = File.ReadAllText(Directory.GetCurrentDirectory() + "/Documentation.txt.txt");
-                MessageBox.Show(file, "Help");
-            }
-            catch
-            {
-                MessageBox.Show("Help info was found to be missing.");
-            }
+            System.Diagnostics.Process.Start("http://scout-eye.com/documentation");
         }
         private void configureBTN_Click(object sender, RoutedEventArgs e)
         {

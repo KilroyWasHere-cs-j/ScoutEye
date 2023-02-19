@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ScoutEye.exe" size="76256">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ScoutEye.exe" size="77792">
       <assemblyIdentity name="ScoutEye" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>u7b3fnlTauR5V0AouFH72+vQFJ47XtI/kmoJSWq+PtM=</dsig:DigestValue>
+        <dsig:DigestValue>FZPhx1ozcEydQOcfN+ozvZUNZa+F1ephbF4W7T6Q41U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

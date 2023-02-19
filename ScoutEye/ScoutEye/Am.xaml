@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:ScoutEye"
         mc:Ignorable="d"
         Title="Am" Height="477" Width="794">
-    <Grid x:Name="Grid" Margin="0,0,0,2" Background="#FFF9F9F9">
-        <Rectangle HorizontalAlignment="Left" Height="161" Margin="13,80,0,0" Stroke="#805df0" VerticalAlignment="Top" Width="744"/>
-        <Rectangle HorizontalAlignment="Left" Height="63" Margin="416,2,0,0" Stroke="#805df0" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10"/>
-        <Rectangle HorizontalAlignment="Left" Height="63" Margin="208,2,0,0" Stroke="#805df0" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10"/>
-        <Rectangle HorizontalAlignment="Left" Height="63" Margin="10,2,0,0" Stroke="#805df0" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10"/>
+    <Grid x:Name="Grid" Margin="0,0,0,-6" Background="#212121">
+        <Rectangle HorizontalAlignment="Left" Height="161" Margin="13,80,0,0" Stroke="#410da1" VerticalAlignment="Top" Width="744" StrokeThickness="4"/>
+        <Rectangle HorizontalAlignment="Left" Height="63" Margin="416,2,0,0" Stroke="#410da1" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10" StrokeThickness="4"/>
+        <Rectangle HorizontalAlignment="Left" Height="63" Margin="208,2,0,0" Stroke="#410da1" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10" StrokeThickness="4"/>
+        <Rectangle HorizontalAlignment="Left" Height="63" Margin="10,2,0,0" Stroke="#410da1" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10" StrokeThickness="4"/>
         <Rectangle HorizontalAlignment="Left" Height="157" Margin="10,256,0,0" Stroke="Black" VerticalAlignment="Top" Width="233"/>
-        <Button x:Name="EnterBTN" Content="Enter Match" HorizontalAlignment="Left" Margin="248,255,0,0" VerticalAlignment="Top" Height="77" Width="127" Click="EnterBTN_Click">
+        <Button x:Name="EnterBTN" Content="Enter Match" HorizontalAlignment="Left" Margin="248,255,0,0" VerticalAlignment="Top" Height="77" Width="127" Click="EnterBTN_Click" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -20,12 +20,12 @@
             </Button.Resources>
             <Button.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
-                    <GradientStop Color="Red" Offset="0" />
-                    <GradientStop Color="Red" Offset="1.0" />
+                    <GradientStop Color="#410da1" Offset="0" />
+                    <GradientStop Color="#410da1" Offset="1.0" />
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="ResetBTN" Content="Reset Match" HorizontalAlignment="Left" Margin="248,337,0,0" VerticalAlignment="Top" Height="76" Width="127" Click="ResetBTN_Click">
+        <Button x:Name="ResetBTN" Content="Reset Match" HorizontalAlignment="Left" Margin="248,337,0,0" VerticalAlignment="Top" Height="76" Width="127" Click="ResetBTN_Click" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -33,33 +33,24 @@
             </Button.Resources>
             <Button.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
-                    <GradientStop Color="Red" Offset="0" />
-                    <GradientStop Color="Red" Offset="1.0" />
+                    <GradientStop Color="#410da1" Offset="0" />
+                    <GradientStop Color="#410da1" Offset="1.0" />
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Label x:Name="MatchNumTB" Content="Match Number" HorizontalAlignment="Left" Margin="213,16,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="TeamNumberLB" Content="Team Number" HorizontalAlignment="Left" Margin="417,16,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="VersionLB" Content="v0.0" HorizontalAlignment="Left" Margin="608,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="TeleopTitleCard" Content="Teleop" HorizontalAlignment="Left" Margin="379,84,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Teleop0LB" Content="NULL" HorizontalAlignment="Left" Margin="380,110,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Teleop1LB" Content="NULL" HorizontalAlignment="Left" Margin="380,141,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Teleop2LB" Content="NULL" HorizontalAlignment="Left" Margin="380,173,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Teleop3LB" Content="NULL" HorizontalAlignment="Left" Margin="380,207,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="AutoTitleCardLB" Content="Auto" HorizontalAlignment="Left" Margin="161,80,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Auto0LB" Content="NULL" HorizontalAlignment="Left" Margin="160,110,0,0" VerticalAlignment="Top" Width="62"/>
-        <Label x:Name="Auto1LB" Content="NULL" HorizontalAlignment="Left" Margin="161,139,0,0" VerticalAlignment="Top" Width="61"/>
-        <Label x:Name="Auto2LB" Content="NULL" HorizontalAlignment="Left" Margin="162,174,0,0" VerticalAlignment="Top" Width="60"/>
-        <Label x:Name="Auto3LB" Content="NULL" HorizontalAlignment="Left" Margin="162,207,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="63">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.118"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
+        <Label x:Name="MatchNumTB" Content="Match Number" HorizontalAlignment="Left" Margin="213,16,0,0" VerticalAlignment="Top" Foreground=" #e9e6f0"/>
+        <Label x:Name="TeamNumberLB" Content="Team Number" HorizontalAlignment="Left" Margin="417,16,0,0" VerticalAlignment="Top" Foreground=" #e9e6f0"/>
+        <Label x:Name="VersionLB" Content="v0.0" HorizontalAlignment="Left" Margin="608,10,0,0" VerticalAlignment="Top" Foreground=" #e9e6f0"/>
+        <Label x:Name="TeleopTitleCard" Content="Teleop" HorizontalAlignment="Left" Margin="379,84,0,0" VerticalAlignment="Top" Foreground=" #e9e6f0"/>
+        <Label x:Name="Teleop0LB" Content="NULL" HorizontalAlignment="Left" Margin="380,110,0,0" VerticalAlignment="Top" Foreground=" #e9e6f0"/>
+        <Label x:Name="Teleop1LB" Content="NULL" HorizontalAlignment="Left" Margin="380,141,0,0" VerticalAlignment="Top" Foreground=" #e9e6f0"/>
+        <Label x:Name="Teleop2LB" Content="NULL" HorizontalAlignment="Left" Margin="380,173,0,0" VerticalAlignment="Top" Foreground=" #e9e6f0"/>
+        <Label x:Name="Teleop3LB" Content="NULL" HorizontalAlignment="Left" Margin="380,207,0,0" VerticalAlignment="Top" Foreground=" #e9e6f0"/>
+        <Label x:Name="AutoTitleCardLB" Content="Auto" HorizontalAlignment="Left" Margin="161,80,0,0" VerticalAlignment="Top" Foreground=" #e9e6f0"/>
+        <Label x:Name="Auto0LB" Content="NULL" HorizontalAlignment="Left" Margin="160,110,0,0" VerticalAlignment="Top" Width="62" Foreground=" #e9e6f0"/>
+        <Label x:Name="Auto1LB" Content="NULL" HorizontalAlignment="Left" Margin="161,139,0,0" VerticalAlignment="Top" Width="61" Foreground=" #e9e6f0"/>
+        <Label x:Name="Auto2LB" Content="NULL" HorizontalAlignment="Left" Margin="162,174,0,0" VerticalAlignment="Top" Width="60" Foreground=" #e9e6f0"/>
+        <Label x:Name="Auto3LB" Content="NULL" HorizontalAlignment="Left" Margin="162,207,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="63" Foreground=" #e9e6f0"/>
         <ComboBox x:Name="Auto0" HorizontalAlignment="Left" Margin="230,113,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="Auto1" HorizontalAlignment="Left" Margin="230,142,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="Auto2" HorizontalAlignment="Left" Margin="230,176,0,0" VerticalAlignment="Top" Width="120"/>
@@ -69,10 +60,10 @@
         <ComboBox x:Name="Teleop2" HorizontalAlignment="Left" Margin="453,176,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="Teleop3" HorizontalAlignment="Left" Margin="453,208,0,0" VerticalAlignment="Top" Width="120"/>
         <Image x:Name="QRCodeDisplayPB" HorizontalAlignment="Left" Height="155" Margin="13,256,0,0" VerticalAlignment="Top" Width="228"/>
-        <CheckBox x:Name="RobotDiedCB" Content="Robot Died" HorizontalAlignment="Left" Margin="599,111,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="FieldFaultCB" Content="Field Fault" HorizontalAlignment="Left" Margin="599,135,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="ScoutNameLB" Content="Scout Name" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" Width="233"/>
-        <Button x:Name="ToggleStopwatchBTN" Content="Toggle Stopwatch" HorizontalAlignment="Left" Margin="449,257,0,0" VerticalAlignment="Top" Height="43" Width="126" Click="ToggleStopwatch_Click">
+        <CheckBox x:Name="RobotDiedCB" Content="Robot Died" HorizontalAlignment="Left" Margin="599,111,0,0" VerticalAlignment="Top" Foreground=" #e9e6f0"/>
+        <CheckBox x:Name="FieldFaultCB" Content="Field Fault" HorizontalAlignment="Left" Margin="599,135,0,0" VerticalAlignment="Top" Foreground=" #e9e6f0"/>
+        <Label x:Name="ScoutNameLB" Content="Scout Name" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" Width="233" Foreground=" #e9e6f0"/>
+        <Button x:Name="ToggleStopwatchBTN" Content="Toggle Stopwatch" HorizontalAlignment="Left" Margin="449,257,0,0" VerticalAlignment="Top" Height="43" Width="126" Click="ToggleStopwatch_Click" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -80,12 +71,12 @@
             </Button.Resources>
             <Button.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
-                    <GradientStop Color="Red" Offset="0" />
-                    <GradientStop Color="Red" Offset="1.0" />
+                    <GradientStop Color="#410da1" Offset="0" />
+                    <GradientStop Color="#410da1" Offset="1.0" />
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="StopwatchResetBTN" Content="Reset Stopwatch" HorizontalAlignment="Left" Margin="449,352,0,0" VerticalAlignment="Top" Height="40" Width="128" Click="ResetStopwatch_Click">
+        <Button x:Name="StopwatchResetBTN" Content="Reset Stopwatch" HorizontalAlignment="Left" Margin="449,352,0,0" VerticalAlignment="Top" Height="40" Width="128" Click="ResetStopwatch_Click" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -93,12 +84,12 @@
             </Button.Resources>
             <Button.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
-                    <GradientStop Color="Red" Offset="0" />
-                    <GradientStop Color="Red" Offset="1.0" />
+                    <GradientStop Color="#410da1" Offset="0" />
+                    <GradientStop Color="#410da1" Offset="1.0" />
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="ClickCounterUp" Content="+" HorizontalAlignment="Left" Margin="380,256,0,0" VerticalAlignment="Top" Height="76" Width="63" Click="ClickCounterUp_Click">
+        <Button x:Name="ClickCounterUp" Content="+" HorizontalAlignment="Left" Margin="380,256,0,0" VerticalAlignment="Top" Height="76" Width="63" Click="ClickCounterUp_Click" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -106,12 +97,12 @@
             </Button.Resources>
             <Button.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
-                    <GradientStop Color="Red" Offset="0" />
-                    <GradientStop Color="Red" Offset="1.0" />
+                    <GradientStop Color="#410da1" Offset="0" />
+                    <GradientStop Color="#410da1" Offset="1.0" />
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="ClickCounterDown" Content="-" HorizontalAlignment="Left" Margin="380,337,0,0" VerticalAlignment="Top" Height="76" Width="59" Click="ClickCounterDown_Click">
+        <Button x:Name="ClickCounterDown" Content="-" HorizontalAlignment="Left" Margin="380,337,0,0" VerticalAlignment="Top" Height="76" Width="59" Click="ClickCounterDown_Click" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -119,19 +110,19 @@
             </Button.Resources>
             <Button.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
-                    <GradientStop Color="Red" Offset="0" />
-                    <GradientStop Color="Red" Offset="1.0" />
+                    <GradientStop Color="#410da1" Offset="0" />
+                    <GradientStop Color="#410da1" Offset="1.0" />
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Label x:Name="ClickCounterCountLB" Content="Click Count 0" HorizontalAlignment="Left" Margin="596,152,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="StopwatchLB" Content="Stopwatch 0.0ms" HorizontalAlignment="Left" Margin="596,173,0,0" VerticalAlignment="Top"/>
-        <Label Content="Team Number" HorizontalAlignment="Left" Margin="10,104,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="ClickCounterCountLB" Content="Click Count 0" HorizontalAlignment="Left" Margin="596,152,0,0" VerticalAlignment="Top" Foreground=" #e9e6f0"/>
+        <Label x:Name="StopwatchLB" Content="Stopwatch 0.0ms" HorizontalAlignment="Left" Margin="596,173,0,0" VerticalAlignment="Top" Foreground=" #e9e6f0"/>
+        <Label Content="Team Number" HorizontalAlignment="Left" Margin="10,104,0,0" VerticalAlignment="Top" Foreground=" #e9e6f0"/>
         <TextBox x:Name="TeamNumberTB" HorizontalAlignment="Left" Margin="16,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Match Number" HorizontalAlignment="Left" Margin="13,147,0,0" VerticalAlignment="Top"/>
+        <Label Content="Match Number" HorizontalAlignment="Left" Margin="13,147,0,0" VerticalAlignment="Top" Foreground=" #e9e6f0"/>
         <TextBox x:Name="MatchNumberChangerTB" HorizontalAlignment="Left" Margin="16,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="MatchNumberChangerTB_TextChanged"/>
-        <Label x:Name="PreMatchLB" Content="Pre-Match" HorizontalAlignment="Left" Margin="13,80,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="ResetClickCounterBTN" Content="Reset Clickcounter " HorizontalAlignment="Left" Margin="449,304,0,0" VerticalAlignment="Top" Height="45" Width="128" Click="ResetClickCounter_Click">
+        <Label x:Name="PreMatchLB" Content="Pre-Match" HorizontalAlignment="Left" Margin="13,80,0,0" VerticalAlignment="Top" Foreground=" #e9e6f0"/>
+        <Button x:Name="ResetClickCounterBTN" Content="Reset Clickcounter " HorizontalAlignment="Left" Margin="449,304,0,0" VerticalAlignment="Top" Height="45" Width="128" Click="ResetClickCounter_Click" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -139,10 +130,11 @@
             </Button.Resources>
             <Button.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
-                    <GradientStop Color="Red" Offset="0" />
-                    <GradientStop Color="Red" Offset="1.0" />
+                    <GradientStop Color="#410da1" Offset="0" />
+                    <GradientStop Color="#410da1" Offset="1.0" />
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
+        <Image x:Name="horus" HorizontalAlignment="Left" Height="183" Margin="608,257,0,0" VerticalAlignment="Top" Width="165" Source="/images/ScoutEyeHorusTransparent-02.png"/>
     </Grid>
 </Window>

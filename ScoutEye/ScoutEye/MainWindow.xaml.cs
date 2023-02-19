@@ -2,6 +2,7 @@
 using System.IO;
 using System.Media;
 using System.Windows;
+using System.Windows.Media.Imaging;
 
 namespace ScoutEye
 {
@@ -24,6 +25,8 @@ namespace ScoutEye
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             userName = Environment.UserName;
             NameTB.Text = userName;
+            BitmapImage image = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "/images/ScoutEyeHorusTransparent-02.png", UriKind.Relative));
+            horus.Source = image;
         }
 
         //<summary>
@@ -99,11 +102,7 @@ namespace ScoutEye
 
         private void NameTB_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(NameTB.Text, "[^a-z]"))
-            {
-                NameTB.Text = NameTB.Text.Remove(NameTB.Text.Length - 1);
-                MessageBox.Show("Please enter only letters.");
-            }
+
         }
     }
 }

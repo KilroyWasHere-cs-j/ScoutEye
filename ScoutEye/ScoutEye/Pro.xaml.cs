@@ -43,6 +43,8 @@ namespace ScoutEye
             //Set the current match number so the scout can start at anypoint
             matchNumber = 0;
             MatchNumTB.Content = "Match Number: " + 0;
+            BitmapImage image = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "/images/ScoutEyeHorusTransparent-02.png", UriKind.Relative));
+            horus.Source = image;
         }
 
         //<summary>
@@ -122,6 +124,7 @@ namespace ScoutEye
             string[] lines = File.ReadAllLines(Directory.GetCurrentDirectory() + "/logs/MatchDataLog.txt");
             List<string> text = new List<string>(lines.ToList());
             text.Add(matchData);
+            DateTime dateTime = DateTime.UtcNow.Date;
             File.WriteAllLines(Directory.GetCurrentDirectory() + "/logs/MatchDataLog.txt", text);
         }
 

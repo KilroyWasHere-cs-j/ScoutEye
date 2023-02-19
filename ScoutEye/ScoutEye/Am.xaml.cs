@@ -37,6 +37,8 @@ namespace ScoutEye
             ScoutNameLB.Content = "Scout Name: " + name;
             MatchNumTB.Content = "Match Number: " + 0;
             LoadUIFromSettings();
+            BitmapImage image = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "/images/ScoutEyeHorusTransparent-02.png", UriKind.Relative));
+            horus.Source = image;
         }
 
         //<summary>

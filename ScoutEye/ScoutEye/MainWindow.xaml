@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoutEye"
         mc:Ignorable="d"
-        Title="ScoutEye" Height="305" Width="361" Background="Black">
-    <Grid Background="#FFF9F9F9" Margin="0,0,0,3">
+        WindowStyle="None"
+        Title="ScoutEye" Height="395" Width="361" Background="Black">
+    <Grid Background="#212121" Height="395" VerticalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="ScoutOption1" Content="Amateur" HorizontalAlignment="Left" Margin="40,59,0,0" VerticalAlignment="Top" Height="72" Width="117" RenderTransformOrigin="0.478,0.379" Click="ScoutOption1_Click" FontFamily="Courier New">
+        <Button x:Name="ScoutOption1" Content="Amateur" HorizontalAlignment="Left" Margin="40,59,0,0" VerticalAlignment="Top" Height="72" Width="117" RenderTransformOrigin="0.478,0.379" Click="ScoutOption1_Click" FontFamily="Courier New" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -18,12 +19,12 @@
             </Button.Resources>
             <Button.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
-                    <GradientStop Color="Red" Offset="0" />
-                    <GradientStop Color="Red" Offset="1.0" />
+                    <GradientStop Color=" #410da1" Offset="0" />
+                    <GradientStop Color=" #410da1" Offset="1.0" />
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="ScoutOption2" Content="Professional" HorizontalAlignment="Left" Margin="201,58,0,0" VerticalAlignment="Top" Height="72" Width="117" AutomationProperties.IsColumnHeader="True" Click="ScoutOption2_Click" FontFamily="Courier New">
+        <Button x:Name="ScoutOption2" Content="Professional" HorizontalAlignment="Left" Margin="201,58,0,0" VerticalAlignment="Top" Height="72" Width="117" AutomationProperties.IsColumnHeader="True" Click="ScoutOption2_Click" FontFamily="Courier New" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -31,15 +32,15 @@
             </Button.Resources>
             <Button.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
-                    <GradientStop Color="Red" Offset="0" />
-                    <GradientStop Color="Red" Offset="1.0" />
+                    <GradientStop Color=" #410da1" Offset="0" />
+                    <GradientStop Color=" #410da1" Offset="1.0" />
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Label Content="Please Select Scouting Level" HorizontalAlignment="Center" Margin="0,17,0,0" VerticalAlignment="Top" Height="25" Width="210" FontFamily="Courier New"/>
+        <Label Content="Please Select Scouting Level" HorizontalAlignment="Center" Margin="0,17,0,0" VerticalAlignment="Top" Height="25" Width="210" FontFamily="Courier New" Foreground=" #e9e6f0"/>
         <TextBox x:Name="NameTB" HorizontalAlignment="Left" Margin="114,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" TextChanged="NameTB_TextChanged"/>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="71,148,0,0" VerticalAlignment="Top" Width="46" Height="26" FontFamily="Courier New"/>
-        <Button x:Name="contactBTN" Content="Contact Us" HorizontalAlignment="Left" Height="24" Margin="86,192,0,0" VerticalAlignment="Top" Width="72" Click="contactBTN_Click">
+        <Label Content="Name" HorizontalAlignment="Left" Margin="71,148,0,0" VerticalAlignment="Top" Width="46" Height="26" FontFamily="Courier New" Foreground=" #e9e6f0"/>
+        <Button x:Name="contactBTN" Content="Contact Us" HorizontalAlignment="Left" Height="24" Margin="86,192,0,0" VerticalAlignment="Top" Width="72" Click="contactBTN_Click" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="8"></Setter>
@@ -47,12 +48,12 @@
             </Button.Resources>
             <Button.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="Red" Offset="0"/>
-                    <GradientStop Color="Red" Offset="1.0"/>
+                    <GradientStop Color=" #410da1" Offset="0"/>
+                    <GradientStop Color=" #410da1" Offset="1.0"/>
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="helpBTN" Content="Help" HorizontalAlignment="Left" Height="24" Margin="201,191,0,0" VerticalAlignment="Top" Width="51" Click="helpBTN_Click">
+        <Button x:Name="helpBTN" Content="Help" HorizontalAlignment="Left" Height="24" Margin="201,191,0,0" VerticalAlignment="Top" Width="51" Click="helpBTN_Click" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -60,12 +61,12 @@
             </Button.Resources>
             <Button.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="Red" Offset="0"/>
-                    <GradientStop Color="Red" Offset="1.0"/>
+                    <GradientStop Color=" #410da1" Offset="0"/>
+                    <GradientStop Color=" #410da1" Offset="1.0"/>
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="openConfigBTN" Content="Configure ScoutEye" HorizontalAlignment="Center" Height="24" Margin="0,223,0,0" VerticalAlignment="Top" Width="118" Click="configureBTN_Click">
+        <Button x:Name="openConfigBTN" Content="Configure ScoutEye" HorizontalAlignment="Center" Height="24" Margin="0,223,0,0" VerticalAlignment="Top" Width="118" Click="configureBTN_Click" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -73,10 +74,11 @@
             </Button.Resources>
             <Button.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="Red" Offset="0"/>
-                    <GradientStop Color="Red" Offset="1.0"/>
+                    <GradientStop Color=" #410da1" Offset="0"/>
+                    <GradientStop Color=" #410da1" Offset="1.0"/>
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
+        <Image x:Name="horus" HorizontalAlignment="Left" Height="111" Margin="142,259,0,0" VerticalAlignment="Top" Width="80" Source="/images/ScoutEyeHorusTransparent-02.png"/>
     </Grid>
 </Window>

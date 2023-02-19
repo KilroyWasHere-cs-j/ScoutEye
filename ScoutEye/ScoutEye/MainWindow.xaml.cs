@@ -39,7 +39,14 @@ namespace ScoutEye
                 //If the user entered a valid name and match number
                 if (NameTB.Text != string.Empty)
                 {
-                    player.Play();
+                    try
+                    {
+                        player.Play();
+                    }
+                    catch
+                    {
+
+                    }
                     pro = new Pro(NameTB.Text);
                     pro.Show();
                     this.Close();
@@ -67,7 +74,14 @@ namespace ScoutEye
                 if (NameTB.Text != string.Empty)
                 {
                     //Might need different sound
-                    player.Play();
+                    try
+                    {
+                        player.Play();
+                    }
+                    catch
+                    {
+
+                    }
                     am = new Am(NameTB.Text);
                     am.Show();
                     this.Close();

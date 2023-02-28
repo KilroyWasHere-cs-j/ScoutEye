@@ -165,12 +165,6 @@
     <None Include="ScoutEye_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="APIOutputLog.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="MatchDataLog.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Resource Include="ScoutEyeHorus-03.ico" />
   </ItemGroup>
   <ItemGroup>

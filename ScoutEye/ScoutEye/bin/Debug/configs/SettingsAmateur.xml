@@ -1,7 +1,7 @@
 ﻿<settings>
   <AppName>ScoutEye</AppName>
   <AppVersion>v2.5</AppVersion>
-  <DefaultComboValue>Empty</DefaultComboValue>
+  <DefaultComboValue>0</DefaultComboValue>
   <Auto0>Cones</Auto0>
   <Auto0Items>NumFill</Auto0Items>
   <Auto0Hide>false</Auto0Hide>

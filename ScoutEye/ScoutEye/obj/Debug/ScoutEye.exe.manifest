@@ -74,28 +74,10 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Oi9PF5kYI6oYRMDJj37HngEGbldSfWrQGFhc0XHyuzw=</dsig:DigestValue>
+        <dsig:DigestValue>t+7mhOEzITlO8Pjs7PZo4cSKFJWCsq8gl81HXRsd9Hw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="APIOutputLog.txt" size="3">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="MatchDataLog.txt" size="14">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>YitYfvwnqPDM+l2LKGDa9/C86bd858QRtOAJ6vh5b7E=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="ScoutEye.exe.config" size="187">
     <hash>
       <dsig:Transforms>

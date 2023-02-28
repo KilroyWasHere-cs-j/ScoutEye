@@ -176,6 +176,11 @@ namespace ScoutEye
                 XmlNodeList nodeList = xml.DocumentElement.SelectNodes("/settings");
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
+                foreach (XmlNode node in nodeList)
+                {
+                    comboDefault = node.SelectSingleNode("DefaultComboValue").InnerText;
+                }
+
                 //Sets every combo box on the screen to say Empty
                 foreach (UIElement element in Grid.Children)
                 {

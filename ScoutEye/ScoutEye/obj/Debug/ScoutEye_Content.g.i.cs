@@ -9,6 +9,5 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("apioutputlog.txt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("matchdatalog.txt")]
 
 

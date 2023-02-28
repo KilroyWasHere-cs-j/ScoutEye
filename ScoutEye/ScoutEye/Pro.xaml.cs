@@ -24,7 +24,6 @@ namespace ScoutEye
         private XmlDocument xml; 
         private DispatcherTimer dt;
         private Stopwatch stopwatch;
-        private SoundPlayer player;
         private bool stopwatchEnabled = false;
         private int clickCount = 0, matchNumber = 0;
         private string name = "", scoutingLevel = "Pro", comboDefault = "0";
@@ -179,6 +178,11 @@ namespace ScoutEye
                 xml.Load("configs/SettingsProfessional.xml");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 XmlNodeList nodeList = xml.DocumentElement.SelectNodes("/settings");
+
+                foreach(XmlNode node in nodeList)
+                {
+                    comboDefault = node.SelectSingleNode("DefaultComboValue").InnerText;
+                }
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
                 //Sets every combo box on the screen to say Empty
@@ -206,6 +210,8 @@ namespace ScoutEye
                     Teleop1LB.Content = node.SelectSingleNode("Teleop1").InnerText;
                     Teleop2LB.Content = node.SelectSingleNode("Teleop2").InnerText;
                     Teleop3LB.Content = node.SelectSingleNode("Teleop3").InnerText;
+
+
 
                     //Fill all drop down menus and decide if they get shown or stay hidden
                     foreach (string item in node.SelectSingleNode("Auto0Items").InnerText.Split(',').ToList())

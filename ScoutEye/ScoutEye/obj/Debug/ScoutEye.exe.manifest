@@ -43,6 +43,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NLog.dll" size="851968">
+      <assemblyIdentity name="NLog" version="5.0.0.0" publicKeyToken="5120E14C03D0593C" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>SpoclGhgm4oVOHB7xQGpi1s24e/AEFjIyFpOYeXILcE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="QRCoder.dll" size="144384">
       <assemblyIdentity name="QRCoder" version="1.4.3.0" publicKeyToken="C4ED5B9AE8358A28" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -55,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ScoutEye.exe" size="77792">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ScoutEye.exe" size="79840">
       <assemblyIdentity name="ScoutEye" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6lqP1LRaITfAlSAoWL6wQMOiqSJo8J2UJ5y2Ai6lj+o=</dsig:DigestValue>
+        <dsig:DigestValue>Oi9PF5kYI6oYRMDJj37HngEGbldSfWrQGFhc0XHyuzw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

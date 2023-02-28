@@ -29,8 +29,6 @@ C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\obj\Debug\APIInterface.baml
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\bin\Debug\APIOutputLog.txt
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\APIOutputLog.txt
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\MatchDataLog.txt
-C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\SettingsProfessional.xml
-C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\SettingsAmateur.xml
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\ScoutEye.exe.config
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\ScoutEye.exe
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\ScoutEye.pdb
@@ -60,3 +58,5 @@ C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye.exe.ma
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye.application
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\Configurer.g.cs
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\Configurer.baml
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\NLog.dll
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\NLog.xml

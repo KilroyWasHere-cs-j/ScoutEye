@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using System.Xml;
 using QRCoder;
+using NLog;
 
 namespace ScoutEye
 {
@@ -26,7 +27,8 @@ namespace ScoutEye
         private SoundPlayer player;
         private bool stopwatchEnabled = false;
         private int clickCount = 0, matchNumber = 0;
-        private string name = "", scoutingLevel = "Pro", comboDefault = "Null";
+        private string name = "", scoutingLevel = "Pro", comboDefault = "0";
+        private static readonly NLog.Logger _log_ = NLog.LogManager.GetCurrentClassLogger();
 
         public Pro(string scoutname)
         {
@@ -45,7 +47,20 @@ namespace ScoutEye
             MatchNumTB.Content = "Match Number: " + 0;
             BitmapImage image = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "/images/ScoutEyeHorusTransparent-02.png", UriKind.Relative));
             horus.Source = image;
-        }
+            var config = new NLog.Config.LoggingConfiguration();
+
+            // Targets where to log to: File and Console
+            var logfile = new NLog.Targets.FileTarget("logfile") { FileName = "logs/Pro_log.txt" };
+            var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
+
+            // Rules for mapping loggers to targets            
+            config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
+            config.AddRule(LogLevel.Debug, LogLevel.Fatal, logfile);
+
+            // Apply config           
+            NLog.LogManager.Configuration = config;
+            _log_.Debug("Start");
+    }
 
         //<summary>
         //Enter match
@@ -53,18 +68,20 @@ namespace ScoutEye
         private void EnterMatch()
         {
             MessageBoxResult result = MessageBox.Show("Are you sure you want to enter this match? This action cannot be undone.", "Just checking in.", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if (result == MessageBoxResult.Yes && TeamNumberTB.Text != String.Empty && MatchNumberChangerTB.Text != String.Empty)
+            if (result == MessageBoxResult.Yes && TeamNumberTB.Text != String.Empty && MatchNumberChangerTB.Text != String.Empty && AllianceCB.Text != "0")
             {
                 //This should be fixed there has got to be a better way to do this. Let's be real I'm never going to fix it...
-                string compiledDataForLogging = name + "," + scoutingLevel + "," + matchNumber.ToString() + "," + TeamNumberTB.Text.ToString() + "," + Auto0.Text + "," + Auto1.Text + "," + Auto2.Text + "," + Auto3.Text + "," + Teleop0.Text + "," + Teleop1.Text + "," + Teleop2.Text + "," + Teleop3.Text + "," + RobotDiedCB.IsChecked.ToString() + "," + FieldFaultCB.IsChecked.ToString() + "," + stopwatch.Elapsed.ToString() + "," + clickCount.ToString();
-                string compiledData = name + "\t" + scoutingLevel + "\t" + matchNumber.ToString() + "\t" + TeamNumberTB.Text.ToString() + "\t" + Auto0.Text + "\t" + Auto1.Text + "\t" + Auto2.Text + "\t" + Auto3.Text + "\t" + Teleop0.Text + "\t" + Teleop1.Text + "\t" + Teleop2.Text + "\t" + Teleop3.Text + "\t" + RobotDiedCB.IsChecked.ToString() + "\t" + FieldFaultCB.IsChecked.ToString() + "\t" + stopwatch.Elapsed.ToString() + "\t" + clickCount.ToString();
+                string compiledDataForLogging = name + "~" + scoutingLevel + "~" + matchNumber.ToString() + "~" + AllianceCB.Text + "~" + TeamNumberTB.Text.ToString() + "~" + Auto0.Text + "~" + Auto1.Text + "~" + Auto2.Text + "~" + Auto3.Text + "~" + Teleop0.Text + "~" + Teleop1.Text + "~" + Teleop2.Text + "~" + Teleop3.Text + "~" + RobotDiedCB.IsChecked.ToString() + "~" + FieldFaultCB.IsChecked.ToString() + "~" + stopwatch.Elapsed.ToString() + "~" + clickCount.ToString();
+                string compiledData = name + "\t" + scoutingLevel + "\t" + matchNumber.ToString() + "\t" + AllianceCB.Text + "\t" + TeamNumberTB.Text.ToString() + "\t" + Auto0.Text + "\t" + Auto1.Text + "\t" + Auto2.Text + "\t" + Auto3.Text + "\t" + Teleop0.Text + "\t" + Teleop1.Text + "\t" + Teleop2.Text + "\t" + Teleop3.Text + "\t" + RobotDiedCB.IsChecked.ToString() + "\t" + FieldFaultCB.IsChecked.ToString() + "\t" + stopwatch.Elapsed.ToString() + "\t" + clickCount.ToString();
                 QRCodeDisplayPB.Source = BitmapToImageSource(GenerateQRCode(compiledData));
                 LogMatchData(compiledDataForLogging);
                 NextMatch();
+                _log_.Debug("Match entered");
             }
             else
             {
                 MessageBox.Show("When entering data it helps to completely fill out the form. Try again.", "Missing fields", MessageBoxButton.OK, MessageBoxImage.Hand);
+                _log_.Error("Missing fields -> enter match");
             }
         }
 
@@ -77,6 +94,7 @@ namespace ScoutEye
             MatchNumberChangerTB.Text = matchNumber.ToString();
             MatchNumTB.Content = "Match number: " + matchNumber.ToString();
             ResetMatch();
+            _log_.Debug("NextMatch");
         }
 
         //<summary>
@@ -102,6 +120,7 @@ namespace ScoutEye
                     cb.IsChecked = false;
                 }
             }
+            _log_.Debug("Match Reset");
         }
 
         //<summary>
@@ -113,6 +132,7 @@ namespace ScoutEye
             QRCodeData qrCodeData = qrGenerator.CreateQrCode(data, QRCodeGenerator.ECCLevel.Q);
             QRCode qrCode = new QRCode(qrCodeData);
             Bitmap qrCodeImage = qrCode.GetGraphic(20);
+            _log_.Debug("QR Code made");
             return qrCodeImage;
         }
 
@@ -126,6 +146,7 @@ namespace ScoutEye
             text.Add(matchData);
             DateTime dateTime = DateTime.UtcNow.Date;
             File.WriteAllLines(Directory.GetCurrentDirectory() + "/logs/MatchDataLog.txt", text);
+            _log_.Debug("Match data logged");
         }
 
         //<summary>
@@ -155,7 +176,7 @@ namespace ScoutEye
             try
             {
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
-                xml.Load("SettingsProfessional.xml");
+                xml.Load("configs/SettingsProfessional.xml");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 XmlNodeList nodeList = xml.DocumentElement.SelectNodes("/settings");
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
@@ -170,6 +191,9 @@ namespace ScoutEye
                         cb.SelectedIndex = 0;
                     }
                 }
+
+                AllianceCB.Items.Add("Red");
+                AllianceCB.Items.Add("Blue");
 
                 foreach (XmlNode node in nodeList)
                 {
@@ -370,14 +394,14 @@ namespace ScoutEye
                     }
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
                 }
+                _log_.Info("UI Loaded");
             }
             catch (Exception ex)
             {
                 // logger.Log("Could not load settings. " + ex.Message);
-                player = new SoundPlayer(Directory.GetCurrentDirectory() + "/wavs/xfiles.wav");
-                player.Play();
-                player.Dispose();
-                MessageBox.Show("Could not load settings. Failed with exception. " + ex.Message, "Fatal error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Granny Smith", "Fatal error", MessageBoxButton.OK, MessageBoxImage.Error);
+                _log_.Fatal("Granny Smith");
+                _log_.Fatal(ex);
                 Environment.Exit(0);
             }
         }

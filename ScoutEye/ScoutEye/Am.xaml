@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Am" Height="477" Width="794">
     <Grid x:Name="Grid" Margin="0,0,0,-6" Background="#212121">
-        <Rectangle HorizontalAlignment="Left" Height="161" Margin="13,80,0,0" Stroke="#410da1" VerticalAlignment="Top" Width="744" StrokeThickness="4"/>
+        <Rectangle HorizontalAlignment="Left" Height="170" Margin="13,80,0,0" Stroke="#410da1" VerticalAlignment="Top" Width="744" StrokeThickness="4"/>
         <Rectangle HorizontalAlignment="Left" Height="63" Margin="416,2,0,0" Stroke="#410da1" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10" StrokeThickness="4"/>
         <Rectangle HorizontalAlignment="Left" Height="63" Margin="208,2,0,0" Stroke="#410da1" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10" StrokeThickness="4"/>
         <Rectangle HorizontalAlignment="Left" Height="63" Margin="10,2,0,0" Stroke="#410da1" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10" StrokeThickness="4"/>
@@ -136,5 +136,7 @@
             </Button.BorderBrush>
         </Button>
         <Image x:Name="horus" HorizontalAlignment="Left" Height="183" Margin="608,257,0,0" VerticalAlignment="Top" Width="165" Source="/images/ScoutEyeHorusTransparent-02.png"/>
+        <Label Content="Alliance" HorizontalAlignment="Left" Margin="16,192,0,0" VerticalAlignment="Top" Foreground=" #e9e6f0"/>
+        <ComboBox x:Name="AllianceCB" HorizontalAlignment="Left" Margin="16,216,0,0" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

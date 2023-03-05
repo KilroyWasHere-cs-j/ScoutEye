@@ -61,7 +61,7 @@ namespace ScoutEye {
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
         public static void Main() {
-            SplashScreen splashScreen = new SplashScreen("scoutingicon%20(1).png");
+            SplashScreen splashScreen = new SplashScreen("scouteye%20logo%20dark.png");
             splashScreen.Show(true);
             ScoutEye.App app = new ScoutEye.App();
             app.InitializeComponent();

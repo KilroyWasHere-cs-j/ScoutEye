@@ -2,6 +2,7 @@
 using System.IO;
 using System.Media;
 using System.Windows;
+using IWshRuntimeLibrary;
 
 namespace ScoutEye
 {
@@ -79,6 +80,18 @@ namespace ScoutEye
         private void NameTB_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
 
+        }
+
+        private void createShortcutBTN_Click(object sender, RoutedEventArgs e)
+        {
+            object shDesktop = (object)"Desktop";
+            WshShell shell = new WshShell();
+            string shortcutAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + @"\ScoutEye.lnk";
+            IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutAddress);
+            shortcut.Description = "ScoutEye link";
+            shortcut.Hotkey = "Ctrl+Shift+S";
+            shortcut.TargetPath = Directory.GetCurrentDirectory() + @"\ScoutEye.exe";
+            shortcut.Save();
         }
     }
 }

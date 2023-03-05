@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("changelog.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("scouteye%20logo%20dark.png")]
 
 

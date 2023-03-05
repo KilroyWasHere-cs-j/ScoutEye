@@ -65,5 +65,18 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
+        <Button x:Name="createShortcutBTN" Content="Create Shortcut" HorizontalAlignment="Left" Height="24" Margin="130,258,0,0" VerticalAlignment="Top" Width="96" Click="createShortcutBTN_Click" BorderThickness="3">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="8"/>
+                </Style>
+            </Button.Resources>
+            <Button.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color=" #410da1" Offset="0"/>
+                    <GradientStop Color=" #410da1" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
     </Grid>
 </Window>

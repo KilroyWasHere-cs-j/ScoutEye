@@ -60,3 +60,4 @@
 2023-03-05 13:44:04.4995|DEBUG|ScoutEye.Pro|Match Reset
 2023-03-05 13:44:04.4995|DEBUG|ScoutEye.Pro|NextMatch
 2023-03-05 13:44:04.4995|DEBUG|ScoutEye.Pro|Match entered
+2023-03-05 13:55:43.6112|DEBUG|ScoutEye.Pro|Start

@@ -20,7 +20,7 @@ namespace ScoutEye
         public MainWindow()
         {
             InitializeComponent();
-            player = new SoundPlayer(Directory.GetCurrentDirectory() + "/wavs/taco.wav");
+            player = new SoundPlayer(Directory.GetCurrentDirectory() + "wavs/taco.wav");
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             userName = Environment.UserName;
             NameTB.Text = userName;
@@ -36,14 +36,6 @@ namespace ScoutEye
                 //If the user entered a valid name and match number
                 if (NameTB.Text != string.Empty)
                 {
-                    try
-                    {
-                        player.Play();
-                    }
-                    catch
-                    {
-
-                    }
                     pro = new Pro(NameTB.Text);
                     pro.Show();
                     this.Close();

@@ -89,7 +89,7 @@ namespace ScoutEye
             string shortcutAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + @"\ScoutEye.lnk";
             IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutAddress);
             shortcut.Description = "ScoutEye link";
-            shortcut.Hotkey = "Ctrl+Shift+S";
+            shortcut.Hotkey = "Ctrl+Shift+Q";
             shortcut.TargetPath = Directory.GetCurrentDirectory() + @"\ScoutEye.exe";
             shortcut.Save();
         }

@@ -44,8 +44,6 @@ namespace ScoutEye
             //Set the current match number so the scout can start at anypoint
             matchNumber = 0;
             MatchNumTB.Content = "Match Number: " + 0;
-            BitmapImage image = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "/images/ScoutEyeHorusTransparent-02.png", UriKind.Relative));
-            horus.Source = image;
             var config = new NLog.Config.LoggingConfiguration();
 
             // Targets where to log to: File and Console
@@ -183,6 +181,7 @@ namespace ScoutEye
                 foreach(XmlNode node in nodeList)
                 {
                     comboDefault = node.SelectSingleNode("DefaultComboValue").InnerText;
+                    ClickCounterCountLB.Content = node.SelectSingleNode("ClickCounterLabel").InnerText;
                 }
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
@@ -406,7 +405,7 @@ namespace ScoutEye
             catch (Exception ex)
             {
                 // logger.Log("Could not load settings. " + ex.Message);
-                MessageBox.Show("Granny Smith", "Fatal error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Granny Smith {ex.ToString()}", "Fatal error", MessageBoxButton.OK, MessageBoxImage.Error);
                 _log_.Fatal("Granny Smith");
                 _log_.Fatal(ex);
                 Environment.Exit(0);
@@ -417,13 +416,13 @@ namespace ScoutEye
         public void increaseClickCounter()
         {
             clickCount++;
-            ClickCounterCountLB.Content = "Click count " + clickCount.ToString();
+            ClickCounterCountCountLB.Content = clickCount.ToString();
         }
 
         public void decreaseClickCounter()
         {
             clickCount--;
-            ClickCounterCountLB.Content = "Click count " + clickCount.ToString();
+            ClickCounterCountCountLB.Content = clickCount.ToString();
         }
         #endregion
 

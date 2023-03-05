@@ -182,5 +182,8 @@
   <ItemGroup>
     <Folder Include="images\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CHANGELOG.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

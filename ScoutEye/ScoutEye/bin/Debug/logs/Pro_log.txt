@@ -28,3 +28,35 @@
 2023-02-28 15:52:53.0765|DEBUG|ScoutEye.Pro|Match Reset
 2023-02-28 15:52:53.0765|DEBUG|ScoutEye.Pro|NextMatch
 2023-02-28 15:52:53.0765|DEBUG|ScoutEye.Pro|Match entered
+2023-02-28 19:21:09.3386|DEBUG|ScoutEye.Pro|Start
+2023-02-28 19:21:36.1273|DEBUG|ScoutEye.Pro|QR Code made
+2023-02-28 19:21:36.1823|DEBUG|ScoutEye.Pro|Match data logged
+2023-02-28 19:21:36.1873|DEBUG|ScoutEye.Pro|Match Reset
+2023-02-28 19:21:36.1873|DEBUG|ScoutEye.Pro|NextMatch
+2023-02-28 19:21:36.1873|DEBUG|ScoutEye.Pro|Match entered
+2023-03-05 13:41:40.2764|DEBUG|ScoutEye.Pro|Start
+2023-03-05 13:41:49.4587|ERROR|ScoutEye.Pro|Missing fields -> enter match
+2023-03-05 13:41:54.0241|DEBUG|ScoutEye.Pro|QR Code made
+2023-03-05 13:41:54.0711|DEBUG|ScoutEye.Pro|Match data logged
+2023-03-05 13:41:54.0931|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-05 13:41:54.0931|DEBUG|ScoutEye.Pro|NextMatch
+2023-03-05 13:41:54.0931|DEBUG|ScoutEye.Pro|Match entered
+2023-03-05 13:42:00.4852|DEBUG|ScoutEye.Pro|Start
+2023-03-05 13:42:14.4355|ERROR|ScoutEye.Pro|Missing fields -> enter match
+2023-03-05 13:42:17.5284|DEBUG|ScoutEye.Pro|QR Code made
+2023-03-05 13:42:17.5634|DEBUG|ScoutEye.Pro|Match data logged
+2023-03-05 13:42:17.5784|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-05 13:42:17.5784|DEBUG|ScoutEye.Pro|NextMatch
+2023-03-05 13:42:17.5784|DEBUG|ScoutEye.Pro|Match entered
+2023-03-05 13:43:44.8635|DEBUG|ScoutEye.Pro|Start
+2023-03-05 13:43:53.2206|ERROR|ScoutEye.Pro|Missing fields -> enter match
+2023-03-05 13:43:56.9894|DEBUG|ScoutEye.Pro|QR Code made
+2023-03-05 13:43:57.0295|DEBUG|ScoutEye.Pro|Match data logged
+2023-03-05 13:43:57.0475|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-05 13:43:57.0475|DEBUG|ScoutEye.Pro|NextMatch
+2023-03-05 13:43:57.0475|DEBUG|ScoutEye.Pro|Match entered
+2023-03-05 13:44:04.4835|DEBUG|ScoutEye.Pro|QR Code made
+2023-03-05 13:44:04.4995|DEBUG|ScoutEye.Pro|Match data logged
+2023-03-05 13:44:04.4995|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-05 13:44:04.4995|DEBUG|ScoutEye.Pro|NextMatch
+2023-03-05 13:44:04.4995|DEBUG|ScoutEye.Pro|Match entered

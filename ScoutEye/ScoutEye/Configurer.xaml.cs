@@ -80,6 +80,9 @@ namespace ScoutEye
                     {
                         VersionTB.Content = node.SelectSingleNode("AppVersion").InnerText;
                         versionNumb = node.SelectSingleNode("AppVersion").InnerText;
+                        DefaultValueLB.Text = node.SelectSingleNode("DefaultComboValue").InnerText;
+                        DefaultClickCountLB.Text = node.SelectSingleNode("ClickCounterLabel").InnerText;
+
                         A0labelTB.Text = node.SelectSingleNode("Auto0").InnerText;
                         A0contentsTB.Text = node.SelectSingleNode("Auto0Items").InnerText;
                         A0VisableCB.IsChecked = isTrue(node.SelectSingleNode("Auto0Hide").InnerText);
@@ -114,9 +117,9 @@ namespace ScoutEye
                         T3VisableCB.IsChecked = isTrue(node.SelectSingleNode("Teleop3Hide").InnerText);
                     }
                 }
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show($"{filePath} could not be opened", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"Courtland {ex.ToString()}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             catch (Exception w)
@@ -142,7 +145,11 @@ namespace ScoutEye
             rootNode.AppendChild(node);
 
             node = xmlDoc.CreateElement("DefaultComboValue");
-            node.InnerText = defaultComboValue;
+            node.InnerText = DefaultValueLB.Text;
+            rootNode.AppendChild(node);
+
+            node = xmlDoc.CreateElement("ClickCounterLabel");
+            node.InnerText = DefaultClickCountLB.Text;
             rootNode.AppendChild(node);
 
             foreach (var head in headers)

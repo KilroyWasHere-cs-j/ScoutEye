@@ -76,5 +76,7 @@
         <CheckBox x:Name="T1VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="191,352,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
         <CheckBox x:Name="T2VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="332,352,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
         <CheckBox x:Name="T3VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="466,352,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
+        <TextBox x:Name="DefaultValueLB" HorizontalAlignment="Left" Height="25" Margin="643,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="DefaultClickCountLB" HorizontalAlignment="Left" Height="26" Margin="643,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
     </Grid>
 </Window>

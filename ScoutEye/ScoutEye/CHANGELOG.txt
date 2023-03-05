@@ -1,2 +1,3 @@
 ﻿Match number auto increment is now based off of the number the user enters into the text box
 Amateur depercated
+Granny Smith error now show full error message

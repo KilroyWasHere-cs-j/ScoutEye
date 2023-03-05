@@ -1,9 +1,0 @@
-gmtow~Am~0~Red~172~1~2~true~0~5~6~ false~0~False~False~00:00:00~0
-gmtow~Pro~0~Blue~5687~6~3~true~ High~19~19~true~ High~False~False~00:00:00~0
-gmtow~Pro~0~Red~172~5~1~ false~ Mid~6~5~true~ High~False~False~00:00:00~0
-gmtow~Pro~0~Red~12~0~0~0~0~0~0~0~0~False~False~00:00:00~0
-gmtow~Pro~0~Red~12~0~0~0~0~0~0~0~0~False~False~00:00:00~0
-gmtow~Pro~0~Red~2~0~0~0~0~0~0~0~0~False~False~00:00:00~0
-gmtow~Pro~3~Red~576~0~0~0~0~0~0~0~0~False~False~00:00:00~0
-gmtow~Win~0~Red~12~0~0~0~0~0~0~0~0~False~False~00:00:00~0
-gmtow~Win~5~Red~23~0~0~0~0~0~0~0~0~False~False~00:00:00~0

@@ -5,3 +5,5 @@ gmtow~Pro~0~Red~12~0~0~0~0~0~0~0~0~False~False~00:00:00~0
 gmtow~Pro~0~Red~12~0~0~0~0~0~0~0~0~False~False~00:00:00~0
 gmtow~Pro~0~Red~2~0~0~0~0~0~0~0~0~False~False~00:00:00~0
 gmtow~Pro~3~Red~576~0~0~0~0~0~0~0~0~False~False~00:00:00~0
+gmtow~Win~0~Red~12~0~0~0~0~0~0~0~0~False~False~00:00:00~0
+gmtow~Win~5~Red~23~0~0~0~0~0~0~0~0~False~False~00:00:00~0

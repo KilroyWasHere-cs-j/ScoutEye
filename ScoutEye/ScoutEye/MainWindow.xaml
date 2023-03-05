@@ -11,20 +11,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="ScoutOption1" Content="Amateur" HorizontalAlignment="Left" Margin="40,59,0,0" VerticalAlignment="Top" Height="72" Width="117" RenderTransformOrigin="0.478,0.379" Click="ScoutOption1_Click" FontFamily="Courier New" BorderThickness="3">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="10"/>
-                </Style>
-            </Button.Resources>
-            <Button.BorderBrush>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
-                    <GradientStop Color=" #410da1" Offset="0" />
-                    <GradientStop Color=" #410da1" Offset="1.0" />
-                </LinearGradientBrush>
-            </Button.BorderBrush>
-        </Button>
-        <Button x:Name="ScoutOption2" Content="Professional" HorizontalAlignment="Left" Margin="201,58,0,0" VerticalAlignment="Top" Height="72" Width="117" AutomationProperties.IsColumnHeader="True" Click="ScoutOption2_Click" FontFamily="Courier New" BorderThickness="3">
+        <Button x:Name="ScoutOption2" Content="Scout" HorizontalAlignment="Left" Margin="116,61,0,0" VerticalAlignment="Top" Height="72" Width="116" AutomationProperties.IsColumnHeader="True" Click="ScoutOption2_Click" FontFamily="Courier New" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>

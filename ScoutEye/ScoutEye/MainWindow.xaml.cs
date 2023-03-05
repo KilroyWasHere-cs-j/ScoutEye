@@ -12,7 +12,6 @@ namespace ScoutEye
     public partial class MainWindow : Window
     {
         Pro pro;
-        Am am;
         Configurer configer;
 
         private SoundPlayer player;
@@ -25,8 +24,6 @@ namespace ScoutEye
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             userName = Environment.UserName;
             NameTB.Text = userName;
-            BitmapImage image = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "/images/ScoutEyeHorusTransparent-02.png", UriKind.Relative));
-            horus.Source = image;
         }
 
         //<summary>
@@ -54,40 +51,6 @@ namespace ScoutEye
                 else
                 {
                     //Something was missing
-                    MessageBox.Show("Name field found to be missing of invalid.", "Missing fields", MessageBoxButton.OK, MessageBoxImage.Hand);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        //<summary>
-        //The user has picked the amateur level of scouting
-        //<summary>
-        private void ScoutOption1_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                //Open the amateur window and closes the current window
-                if (NameTB.Text != string.Empty)
-                {
-                    //Might need different sound
-                    try
-                    {
-                        player.Play();
-                    }
-                    catch
-                    {
-
-                    }
-                    am = new Am(NameTB.Text);
-                    am.Show();
-                    this.Close();
-                }
-                else
-                {
                     MessageBox.Show("Name field found to be missing of invalid.", "Missing fields", MessageBoxButton.OK, MessageBoxImage.Hand);
                 }
             }

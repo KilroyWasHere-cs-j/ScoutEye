@@ -61,3 +61,15 @@
 2023-03-05 13:44:04.4995|DEBUG|ScoutEye.Pro|NextMatch
 2023-03-05 13:44:04.4995|DEBUG|ScoutEye.Pro|Match entered
 2023-03-05 13:55:43.6112|DEBUG|ScoutEye.Pro|Start
+2023-03-05 14:06:45.1189|DEBUG|ScoutEye.Pro|Start
+2023-03-05 14:07:01.9881|DEBUG|ScoutEye.Pro|QR Code made
+2023-03-05 14:07:02.0241|DEBUG|ScoutEye.Pro|Match data logged
+2023-03-05 14:07:02.0471|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-05 14:07:02.0471|DEBUG|ScoutEye.Pro|NextMatch
+2023-03-05 14:07:02.0471|DEBUG|ScoutEye.Pro|Match entered
+2023-03-05 14:07:17.2122|ERROR|ScoutEye.Pro|Missing fields -> enter match
+2023-03-05 14:07:22.0252|DEBUG|ScoutEye.Pro|QR Code made
+2023-03-05 14:07:22.0383|DEBUG|ScoutEye.Pro|Match data logged
+2023-03-05 14:07:22.0383|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-05 14:07:22.0383|DEBUG|ScoutEye.Pro|NextMatch
+2023-03-05 14:07:22.0383|DEBUG|ScoutEye.Pro|Match entered

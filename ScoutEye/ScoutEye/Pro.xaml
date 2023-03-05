@@ -149,7 +149,6 @@
         <Label x:Name="MatchNumberChangerLB" Content="Match Number" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Height="26" Width="90" Foreground="#e9e6f0"/>
         <TextBox x:Name="MatchNumberChangerTB" HorizontalAlignment="Left" Margin="15,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" TextChanged="MatchNumberChangerTB_TextChanged"/>
         <Rectangle HorizontalAlignment="Left" Height="146" Margin="10,256,0,0" Stroke="#410da1" VerticalAlignment="Top" Width="233" StrokeThickness="3"/>
-        <Image x:Name="horus" HorizontalAlignment="Left" Height="146" Margin="576,249,0,0" VerticalAlignment="Top" Width="118" Source="/images/ScoutEyeHorusTransparent-02.png"/>
         <Label x:Name="AllianceLB" Content="Alliance" HorizontalAlignment="Left" Margin="13,176,0,0" VerticalAlignment="Top" Height="26" Width="90" Foreground="#e9e6f0"/>
         <ComboBox x:Name="AllianceCB" HorizontalAlignment="Left" Margin="15,207,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
     </Grid>

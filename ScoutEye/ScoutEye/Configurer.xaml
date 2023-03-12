@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoutEye"
         mc:Ignorable="d"
-        Title="Configurer" Height="450" Width="800">
+        Title="Configurer" Height="450" Width="877">
     <Grid x:Name="Grid" Background="#212121">
         <!--Needed a name to iterate through it-->
         <Grid.RowDefinitions>
@@ -29,7 +29,7 @@
         <TextBox x:Name="A0contentsTB" HorizontalAlignment="Left" Height="25" Margin="44,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
         <TextBox x:Name="A1labelTB" HorizontalAlignment="Left" Height="25" Margin="191,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
         <TextBox x:Name="A1contentsTB" HorizontalAlignment="Left" Height="25" Margin="191,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <Label x:Name="VersionTB" Content="v.0.0" HorizontalAlignment="Left" Height="27" Margin="631,53,0,0" VerticalAlignment="Top" Width="159" Foreground="#e9e6f0"/>
+        <Label x:Name="VersionTB" Content="v.0.0" HorizontalAlignment="Left" Height="27" Margin="45,385,0,0" VerticalAlignment="Top" Width="159" Foreground="#e9e6f0"/>
         <TextBox x:Name="A2labelTB" HorizontalAlignment="Left" Height="25" Margin="332,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
         <TextBox x:Name="A2contentsTB" HorizontalAlignment="Left" Height="25" Margin="332,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
         <TextBox x:Name="A3labelTB" HorizontalAlignment="Left" Height="25" Margin="466,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
@@ -76,7 +76,19 @@
         <CheckBox x:Name="T1VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="191,352,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
         <CheckBox x:Name="T2VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="332,352,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
         <CheckBox x:Name="T3VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="466,352,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
-        <TextBox x:Name="DefaultValueLB" HorizontalAlignment="Left" Height="25" Margin="643,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="DefaultClickCountLB" HorizontalAlignment="Left" Height="26" Margin="643,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="DefaultValueLB" ToolTip="Default value for dropdowns" HorizontalAlignment="Left" Height="25" Margin="643,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="DefaultClickCountLB" ToolTip="Label for click count" HorizontalAlignment="Left" Height="26" Margin="643,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="A4labelTB" HorizontalAlignment="Left" Height="25" Margin="595,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="A4contentsTB" HorizontalAlignment="Left" Height="25" Margin="595,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <CheckBox x:Name="A4VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="595,230,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
+        <TextBox x:Name="T4labelTB" HorizontalAlignment="Left" Height="25" Margin="595,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="T4contentsTB" HorizontalAlignment="Left" Height="25" Margin="595,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <CheckBox x:Name="T4VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="595,352,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
+        <TextBox x:Name="A5labelTB" HorizontalAlignment="Left" Height="25" Margin="722,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="A5contentsTB" HorizontalAlignment="Left" Height="25" Margin="722,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <CheckBox x:Name="A5VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="722,229,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
+        <TextBox x:Name="T5labelTB" HorizontalAlignment="Left" Height="25" Margin="722,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="T5contentsTB" HorizontalAlignment="Left" Height="25" Margin="722,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <CheckBox x:Name="T5VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="722,352,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
     </Grid>
 </Window>

@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ScoutEye.exe" size="190432">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ScoutEye.exe" size="194528">
       <assemblyIdentity name="ScoutEye" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6uQIkryS07O4lLbaobg6CWvwjsUB1q+id51SyIsPTKQ=</dsig:DigestValue>
+        <dsig:DigestValue>tYY7aRlWjU16B7/DV46hOwhha9WMU52+0wJR8Oekfh4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -96,13 +96,13 @@
       <dsig:DigestValue>mAe6EIbKfVcR7uHdUDac2RbuXeB2yXE4HVf1yvkzmtc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SettingsProfessional.xml" size="1432" writeableType="applicationData">
+  <file name="SettingsProfessional.xml" size="1430" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>/bgDRK7tMfFpDLxLbcUxYEAfk7hB7KvDwBXyBxcktZM=</dsig:DigestValue>
+      <dsig:DigestValue>aUrIEf+mlSBo+JkBvL6/pUQqiraZ36D2deqc5E7QL74=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

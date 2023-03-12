@@ -68,8 +68,8 @@ namespace ScoutEye
             if (result == MessageBoxResult.Yes && TeamNumberTB.Text != String.Empty && MatchNumberChangerTB.Text != String.Empty && AllianceCB.Text != "0")
             {
                 //This should be fixed there has got to be a better way to do this. Let's be real I'm never going to fix it...
-                string compiledDataForLogging = name + "~" + scoutingLevel + "~" + matchNumber.ToString() + "~" + AllianceCB.Text + "~" + TeamNumberTB.Text.ToString() + "~" + Auto0.Text + "~" + Auto1.Text + "~" + Auto2.Text + "~" + Auto3.Text + "~" + Teleop0.Text + "~" + Teleop1.Text + "~" + Teleop2.Text + "~" + Teleop3.Text + "~" + RobotDiedCB.IsChecked.ToString() + "~" + FieldFaultCB.IsChecked.ToString() + "~" + stopwatch.Elapsed.ToString() + "~" + clickCount.ToString();
-                string compiledData = name + "\t" + scoutingLevel + "\t" + matchNumber.ToString() + "\t" + AllianceCB.Text + "\t" + TeamNumberTB.Text.ToString() + "\t" + Auto0.Text + "\t" + Auto1.Text + "\t" + Auto2.Text + "\t" + Auto3.Text + "\t" + Teleop0.Text + "\t" + Teleop1.Text + "\t" + Teleop2.Text + "\t" + Teleop3.Text + "\t" + RobotDiedCB.IsChecked.ToString() + "\t" + FieldFaultCB.IsChecked.ToString() + "\t" + stopwatch.Elapsed.ToString() + "\t" + clickCount.ToString();
+                string compiledDataForLogging = name + "~" + scoutingLevel + "~" + matchNumber.ToString() + "~" + AllianceCB.Text + "~" + TeamNumberTB.Text.ToString() + "~" + Auto0.Text + "~" + Auto1.Text + "~" + Auto2.Text + "~" + Auto3.Text + "~" + Auto4.Text + "~" + Auto5.Text + "~" + Teleop0.Text + "~" + Teleop1.Text + "~" + Teleop2.Text + "~" + Teleop3.Text + "~" + Teleop4.Text + "~" + Teleop5.Text + "~" + RobotDiedCB.IsChecked.ToString() + "~" + FieldFaultCB.IsChecked.ToString() + "~" + stopwatch.Elapsed.ToString() + "~" + clickCount.ToString() + "~" + SpeedCB.Text + "~" + GiveDefenseCB.Text + "~" + TakeDefenseCB.Text;
+                string compiledData = name + "\t" + scoutingLevel + "\t" + matchNumber.ToString() + "\t" + AllianceCB.Text + "\t" + TeamNumberTB.Text.ToString() + "\t" + Auto0.Text + "\t" + Auto1.Text + "\t" + Auto2.Text + "\t" + Auto3.Text + "\t" + Auto4.Text + "\t" + Auto5.Text + "\t" + Teleop0.Text + "\t" + Teleop1.Text + "\t" + Teleop2.Text + "\t" + Teleop3.Text + "\t" + Teleop4.Text + "\t" + Teleop5.Text + "\t" + RobotDiedCB.IsChecked.ToString() + "\t" + FieldFaultCB.IsChecked.ToString() + "\t" + stopwatch.Elapsed.ToString() + "\t" + clickCount.ToString() + "\t" + SpeedCB.Text + "\t" + GiveDefenseCB.Text + "\t" + TakeDefenseCB.Text;
                 QRCodeDisplayPB.Source = BitmapToImageSource(GenerateQRCode(compiledData));
                 LogMatchData(compiledDataForLogging);
                 NextMatch();
@@ -221,10 +221,14 @@ namespace ScoutEye
                     Auto1LB.Content = node.SelectSingleNode("Auto1").InnerText;
                     Auto2LB.Content = node.SelectSingleNode("Auto2").InnerText;
                     Auto3LB.Content = node.SelectSingleNode("Auto3").InnerText;
+                    Auto4LB.Content = node.SelectSingleNode("Auto4").InnerText;
+                    Auto5LB.Content = node.SelectSingleNode("Auto5").InnerText;
                     Teleop0LB.Content = node.SelectSingleNode("Teleop0").InnerText;
                     Teleop1LB.Content = node.SelectSingleNode("Teleop1").InnerText;
                     Teleop2LB.Content = node.SelectSingleNode("Teleop2").InnerText;
                     Teleop3LB.Content = node.SelectSingleNode("Teleop3").InnerText;
+                    Teleop4LB.Content = node.SelectSingleNode("Teleop4").InnerText;
+                    Teleop5LB.Content = node.SelectSingleNode("Teleop5").InnerText;
 
 
 

@@ -42,7 +42,7 @@
 	
 	<Teleop3>Placment</Teleop3>
 	<Teleop3Items>Low, Mid, High</Teleop3Items>
-	<Teleop3Hide>false</Teleop3Hide>
+	<Teleop3Hide>true</Teleop3Hide>
 
 	<Teleop4>Intake Location</Teleop4>
 	<Teleop4Items>Ground, Human</Teleop4Items>
@@ -50,5 +50,5 @@
 
 	<Teleop5>Hold</Teleop5>
 	<Teleop5Items>Low, Mid, High</Teleop5Items>
-	<Teleop5Hide>false</Teleop5Hide>
+	<Teleop5Hide>true</Teleop5Hide>
 </settings>

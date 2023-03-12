@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoutEye"
         mc:Ignorable="d"
-        Title="ScoutEye" Height="395" Width="361" Background="Black">
-    <Grid Background="#212121" Height="395" VerticalAlignment="Center">
+        Title="ScoutEye" Height="395" Width="361" Background="Black"
+        ResizeMode="CanMinimize">
+    <Grid Background="#212121" Height="395" Width="361" VerticalAlignment="Center" MaxHeight="395" MaxWidth="361">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>

@@ -57,3 +57,9 @@ C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\Configurer.g.cs
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\Configurer.baml
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\NLog.dll
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\NLog.xml
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\SettingsProfessional.xml
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\ScoutEye.exe.CodeAnalysisLog.xml
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\ScoutEye.exe.lastcodeanalysissucceeded
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\Interop.IWshRuntimeLibrary.dll
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye.csproj.ResolveComReference.cache
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye_Content.g.cs

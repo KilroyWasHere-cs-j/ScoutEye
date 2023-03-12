@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoutEye"
         mc:Ignorable="d"
-        Title="Pro" Height="441" Width="712" KeyDown="Pro_Keypressed">
-    <Grid x:Name="Grid" Height="427" VerticalAlignment="Top" Background="#212121" HorizontalAlignment="Center" Width="712">
+        Title="Pro" Height="507" Width="831" KeyDown="Pro_Keypressed"
+        ResizeMode="CanMinimize">
+    <Grid x:Name="Grid" Height="495" MaxHeight="495" VerticalAlignment="Top" Background="#212121" HorizontalAlignment="Center" Width="832" MaxWidth="832">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -16,8 +17,8 @@
         <Rectangle HorizontalAlignment="Left" Height="63" Margin="401,2,0,0" Stroke="#410da1" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10" StrokeThickness="3"/>
         <Rectangle HorizontalAlignment="Left" Height="63" Margin="206,2,0,0" Stroke="#410da1" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10" StrokeThickness="3"/>
         <Rectangle HorizontalAlignment="Left" Height="63" Margin="10,2,0,0" Stroke="#410da1" VerticalAlignment="Top" Width="191" RadiusY="10" RadiusX="10" StrokeThickness="3"/>
-        <Rectangle HorizontalAlignment="Left" Height="163" Margin="10,81,0,0" Stroke="#410da1" VerticalAlignment="Top" Width="666" StrokeThickness="3"/>
-        <Button x:Name="EnterBTN" Content="Enter Match" HorizontalAlignment="Left" Margin="248,249,0,0" VerticalAlignment="Top" Height="68" Width="127" Click="EnterBTN_Click" ToolTip="Submit the match data and generate a QR code" ClipToBounds="True" BorderThickness="3">
+        <Rectangle HorizontalAlignment="Left" Height="225" Margin="10,81,0,0" Stroke="#410da1" VerticalAlignment="Top" Width="666" StrokeThickness="3"/>
+        <Button x:Name="EnterBTN" Content="Enter Match" HorizontalAlignment="Left" Margin="281,327,0,0" VerticalAlignment="Top" Height="118" Width="239" Click="EnterBTN_Click" ToolTip="Submit the match data and generate a QR code" ClipToBounds="True" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -31,7 +32,7 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="ResetBTN" Content="Reset Match" HorizontalAlignment="Left" Margin="248,322,0,0" VerticalAlignment="Top" Height="73" Width="127" Click="ResetBTN_Click" ToolTip="Clear all of the match data" ClipToBounds="True" BorderThickness="3">
+        <Button x:Name="ResetBTN" Content="Reset Match" HorizontalAlignment="Left" Margin="536,327,0,0" VerticalAlignment="Top" Height="118" Width="248" Click="ResetBTN_Click" ToolTip="Clear all of the match data" ClipToBounds="True" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -47,29 +48,29 @@
         <Label x:Name="MatchNumTB" Content="Match Number" HorizontalAlignment="Left" Margin="211,8,0,0" VerticalAlignment="Top" Cursor="No" Height="26" Width="90" Foreground="#e9e6f0"/>
         <Label x:Name="TeamNumberLB" Content="Team Number" HorizontalAlignment="Left" Margin="412,10,0,0" VerticalAlignment="Top" Cursor="No" ToolTip="I'm a teapot" Height="26" Width="84" Foreground="#e9e6f0"/>
         <Label x:Name="VersionLB" Content="v0.0" HorizontalAlignment="Left" Margin="597,0,0,0" VerticalAlignment="Top" Cursor="No" Height="26" Width="31" Foreground="#e9e6f0"/>
-        <Label x:Name="TeleopTitleCard" Content="Teleop" HorizontalAlignment="Left" Margin="364,86,0,0" VerticalAlignment="Top" Height="26" Width="45" Foreground="#e9e6f0"/>
-        <Label x:Name="Teleop0LB" Content="NULL" HorizontalAlignment="Left" Margin="365,114,0,0" VerticalAlignment="Top" Height="26" Width="71" Foreground="#e9e6f0"/>
-        <Label x:Name="Teleop1LB" Content="NULL" HorizontalAlignment="Left" Margin="366,140,0,0" VerticalAlignment="Top" Height="26" Width="69" Foreground="#e9e6f0"/>
-        <Label x:Name="Teleop2LB" Content="NULL" HorizontalAlignment="Left" Margin="366,170,0,0" VerticalAlignment="Top" Height="26" Width="69" Foreground="#e9e6f0"/>
-        <Label x:Name="Teleop3LB" Content="NULL" HorizontalAlignment="Left" Margin="368,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.624,0.59" Height="26" Width="66" Foreground="#e9e6f0"/>
+        <Label x:Name="TeleopTitleCard" Content="Teleop" HorizontalAlignment="Left" Margin="344,86,0,0" VerticalAlignment="Top" Height="26" Width="45" Foreground="#e9e6f0"/>
+        <Label x:Name="Teleop0LB" Content="NULL" HorizontalAlignment="Left" Margin="342,114,0,0" VerticalAlignment="Top" Height="26" Width="71" Foreground="#e9e6f0"/>
+        <Label x:Name="Teleop1LB" Content="NULL" HorizontalAlignment="Left" Margin="343,140,0,0" VerticalAlignment="Top" Height="26" Width="69" Foreground="#e9e6f0"/>
+        <Label x:Name="Teleop2LB" Content="NULL" HorizontalAlignment="Left" Margin="344,170,0,0" VerticalAlignment="Top" Height="26" Width="69" Foreground="#e9e6f0"/>
+        <Label x:Name="Teleop3LB" Content="NULL" HorizontalAlignment="Left" Margin="344,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.624,0.59" Height="26" Width="66" Foreground="#e9e6f0"/>
         <Label x:Name="AutoTitleCardLB" Content="Auto" HorizontalAlignment="Left" Margin="146,86,0,0" VerticalAlignment="Top" Height="26" Width="36" Foreground="#e9e6f0"/>
-        <Label x:Name="Auto0LB" Content="NULL" HorizontalAlignment="Left" Margin="145,113,0,0" VerticalAlignment="Top" Height="26" Width="80" Foreground="#e9e6f0"/>
-        <Label x:Name="Auto1LB" Content="NULL" HorizontalAlignment="Left" Margin="147,141,0,0" VerticalAlignment="Top" Height="26" Width="78" Foreground="#e9e6f0"/>
-        <Label x:Name="Auto2LB" Content="NULL" HorizontalAlignment="Left" Margin="147,170,0,0" VerticalAlignment="Top" Height="26" Width="78" Foreground="#e9e6f0"/>
-        <Label x:Name="Auto3LB" Content="NULL" HorizontalAlignment="Left" Margin="148,199,0,0" VerticalAlignment="Top" Height="26" Width="77" Foreground="#e9e6f0"/>
-        <ComboBox x:Name="Auto0" HorizontalAlignment="Left" Margin="230,117,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
-        <ComboBox x:Name="Auto1" HorizontalAlignment="Left" Margin="230,144,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
-        <ComboBox x:Name="Auto2" HorizontalAlignment="Left" Margin="230,172,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
-        <ComboBox x:Name="Auto3" HorizontalAlignment="Left" Margin="230,201,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
-        <ComboBox x:Name="Teleop0" HorizontalAlignment="Left" Margin="441,116,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
-        <ComboBox x:Name="Teleop1" HorizontalAlignment="Left" Margin="440,143,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
-        <ComboBox x:Name="Teleop2" HorizontalAlignment="Left" Margin="440,172,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
-        <ComboBox x:Name="Teleop3" HorizontalAlignment="Left" Margin="439,201,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
-        <Image x:Name="QRCodeDisplayPB" HorizontalAlignment="Left" Height="129" Margin="10,256,0,0" VerticalAlignment="Top" Width="161" ToolTip="The truth is out there"/>
+        <Label x:Name="Auto0LB" Content="NULL" HorizontalAlignment="Left" Margin="148,113,0,0" VerticalAlignment="Top" Height="26" Width="80" Foreground="#e9e6f0"/>
+        <Label x:Name="Auto1LB" Content="NULL" HorizontalAlignment="Left" Margin="149,141,0,0" VerticalAlignment="Top" Height="26" Width="78" Foreground="#e9e6f0"/>
+        <Label x:Name="Auto2LB" Content="NULL" HorizontalAlignment="Left" Margin="149,170,0,0" VerticalAlignment="Top" Height="26" Width="78" Foreground="#e9e6f0"/>
+        <Label x:Name="Auto3LB" Content="NULL" HorizontalAlignment="Left" Margin="149,199,0,0" VerticalAlignment="Top" Height="26" Width="77" Foreground="#e9e6f0"/>
+        <ComboBox x:Name="Auto0" HorizontalAlignment="Left" Margin="210,117,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+        <ComboBox x:Name="Auto1" HorizontalAlignment="Left" Margin="210,144,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+        <ComboBox x:Name="Auto2" HorizontalAlignment="Left" Margin="210,172,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+        <ComboBox x:Name="Auto3" HorizontalAlignment="Left" Margin="210,201,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+        <ComboBox x:Name="Teleop0" HorizontalAlignment="Left" Margin="400,116,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+        <ComboBox x:Name="Teleop1" HorizontalAlignment="Left" Margin="400,143,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+        <ComboBox x:Name="Teleop2" HorizontalAlignment="Left" Margin="400,172,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+        <ComboBox x:Name="Teleop3" HorizontalAlignment="Left" Margin="399,201,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+        <Image x:Name="QRCodeDisplayPB" HorizontalAlignment="Left" Height="129" Margin="37,331,0,0" VerticalAlignment="Top" Width="161" ToolTip="The truth is out there"/>
         <CheckBox x:Name="RobotDiedCB" Content="Robot Died" HorizontalAlignment="Left" Margin="576,115,0,0" VerticalAlignment="Top" ClipToBounds="True" RenderTransformOrigin="0.513,0.466" Height="15" Width="80" Foreground="#e9e6f0"/>
         <CheckBox x:Name="FieldFaultCB" Content="Field Fault" HorizontalAlignment="Left" Margin="576,139,0,0" VerticalAlignment="Top" ClipToBounds="True" Height="15" Width="74" Foreground="#e9e6f0"/>
         <Label x:Name="ScoutNameLB" Content="Scout Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="233" Cursor="No" Height="26" Foreground="#e9e6f0"/>
-        <Button x:Name="ToggleStopwatchBTN" Content="Toggle Stopwatch" HorizontalAlignment="Left" Margin="442,297,0,0" VerticalAlignment="Top" Height="43" Width="126" Click="ToggleStopwatch_Click" RenderTransformOrigin="0.5,0.5" ToolTip="Toggle stopwatch on and off" ClipToBounds="True" BorderThickness="3">
+        <Button x:Name="ToggleStopwatchBTN" Content="Toggle Stopwatch" HorizontalAlignment="Left" Margin="682,208,0,0" VerticalAlignment="Top" Height="43" Width="126" Click="ToggleStopwatch_Click" RenderTransformOrigin="0.5,0.5" ToolTip="Toggle stopwatch on and off" ClipToBounds="True" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -82,7 +83,7 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="StopwatchResetBTN" Content="Reset Stopwatch" HorizontalAlignment="Left" Margin="441,345,0,0" VerticalAlignment="Top" Height="43" Width="127" Click="ResetStopwatch_Click" ToolTip="Reset the stopwatch back to zero" ClipToBounds="True" BorderThickness="3">
+        <Button x:Name="StopwatchResetBTN" Content="Reset Stopwatch" HorizontalAlignment="Left" Margin="681,256,0,0" VerticalAlignment="Top" Height="43" Width="127" Click="ResetStopwatch_Click" ToolTip="Reset the stopwatch back to zero" ClipToBounds="True" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -95,7 +96,7 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="ClickCounterUp" Content="+" HorizontalAlignment="Left" Margin="380,249,0,0" VerticalAlignment="Top" Height="68" Width="57" Click="ClickCounterUp_Click" ToolTip="Add one to the click counter" RenderTransformOrigin="0.5,0.5" BorderThickness="3">
+        <Button x:Name="ClickCounterUp" Content="+" HorizontalAlignment="Left" Margin="684,88,0,0" VerticalAlignment="Top" Height="68" Width="57" Click="ClickCounterUp_Click" ToolTip="Add one to the click counter" RenderTransformOrigin="0.5,0.5" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -116,7 +117,7 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="ClickCounterDown" Content="-" HorizontalAlignment="Left" Margin="378,322,0,0" VerticalAlignment="Top" Height="73" Width="59" Click="ClickCounterDown_Click" ToolTip="Add one to the click counter" BorderThickness="3">
+        <Button x:Name="ClickCounterDown" Content="-" HorizontalAlignment="Left" Margin="745,88,0,0" VerticalAlignment="Top" Height="68" Width="59" Click="ClickCounterDown_Click" ToolTip="Add one to the click counter" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -129,12 +130,12 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Label x:Name="ClickCounterCountLB" Content="Click Count" HorizontalAlignment="Left" Margin="576,186,0,0" VerticalAlignment="Top" Height="26" Width="80" Foreground="#e9e6f0"/>
-        <Label x:Name="ClickCounterCountCountLB" Content="0" HorizontalAlignment="Left" Margin="576,205,0,0" VerticalAlignment="Top" Height="26" Width="80" Foreground="#e9e6f0"/>
-        <Label x:Name="StopwatchLB" Content="Stopwatch 0.0ms" HorizontalAlignment="Left" Margin="576,157,0,0" VerticalAlignment="Top" Height="26" Width="100" Foreground="#e9e6f0"/>
+        <Label x:Name="ClickCounterCountLB" Content="Click Count" HorizontalAlignment="Left" Margin="644,39,0,0" VerticalAlignment="Top" Height="26" Width="80" Foreground="#e9e6f0"/>
+        <Label x:Name="ClickCounterCountCountLB" Content="0" HorizontalAlignment="Left" Margin="724,39,0,0" VerticalAlignment="Top" Height="26" Width="80" Foreground="#e9e6f0"/>
+        <Label x:Name="StopwatchLB" Content="Stopwatch 0.0ms" HorizontalAlignment="Left" Margin="644,8,0,0" VerticalAlignment="Top" Height="26" Width="100" Foreground="#e9e6f0"/>
         <Label x:Name="TeamNumberChangerLB" Content="Team Number" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" Height="26" Width="85" Foreground="#e9e6f0"/>
         <TextBox x:Name="TeamNumberTB" HorizontalAlignment="Left" Margin="15,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TeamNumberTB_TextChanged_1" Height="18"/>
-        <Button x:Name="ResetClickCounterBTN" Content="Reset Click Counter" HorizontalAlignment="Left" Margin="442,249,0,0" VerticalAlignment="Top" Height="43" Width="122" Click="ResetClickCounterBTN_Click" ToolTip="Clear all of the match data" ClipToBounds="True" BorderThickness="3">
+        <Button x:Name="ResetClickCounterBTN" Content="Reset Click Counter" HorizontalAlignment="Left" Margin="682,162,0,0" VerticalAlignment="Top" Height="42" Width="122" Click="ResetClickCounterBTN_Click" ToolTip="Clear all of the match data" ClipToBounds="True" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -149,8 +150,22 @@
         </Button>
         <Label x:Name="MatchNumberChangerLB" Content="Match Number" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Height="26" Width="90" Foreground="#e9e6f0"/>
         <TextBox x:Name="MatchNumberChangerTB" HorizontalAlignment="Left" Margin="15,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" TextChanged="MatchNumberChangerTB_TextChanged"/>
-        <Rectangle HorizontalAlignment="Left" Height="146" Margin="10,256,0,0" Stroke="#410da1" VerticalAlignment="Top" Width="233" StrokeThickness="3"/>
+        <Rectangle HorizontalAlignment="Left" Height="146" Margin="10,323,0,0" Stroke="#410da1" VerticalAlignment="Top" Width="233" StrokeThickness="3"/>
         <Label x:Name="AllianceLB" Content="Alliance" HorizontalAlignment="Left" Margin="13,176,0,0" VerticalAlignment="Top" Height="26" Width="90" Foreground="#e9e6f0"/>
         <ComboBox x:Name="AllianceCB" HorizontalAlignment="Left" Margin="15,207,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+        <Label x:Name="Auto4LB" Content="NULL" HorizontalAlignment="Left" Margin="148,226,0,0" VerticalAlignment="Top" Height="26" Width="77" Foreground="#e9e6f0"/>
+        <ComboBox x:Name="Auto4" HorizontalAlignment="Left" Margin="210,228,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+        <Label x:Name="Auto5LB" Content="NULL" HorizontalAlignment="Left" Margin="148,254,0,0" VerticalAlignment="Top" Height="26" Width="77" Foreground="#e9e6f0"/>
+        <ComboBox x:Name="Auto5" HorizontalAlignment="Left" Margin="210,256,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+        <Label x:Name="Teleop4LB" Content="NULL" HorizontalAlignment="Left" Margin="344,226,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.624,0.59" Height="26" Width="66" Foreground="#e9e6f0"/>
+        <Label x:Name="Teleop5LB" Content="NULL" HorizontalAlignment="Left" Margin="344,253,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.624,0.59" Height="26" Width="66" Foreground="#e9e6f0"/>
+        <ComboBox x:Name="Teleop4" HorizontalAlignment="Left" Margin="400,228,0,0" VerticalAlignment="Top" Width="120" Height="22" SelectionChanged="Teleop4_SelectionChanged"/>
+        <ComboBox x:Name="Teleop5" HorizontalAlignment="Left" Margin="399,255,0,0" VerticalAlignment="Top" Width="120" Height="22" SelectionChanged="Teleop5_SelectionChanged"/>
+        <Label x:Name="SpeedLB" Content="Robot Speed" HorizontalAlignment="Left" Margin="562,161,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.624,0.59" Height="28" Width="78" Foreground="#e9e6f0"/>
+        <ComboBox x:Name="SpeedCB" HorizontalAlignment="Left" Margin="541,186,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+        <Label x:Name="GiveDefenseLB" Content="Give Defense" HorizontalAlignment="Left" Margin="562,204,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.624,0.59" Height="28" Width="78" Foreground="#e9e6f0"/>
+        <ComboBox x:Name="GiveDefenseCB" HorizontalAlignment="Left" Margin="541,228,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+        <Label x:Name="TakeDefenseLB" Content="Give Defense" HorizontalAlignment="Left" Margin="562,248,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.624,0.59" Height="28" Width="78" Foreground="#e9e6f0"/>
+        <ComboBox x:Name="TakeDefenseCB" HorizontalAlignment="Left" Margin="541,276,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
     </Grid>
 </Window>

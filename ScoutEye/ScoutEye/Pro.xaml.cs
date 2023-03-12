@@ -199,6 +199,21 @@ namespace ScoutEye
                 AllianceCB.Items.Add("Red");
                 AllianceCB.Items.Add("Blue");
 
+                SpeedCB.Items.Add("Slow");
+                SpeedCB.Items.Add("Medium");
+                SpeedCB.Items.Add("Fast");
+
+                
+                for(int i = 1; i < 11; i++)
+                {
+                    GiveDefenseCB.Items.Add(i.ToString());
+                }
+
+                for (int i = 1; i < 11; i++)
+                {
+                    TakeDefenseCB.Items.Add(i.ToString());
+                }
+
                 foreach (XmlNode node in nodeList)
                 {
                     VersionLB.Content = node.SelectSingleNode("AppVersion").InnerText;
@@ -306,6 +321,52 @@ namespace ScoutEye
                             }
                         }
                     }
+                    foreach (string item in node.SelectSingleNode("Auto4Items").InnerText.Split(',').ToList())
+                    {
+                        if (node.SelectSingleNode("Auto4Hide").InnerText == "true")
+                        {
+                            Auto4.Visibility = Visibility.Hidden;
+                        }
+                        else
+                        {
+                            if (item == "NumFill")
+                            {
+                                foreach (int num in values)
+                                {
+                                    Auto4.IsEditable = true;
+                                    Auto4.Items.Add(num);
+                                }
+                            }
+                            else
+                            {
+                                Auto4.IsEditable = false;
+                                Auto4.Items.Add(item);
+                            }
+                        }
+                    }
+                    foreach (string item in node.SelectSingleNode("Auto5Items").InnerText.Split(',').ToList())
+                    {
+                        if (node.SelectSingleNode("Auto5Hide").InnerText == "true")
+                        {
+                            Auto5.Visibility = Visibility.Hidden;
+                        }
+                        else
+                        {
+                            if (item == "NumFill")
+                            {
+                                foreach (int num in values)
+                                {
+                                    Auto5.IsEditable = true;
+                                    Auto5.Items.Add(num);
+                                }
+                            }
+                            else
+                            {
+                                Auto5.IsEditable = false;
+                                Auto5.Items.Add(item);
+                            }
+                        }
+                    }
                     foreach (string item in node.SelectSingleNode("Teleop0Items").InnerText.Split(',').ToList())
                     {
                         if(node.SelectSingleNode("Teleop0Hide").InnerText == "true")
@@ -395,6 +456,52 @@ namespace ScoutEye
                             {
                                 Teleop3.IsEditable = false;
                                 Teleop3.Items.Add(item);
+                            }
+                        }
+                    }
+                    foreach (string item in node.SelectSingleNode("Teleop4Items").InnerText.Split(',').ToList())
+                    {
+                        if (node.SelectSingleNode("Teleop4Hide").InnerText == "true")
+                        {
+                            Teleop4.Visibility = Visibility.Hidden;
+                        }
+                        else
+                        {
+                            if (item == "NumFill")
+                            {
+                                foreach (int num in values)
+                                {
+                                    Teleop4.IsEditable = true;
+                                    Teleop4.Items.Add(num);
+                                }
+                            }
+                            else
+                            {
+                                Teleop4.IsEditable = false;
+                                Teleop4.Items.Add(item);
+                            }
+                        }
+                    }
+                    foreach (string item in node.SelectSingleNode("Teleop5Items").InnerText.Split(',').ToList())
+                    {
+                        if (node.SelectSingleNode("Teleop5Hide").InnerText == "true")
+                        {
+                            Teleop5.Visibility = Visibility.Hidden;
+                        }
+                        else
+                        {
+                            if (item == "NumFill")
+                            {
+                                foreach (int num in values)
+                                {
+                                    Teleop5.IsEditable = true;
+                                    Teleop5.Items.Add(num);
+                                }
+                            }
+                            else
+                            {
+                                Teleop5.IsEditable = false;
+                                Teleop5.Items.Add(item);
                             }
                         }
                     }

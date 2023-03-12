@@ -30,3 +30,5 @@ C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Release\ScoutEye.exe
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Release\ScoutEye.pdb
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Release\Interop.IWshRuntimeLibrary.dll
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Release\ScoutEye.csproj.ResolveComReference.cache
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Release\SettingsProfessional.xml
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Release\ScoutEye_Content.g.cs

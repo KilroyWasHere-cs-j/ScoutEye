@@ -10,9 +10,9 @@
   <Auto1Items>NumFill</Auto1Items>
   <Auto1Hide>false</Auto1Hide>
   <Auto2>Balanced</Auto2>
-  <Auto2Items>true,false</Auto2Items>
+  <Auto2Items>True,False</Auto2Items>
   <Auto2Hide>false</Auto2Hide>
-  <Auto3>Placment</Auto3>
+  <Auto3>Placement</Auto3>
   <Auto3Items>Low,Mid,High</Auto3Items>
   <Auto3Hide>false</Auto3Hide>
   <Auto4>Left comun</Auto4>
@@ -29,9 +29,9 @@
   <Teleop1Items>NumFill</Teleop1Items>
   <Teleop1Hide>false</Teleop1Hide>
   <Teleop2>Balanced</Teleop2>
-  <Teleop2Items>true, false</Teleop2Items>
+  <Teleop2Items>True,False</Teleop2Items>
   <Teleop2Hide>false</Teleop2Hide>
-  <Teleop3>Placment</Teleop3>
+  <Teleop3>Placement</Teleop3>
   <Teleop3Items>Low,Mid,High</Teleop3Items>
   <Teleop3Hide>false</Teleop3Hide>
   <Teleop4>Intake Loc</Teleop4>

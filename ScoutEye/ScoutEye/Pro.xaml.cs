@@ -42,7 +42,6 @@ namespace ScoutEye
             ScoutNameLB.Content = "Scout Name: " + name;
             //Set the current match number so the scout can start at anypoint
             matchNumber = 0;
-            MatchNumTB.Content = "Match Number: " + 0;
             var config = new NLog.Config.LoggingConfiguration();
 
             // Targets where to log to: File and Console
@@ -89,7 +88,6 @@ namespace ScoutEye
             matchNumber = Int32.Parse(MatchNumberChangerTB.Text);
             matchNumber++;
             MatchNumberChangerTB.Text = matchNumber.ToString();
-            MatchNumTB.Content = "Match number: " + matchNumber.ToString();
             ResetMatch();
             _log_.Debug("NextMatch");
         }
@@ -99,25 +97,40 @@ namespace ScoutEye
         //<summary>
         private void ResetMatch()
         {
-            TeamNumberTB.Text = String.Empty;
-            stopwatch.Stop();
-            stopwatch.Reset();
-            ClickCounterCountLB.Content = "Click count: 0";
-            clickCount = 0;
-            foreach (UIElement element in Grid.Children)
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to reset this match? This action cannot be undone.", "Just checking in.", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            switch (result)
             {
-                if (element is ComboBox)
-                {
-                    ComboBox cb = (ComboBox)element;
-                    cb.SelectedIndex = 0;
-                }
-                if (element is CheckBox)
-                {
-                    CheckBox cb = (CheckBox)element;
-                    cb.IsChecked = false;
-                }
+                case MessageBoxResult.Yes:
+                    TeamNumberTB.Text = String.Empty;
+                    stopwatch.Stop();
+                    stopwatch.Reset();
+                    clickCount = 0;
+                    foreach (UIElement element in Grid.Children)
+                    {
+                        // Reset all combo boxes except the alliance combo box
+                        if (element is ComboBox)
+                        {
+                            ComboBox cb = (ComboBox)element;
+                            if(cb.Text.Contains("Red") || cb.Text.Contains("Blue"))
+                            {
+                                // Simply don't do anything
+                            }
+                            else
+                            {
+                                cb.SelectedIndex = 0;
+                            }
+                        }
+                        if (element is CheckBox)
+                        {
+                            CheckBox cb = (CheckBox)element;
+                            cb.IsChecked = false;
+                        }
+                    }
+                    _log_.Debug("Match Reset");
+                    break;
+                case MessageBoxResult.No:
+                    break;
             }
-            _log_.Debug("Match Reset");
         }
 
         //<summary>
@@ -203,12 +216,12 @@ namespace ScoutEye
                 SpeedCB.Items.Add("Fast");
 
                 
-                for(int i = 1; i < 11; i++)
+                for(int i = 1; i < 6; i++)
                 {
                     GiveDefenseCB.Items.Add(i.ToString());
                 }
 
-                for (int i = 1; i < 11; i++)
+                for (int i = 1; i < 6; i++)
                 {
                     TakeDefenseCB.Items.Add(i.ToString());
                 }
@@ -539,9 +552,8 @@ namespace ScoutEye
         #region EventHandlers
         private void dt_Tick(object sender, EventArgs e)
         {
-            MatchNumTB.Content = "Match Number: " + MatchNumberChangerTB.Text;
-            TeamNumberLB.Content = "Team Number: " + TeamNumberTB.Text;
             StopwatchLB.Content = "Stopwatch: " + stopwatch.Elapsed.TotalSeconds.ToString() + "ms";
+            ClickCounterCountCountLB.Content = clickCount.ToString();
         }
 
         private void EnterBTN_Click(object sender, RoutedEventArgs e)
@@ -585,7 +597,6 @@ namespace ScoutEye
         private void ResetClickCounterBTN_Click(object sender, RoutedEventArgs e)
         {
             clickCount = 0;
-            ClickCounterCountLB.Content = "Click count " + clickCount.ToString();
         }
 
         //<summary>

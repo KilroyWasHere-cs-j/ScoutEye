@@ -165,7 +165,7 @@
         <ComboBox x:Name="SpeedCB" HorizontalAlignment="Left" Margin="541,186,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
         <Label x:Name="GiveDefenseLB" Content="Give Defense" HorizontalAlignment="Left" Margin="562,204,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.624,0.59" Height="28" Width="78" Foreground="#e9e6f0"/>
         <ComboBox x:Name="GiveDefenseCB" HorizontalAlignment="Left" Margin="541,228,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
-        <Label x:Name="TakeDefenseLB" Content="Give Defense" HorizontalAlignment="Left" Margin="562,248,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.624,0.59" Height="28" Width="78" Foreground="#e9e6f0"/>
+        <Label x:Name="TakeDefenseLB" Content="Take Defense" HorizontalAlignment="Left" Margin="562,248,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.624,0.59" Height="28" Width="78" Foreground="#e9e6f0"/>
         <ComboBox x:Name="TakeDefenseCB" HorizontalAlignment="Left" Margin="541,276,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
     </Grid>
 </Window>

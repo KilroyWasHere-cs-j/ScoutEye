@@ -160,7 +160,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -191,7 +193,7 @@
     <SplashScreen Include="ScoutEye Logo dark.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="CHANGELOG.txt" />
+    <None Include="CHANGELOG.md" />
     <Resource Include="ScoutEye Logo dark.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -206,6 +208,9 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\wavs\taco.wav.wav" />
+    <None Include="Resources\garand.wav" />
+    <None Include="Resources\brrrr.wav" />
     <Content Include="SettingsProfessional.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -1,0 +1,60 @@
+2023-03-29 10:49:48.8325|DEBUG|ScoutEye.MainWindow|Start
+2023-03-29 10:50:00.3230|ERROR|ScoutEye.MainWindow|System.IO.FileNotFoundException: Please be sure a sound file exists at the specified location.
+File name: 'C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\wavs\taco.wav'
+   at System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   at System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   at ScoutEye.MainWindow.ScoutOption2_Click(Object sender, RoutedEventArgs e) in C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\MainWindow.xaml.cs:line 63
+2023-03-29 10:50:00.3910|INFO|ScoutEye.Pro|UI Loaded
+2023-03-29 10:52:37.1172|DEBUG|ScoutEye.MainWindow|Start
+2023-03-29 10:52:38.1943|ERROR|ScoutEye.MainWindow|System.IO.FileNotFoundException: Please be sure a sound file exists at the specified location.
+File name: 'C:\\Users\\gmtow\\source\\repos\\ScoutEye\\ScoutEye\\ScoutEye\\bin\\Debug\\wavs\\taco.wav'
+   at System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   at System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   at ScoutEye.MainWindow.ScoutOption2_Click(Object sender, RoutedEventArgs e) in C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\MainWindow.xaml.cs:line 63
+2023-03-29 10:52:38.2993|INFO|ScoutEye.Pro|UI Loaded
+2023-03-29 10:54:18.1560|DEBUG|ScoutEye.MainWindow|Start
+2023-03-29 10:54:19.4741|ERROR|ScoutEye.MainWindow|System.IO.FileNotFoundException: Please be sure a sound file exists at the specified location.
+File name: 'C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\wavs\taco.wav'
+   at System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   at System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   at ScoutEye.MainWindow.ScoutOption2_Click(Object sender, RoutedEventArgs e) in C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\MainWindow.xaml.cs:line 63
+2023-03-29 10:54:19.5901|INFO|ScoutEye.Pro|UI Loaded
+2023-03-29 10:55:33.3047|DEBUG|ScoutEye.MainWindow|Start
+2023-03-29 10:55:34.3298|ERROR|ScoutEye.MainWindow|System.IO.FileNotFoundException: Please be sure a sound file exists at the specified location.
+File name: 'C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\wavs\taco.wav'
+   at System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   at System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   at ScoutEye.MainWindow.ScoutOption2_Click(Object sender, RoutedEventArgs e) in C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\MainWindow.xaml.cs:line 64
+2023-03-29 10:55:34.4258|INFO|ScoutEye.Pro|UI Loaded
+2023-03-29 10:56:00.8553|DEBUG|ScoutEye.MainWindow|Start
+2023-03-29 10:56:03.3178|ERROR|ScoutEye.MainWindow|System.IO.FileNotFoundException: Please be sure a sound file exists at the specified location.
+File name: 'C:\\Users\\gmtow\\source\\repos\\ScoutEye\\ScoutEye\\ScoutEye\\bin\\Debug\\wavs\\taco.wav'
+   at System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   at System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   at ScoutEye.MainWindow.ScoutOption2_Click(Object sender, RoutedEventArgs e) in C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\MainWindow.xaml.cs:line 64
+2023-03-29 10:56:03.4022|INFO|ScoutEye.Pro|UI Loaded
+2023-03-29 10:56:10.0000|DEBUG|ScoutEye.MainWindow|Start
+2023-03-29 10:56:12.2987|ERROR|ScoutEye.MainWindow|System.IO.FileNotFoundException: Please be sure a sound file exists at the specified location.
+File name: 'C:\\Users\\gmtow\\source\\repos\\ScoutEye\\ScoutEye\\ScoutEye\\bin\\Debug\\wavs\\taco.wav'
+   at System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   at System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   at ScoutEye.MainWindow.ScoutOption2_Click(Object sender, RoutedEventArgs e) in C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\MainWindow.xaml.cs:line 64
+2023-03-29 10:56:12.3627|INFO|ScoutEye.Pro|UI Loaded
+2023-03-29 10:57:33.4513|DEBUG|ScoutEye.MainWindow|Start
+2023-03-29 10:57:34.9674|ERROR|ScoutEye.MainWindow|System.IO.FileNotFoundException: Please be sure a sound file exists at the specified location.
+File name: 'C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\wavs\taco.wav'
+   at System.Media.SoundPlayer.ValidateSoundFile(String fileName)
+   at System.Media.SoundPlayer.LoadAndPlay(Int32 flags)
+   at ScoutEye.MainWindow.ScoutOption2_Click(Object sender, RoutedEventArgs e) in C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\MainWindow.xaml.cs:line 64
+2023-03-29 10:57:35.0855|INFO|ScoutEye.Pro|UI Loaded
+2023-03-29 11:03:08.2353|DEBUG|ScoutEye.MainWindow|Start
+2023-03-29 11:06:52.9101|INFO|ScoutEye.Pro|UI Loaded
+2023-03-29 11:07:01.0560|DEBUG|ScoutEye.MainWindow|Start
+2023-03-29 11:07:02.4091|INFO|ScoutEye.Pro|UI Loaded
+2023-03-29 11:39:32.7897|DEBUG|ScoutEye.MainWindow|Start
+2023-03-29 11:40:24.0107|DEBUG|ScoutEye.MainWindow|Start
+2023-03-29 11:40:25.2148|INFO|ScoutEye.Pro|UI Loaded
+2023-03-29 11:41:03.4616|DEBUG|ScoutEye.MainWindow|Start
+2023-03-29 11:41:04.7987|INFO|ScoutEye.Pro|UI Loaded
+2023-03-29 11:43:15.9325|DEBUG|ScoutEye.MainWindow|Start
+2023-03-29 11:43:17.1914|INFO|ScoutEye.Pro|UI Loaded

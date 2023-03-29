@@ -1,4 +1,6 @@
-﻿Reset match button now asks if the user is sure of this action
+﻿# Changes
+
+Reset match button now asks if the user is sure of this action
 Defense levels are now contained to 0-5
 Fixed spaceing
 Box around QR code has been removed

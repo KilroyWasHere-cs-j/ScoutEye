@@ -3,6 +3,7 @@ using System.IO;
 using System.Media;
 using System.Windows;
 using IWshRuntimeLibrary;
+using NLog;
 
 namespace ScoutEye
 {
@@ -12,15 +13,28 @@ namespace ScoutEye
     public partial class MainWindow : Window
     {
         Pro pro;
-        Configurer configer;
+        Configurer configuer;
 
         private SoundPlayer player;
         private string userName = "";
+        private static readonly NLog.Logger _log_ = NLog.LogManager.GetCurrentClassLogger();
 
         public MainWindow()
         {
             InitializeComponent();
-            player = new SoundPlayer(Directory.GetCurrentDirectory() + "wavs/taco.wav");
+            var config = new NLog.Config.LoggingConfiguration();
+
+            // Targets where to log to: File and Console
+            var logfile = new NLog.Targets.FileTarget("logfile") { FileName = "logs\\Mainlog.log" };
+            var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
+
+            // Rules for mapping loggers to targets            
+            config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
+            config.AddRule(LogLevel.Debug, LogLevel.Fatal, logfile);
+
+            // Apply config           
+            NLog.LogManager.Configuration = config;
+            _log_.Debug("Start");
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             userName = Environment.UserName;
             NameTB.Text = userName;
@@ -36,6 +50,15 @@ namespace ScoutEye
                 //If the user entered a valid name and match number
                 if (NameTB.Text != string.Empty)
                 {
+                    try
+                    {
+                        SoundPlayer sndplayr = new SoundPlayer();
+                        sndplayr.Play();
+                    }
+                    catch (Exception ex)
+                    {
+                        _log_.Error(ex.ToString());
+                    }
                     pro = new Pro(NameTB.Text);
                     pro.Show();
                     this.Close();
@@ -64,8 +87,8 @@ namespace ScoutEye
         }
         private void configureBTN_Click(object sender, RoutedEventArgs e)
         {
-            configer = new Configurer();
-            configer.Show();
+            configuer = new Configurer();
+            configuer.Show();
         }
         #endregion
 

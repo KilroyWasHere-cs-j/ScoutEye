@@ -65,3 +65,4 @@ C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye.csproj
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\ScoutEye_Content.g.cs
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\Notes.g.cs
 C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\obj\Debug\Notes.baml
+C:\Users\gmtow\source\repos\ScoutEye\ScoutEye\ScoutEye\bin\Debug\Properties\Resources.resx

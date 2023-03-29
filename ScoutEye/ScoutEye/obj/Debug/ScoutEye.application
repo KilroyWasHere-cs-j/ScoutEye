@@ -14,14 +14,14 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="ScoutEye.exe.manifest" size="5720">
+    <dependentAssembly dependencyType="install" codebase="ScoutEye.exe.manifest" size="5721">
       <assemblyIdentity name="ScoutEye.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BqaCWGfybRjfdeJFvk0qp2vxcwwbA+WWE6GNcYbQ+tI=</dsig:DigestValue>
+        <dsig:DigestValue>bHxC9Og1LWcVxewhNoAIyIfkkavnjS4yzCHrG+uj0+M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

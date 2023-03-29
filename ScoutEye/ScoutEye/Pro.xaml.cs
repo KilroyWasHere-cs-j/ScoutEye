@@ -12,6 +12,7 @@ using System.Windows.Threading;
 using System.Xml;
 using QRCoder;
 using NLog;
+using System.Media;
 
 namespace ScoutEye
 {
@@ -45,7 +46,7 @@ namespace ScoutEye
             var config = new NLog.Config.LoggingConfiguration();
 
             // Targets where to log to: File and Console
-            var logfile = new NLog.Targets.FileTarget("logfile") { FileName = "logs/Pro_log.txt" };
+            var logfile = new NLog.Targets.FileTarget("logfile") { FileName = "logs/Prolog.log" };
             var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
 
             // Rules for mapping loggers to targets            
@@ -558,11 +559,29 @@ namespace ScoutEye
 
         private void EnterBTN_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                SoundPlayer player = new SoundPlayer(Properties.Resources.garand);
+                player.Play();
+            }
+            catch(Exception ex)
+            {
+                _log_.Error(ex);
+            }
             EnterMatch();
         }
 
         private void ResetBTN_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                SoundPlayer player = new SoundPlayer(Properties.Resources.brrrr);
+                player.Play();
+            }
+            catch (Exception ex)
+            {
+                _log_.Error(ex);
+            }
             ResetMatch();
         }
 

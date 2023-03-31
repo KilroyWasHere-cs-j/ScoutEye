@@ -63,8 +63,8 @@
         <ComboBox x:Name="Teleop2" HorizontalAlignment="Left" Margin="400,172,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
         <ComboBox x:Name="Teleop3" HorizontalAlignment="Left" Margin="399,201,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
         <Image x:Name="QRCodeDisplayPB" HorizontalAlignment="Left" Height="129" Margin="329,327,0,0" VerticalAlignment="Top" Width="161" ToolTip="The truth is out there"/>
-        <CheckBox x:Name="RobotDiedCB" Content="Robot Died" HorizontalAlignment="Left" Margin="576,115,0,0" VerticalAlignment="Top" ClipToBounds="True" RenderTransformOrigin="0.513,0.466" Height="15" Width="80" Foreground="#e9e6f0"/>
-        <CheckBox x:Name="FieldFaultCB" Content="Field Fault" HorizontalAlignment="Left" Margin="576,139,0,0" VerticalAlignment="Top" ClipToBounds="True" Height="15" Width="74" Foreground="#e9e6f0"/>
+        <CheckBox x:Name="RobotDiedCB" Content="Robot Died" HorizontalAlignment="Left" Margin="548,117,0,0" VerticalAlignment="Top" ClipToBounds="True" RenderTransformOrigin="0.513,0.466" Height="15" Width="80" Foreground="#e9e6f0"/>
+        <CheckBox x:Name="FieldFaultCB" Content="Field Fault" HorizontalAlignment="Left" Margin="548,140,0,0" VerticalAlignment="Top" ClipToBounds="True" Height="16" Width="74" Foreground="#e9e6f0"/>
         <Label x:Name="ScoutNameLB" Content="Scout Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="233" Cursor="No" Height="26" Foreground="#e9e6f0"/>
         <Button x:Name="ToggleStopwatchBTN" Content="Toggle Stopwatch" HorizontalAlignment="Left" Margin="682,208,0,0" VerticalAlignment="Top" Height="43" Width="126" Click="ToggleStopwatch_Click" RenderTransformOrigin="0.5,0.5" ToolTip="Toggle stopwatch on and off" ClipToBounds="True" BorderThickness="3">
             <Button.Resources>

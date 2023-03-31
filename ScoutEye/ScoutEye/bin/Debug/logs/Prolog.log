@@ -28,3 +28,11 @@
 2023-03-31 16:13:25.3672|DEBUG|ScoutEye.Pro|Match Reset
 2023-03-31 16:13:25.3672|DEBUG|ScoutEye.Pro|NextMatch
 2023-03-31 16:13:25.3672|DEBUG|ScoutEye.Pro|Match entered
+2023-03-31 16:16:49.3909|DEBUG|ScoutEye.Pro|Start
+2023-03-31 16:16:56.2786|ERROR|ScoutEye.Pro|Missing fields -> enter match
+2023-03-31 16:17:44.5642|DEBUG|ScoutEye.Pro|Start
+2023-03-31 16:17:50.2062|ERROR|ScoutEye.Pro|Missing fields -> enter match
+2023-03-31 16:17:58.2870|ERROR|ScoutEye.Pro|Missing fields -> enter match
+2023-03-31 16:19:01.6799|DEBUG|ScoutEye.Pro|Start
+2023-03-31 16:19:06.1376|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-31 16:19:11.0192|DEBUG|ScoutEye.Pro|Match Reset

@@ -560,6 +560,7 @@ namespace ScoutEye
 
         private void EnterBTN_Click(object sender, RoutedEventArgs e)
         {
+            stopwatch.Stop();
             EnterMatch();
         }
 
@@ -578,6 +579,7 @@ namespace ScoutEye
                     {
                         _log_.Error(ex);
                     }
+                    stopwatch.Stop();
                     ResetMatch();
                     break;
                 case MessageBoxResult.No:

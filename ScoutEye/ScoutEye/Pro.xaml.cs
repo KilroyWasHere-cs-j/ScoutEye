@@ -28,6 +28,7 @@ namespace ScoutEye
         private int clickCount = 0, matchNumber = 0;
         private string name = "", scoutingLevel = "Win", comboDefault = "0";
         private static readonly NLog.Logger _log_ = NLog.LogManager.GetCurrentClassLogger();
+        private string versionNumber = "0.0";
 
         public Pro(string scoutname)
         {
@@ -76,8 +77,8 @@ namespace ScoutEye
                     _log_.Error(ex);
                 }
                 //This should be fixed there has got to be a better way to do this. Let's be real I'm never going to fix it...
-                string compiledDataForLogging = name + "~" + scoutingLevel + "~" + matchNumber.ToString() + "~" + AllianceCB.Text + "~" + TeamNumberTB.Text.ToString() + "~" + Auto0.Text + "~" + Auto1.Text + "~" + Auto2.Text + "~" + Auto3.Text + "~" + Auto4.Text + "~" + Auto5.Text + "~" + Teleop0.Text + "~" + Teleop1.Text + "~" + Teleop2.Text + "~" + Teleop3.Text + "~" + Teleop4.Text + "~" + Teleop5.Text + "~" + RobotDiedCB.IsChecked.ToString() + "~" + FieldFaultCB.IsChecked.ToString() + "~" + stopwatch.Elapsed.ToString() + "~" + clickCount.ToString() + "~" + SpeedCB.Text + "~" + GiveDefenseCB.Text + "~" + TakeDefenseCB.Text;
-                string compiledData = name + "\t" + scoutingLevel + "\t" + matchNumber.ToString() + "\t" + AllianceCB.Text + "\t" + TeamNumberTB.Text.ToString() + "\t" + Auto0.Text + "\t" + Auto1.Text + "\t" + Auto2.Text + "\t" + Auto3.Text + "\t" + Auto4.Text + "\t" + Auto5.Text + "\t" + Teleop0.Text + "\t" + Teleop1.Text + "\t" + Teleop2.Text + "\t" + Teleop3.Text + "\t" + Teleop4.Text + "\t" + Teleop5.Text + "\t" + RobotDiedCB.IsChecked.ToString() + "\t" + FieldFaultCB.IsChecked.ToString() + "\t" + stopwatch.Elapsed.ToString() + "\t" + clickCount.ToString() + "\t" + SpeedCB.Text + "\t" + GiveDefenseCB.Text + "\t" + TakeDefenseCB.Text;
+                string compiledDataForLogging = name + "~" + scoutingLevel + "~" + matchNumber.ToString() + "~" + AllianceCB.Text + "~" + TeamNumberTB.Text.ToString() + "~" + Auto0.Text + "~" + Auto1.Text + "~" + Auto2.Text + "~" + Auto3.Text + "~" + Auto4.Text + "~" + Auto5.Text + "~" + Teleop0.Text + "~" + Teleop1.Text + "~" + Teleop2.Text + "~" + Teleop3.Text + "~" + Teleop4.Text + "~" + Teleop5.Text + "~" + RobotDiedCB.IsChecked.ToString() + "~" + FieldFaultCB.IsChecked.ToString() + "~" + stopwatch.Elapsed.ToString() + "~" + clickCount.ToString() + "~" + SpeedCB.Text + "~" + GiveDefenseCB.Text + "~" + TakeDefenseCB.Text + "~" + versionNumber;
+                string compiledData = name + "\t" + scoutingLevel + "\t" + matchNumber.ToString() + "\t" + AllianceCB.Text + "\t" + TeamNumberTB.Text.ToString() + "\t" + Auto0.Text + "\t" + Auto1.Text + "\t" + Auto2.Text + "\t" + Auto3.Text + "\t" + Auto4.Text + "\t" + Auto5.Text + "\t" + Teleop0.Text + "\t" + Teleop1.Text + "\t" + Teleop2.Text + "\t" + Teleop3.Text + "\t" + Teleop4.Text + "\t" + Teleop5.Text + "\t" + RobotDiedCB.IsChecked.ToString() + "\t" + FieldFaultCB.IsChecked.ToString() + "\t" + stopwatch.Elapsed.ToString() + "\t" + clickCount.ToString() + "\t" + SpeedCB.Text + "\t" + GiveDefenseCB.Text + "\t" + TakeDefenseCB.Text + "\t" + versionNumber;
                 QRCodeDisplayPB.Source = BitmapToImageSource(GenerateQRCode(compiledData));
                 LogMatchData(compiledDataForLogging);
                 NextMatch();
@@ -231,6 +232,7 @@ namespace ScoutEye
                 foreach (XmlNode node in nodeList)
                 {
                     VersionLB.Content = node.SelectSingleNode("AppVersion").InnerText;
+                    versionNumber = node.SelectSingleNode("AppVersion").InnerText;
                     Auto0LB.Content = node.SelectSingleNode("Auto0").InnerText;
                     Auto1LB.Content = node.SelectSingleNode("Auto1").InnerText;
                     Auto2LB.Content = node.SelectSingleNode("Auto2").InnerText;

@@ -36,3 +36,9 @@
 2023-03-31 16:19:01.6799|DEBUG|ScoutEye.Pro|Start
 2023-03-31 16:19:06.1376|DEBUG|ScoutEye.Pro|Match Reset
 2023-03-31 16:19:11.0192|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-31 16:25:07.5187|DEBUG|ScoutEye.Pro|Start
+2023-03-31 16:25:14.9796|DEBUG|ScoutEye.Pro|QR Code made
+2023-03-31 16:25:15.0006|DEBUG|ScoutEye.Pro|Match data logged
+2023-03-31 16:25:15.0126|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-31 16:25:15.0126|DEBUG|ScoutEye.Pro|NextMatch
+2023-03-31 16:25:15.0126|DEBUG|ScoutEye.Pro|Match entered

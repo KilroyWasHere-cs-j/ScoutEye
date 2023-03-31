@@ -1,4 +1,4 @@
-﻿# Changes
+﻿# Changes for ScoutEye windows
 
 Reset match button now asks if the user is sure of this action
 Defense levels are now contained to 0-5
@@ -13,3 +13,4 @@ Fixed magical issue where when clicking "Reset Match" button click counts label 
 Added audio cues for enter match and reset match button clicks
 Fixed issue where stopwatch would continue even if the enter match button was clicked (it now auto stops)
 Fixed issue where stopwatch would not stop when the reset match button was clicked, it only reset (it now auto stops and then resets)
+Windows will now display the version number as the last part of the output string

@@ -66,6 +66,15 @@ namespace ScoutEye
             MessageBoxResult result = MessageBox.Show("Are you sure you want to enter this match? This action cannot be undone.", "Just checking in.", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes && TeamNumberTB.Text != String.Empty && MatchNumberChangerTB.Text != String.Empty && AllianceCB.Text != "0")
             {
+                try
+                {
+                    SoundPlayer player = new SoundPlayer(Properties.Resources.garand);
+                    player.Play();
+                }
+                catch (Exception ex)
+                {
+                    _log_.Error(ex);
+                }
                 //This should be fixed there has got to be a better way to do this. Let's be real I'm never going to fix it...
                 string compiledDataForLogging = name + "~" + scoutingLevel + "~" + matchNumber.ToString() + "~" + AllianceCB.Text + "~" + TeamNumberTB.Text.ToString() + "~" + Auto0.Text + "~" + Auto1.Text + "~" + Auto2.Text + "~" + Auto3.Text + "~" + Auto4.Text + "~" + Auto5.Text + "~" + Teleop0.Text + "~" + Teleop1.Text + "~" + Teleop2.Text + "~" + Teleop3.Text + "~" + Teleop4.Text + "~" + Teleop5.Text + "~" + RobotDiedCB.IsChecked.ToString() + "~" + FieldFaultCB.IsChecked.ToString() + "~" + stopwatch.Elapsed.ToString() + "~" + clickCount.ToString() + "~" + SpeedCB.Text + "~" + GiveDefenseCB.Text + "~" + TakeDefenseCB.Text;
                 string compiledData = name + "\t" + scoutingLevel + "\t" + matchNumber.ToString() + "\t" + AllianceCB.Text + "\t" + TeamNumberTB.Text.ToString() + "\t" + Auto0.Text + "\t" + Auto1.Text + "\t" + Auto2.Text + "\t" + Auto3.Text + "\t" + Auto4.Text + "\t" + Auto5.Text + "\t" + Teleop0.Text + "\t" + Teleop1.Text + "\t" + Teleop2.Text + "\t" + Teleop3.Text + "\t" + Teleop4.Text + "\t" + Teleop5.Text + "\t" + RobotDiedCB.IsChecked.ToString() + "\t" + FieldFaultCB.IsChecked.ToString() + "\t" + stopwatch.Elapsed.ToString() + "\t" + clickCount.ToString() + "\t" + SpeedCB.Text + "\t" + GiveDefenseCB.Text + "\t" + TakeDefenseCB.Text;
@@ -98,40 +107,32 @@ namespace ScoutEye
         //<summary>
         private void ResetMatch()
         {
-            MessageBoxResult result = MessageBox.Show("Are you sure you want to reset this match? This action cannot be undone.", "Just checking in.", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            switch (result)
+            TeamNumberTB.Text = String.Empty;
+            stopwatch.Stop();
+            stopwatch.Reset();
+            clickCount = 0;
+            foreach (UIElement element in Grid.Children)
             {
-                case MessageBoxResult.Yes:
-                    TeamNumberTB.Text = String.Empty;
-                    stopwatch.Stop();
-                    stopwatch.Reset();
-                    clickCount = 0;
-                    foreach (UIElement element in Grid.Children)
+                // Reset all combo boxes except the alliance combo box
+                if (element is ComboBox)
+                {
+                    ComboBox cb = (ComboBox)element;
+                    if (cb.Text.Contains("Red") || cb.Text.Contains("Blue"))
                     {
-                        // Reset all combo boxes except the alliance combo box
-                        if (element is ComboBox)
-                        {
-                            ComboBox cb = (ComboBox)element;
-                            if(cb.Text.Contains("Red") || cb.Text.Contains("Blue"))
-                            {
-                                // Simply don't do anything
-                            }
-                            else
-                            {
-                                cb.SelectedIndex = 0;
-                            }
-                        }
-                        if (element is CheckBox)
-                        {
-                            CheckBox cb = (CheckBox)element;
-                            cb.IsChecked = false;
-                        }
+                        // Simply don't do anything
                     }
-                    _log_.Debug("Match Reset");
-                    break;
-                case MessageBoxResult.No:
-                    break;
+                    else
+                    {
+                        cb.SelectedIndex = 0;
+                    }
+                }
+                if (element is CheckBox)
+                {
+                    CheckBox cb = (CheckBox)element;
+                    cb.IsChecked = false;
+                }
             }
+            _log_.Debug("Match Reset");
         }
 
         //<summary>
@@ -559,30 +560,29 @@ namespace ScoutEye
 
         private void EnterBTN_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                SoundPlayer player = new SoundPlayer(Properties.Resources.garand);
-                player.Play();
-            }
-            catch(Exception ex)
-            {
-                _log_.Error(ex);
-            }
             EnterMatch();
         }
 
         private void ResetBTN_Click(object sender, RoutedEventArgs e)
         {
-            try
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to reset this match? This action cannot be undone.", "Just checking in.", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            switch (result)
             {
-                SoundPlayer player = new SoundPlayer(Properties.Resources.brrrr);
-                player.Play();
+                case MessageBoxResult.Yes:
+                    try
+                    {
+                        SoundPlayer player = new SoundPlayer(Properties.Resources.brrrr);
+                        player.Play();
+                    }
+                    catch (Exception ex)
+                    {
+                        _log_.Error(ex);
+                    }
+                    ResetMatch();
+                    break;
+                case MessageBoxResult.No:
+                    break;
             }
-            catch (Exception ex)
-            {
-                _log_.Error(ex);
-            }
-            ResetMatch();
         }
 
         private void ToggleStopwatch()

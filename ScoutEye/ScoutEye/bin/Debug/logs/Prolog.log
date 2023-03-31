@@ -16,3 +16,15 @@
 2023-03-29 11:41:09.3541|ERROR|ScoutEye.Pro|Missing fields -> enter match
 2023-03-29 11:43:17.2364|DEBUG|ScoutEye.Pro|Start
 2023-03-29 11:43:21.1229|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-29 11:44:34.5663|DEBUG|ScoutEye.Pro|Start
+2023-03-29 11:44:38.6336|ERROR|ScoutEye.Pro|Missing fields -> enter match
+2023-03-31 16:12:13.0000|DEBUG|ScoutEye.Pro|Start
+2023-03-31 16:12:15.6062|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-31 16:12:28.4239|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-31 16:12:39.3035|ERROR|ScoutEye.Pro|Missing fields -> enter match
+2023-03-31 16:13:18.2203|DEBUG|ScoutEye.Pro|Start
+2023-03-31 16:13:25.3362|DEBUG|ScoutEye.Pro|QR Code made
+2023-03-31 16:13:25.3672|DEBUG|ScoutEye.Pro|Match data logged
+2023-03-31 16:13:25.3672|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-31 16:13:25.3672|DEBUG|ScoutEye.Pro|NextMatch
+2023-03-31 16:13:25.3672|DEBUG|ScoutEye.Pro|Match entered

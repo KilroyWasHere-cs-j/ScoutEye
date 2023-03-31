@@ -529,7 +529,7 @@ namespace ScoutEye
             }
             catch (Exception ex)
             {
-                // logger.Log("Could not load settings. " + ex.Message);
+                _log_.Info("Could not load settings. " + ex.Message.ToString());
                 MessageBox.Show($"Granny Smith {ex.ToString()}", "Fatal error", MessageBoxButton.OK, MessageBoxImage.Error);
                 _log_.Fatal("Granny Smith");
                 _log_.Fatal(ex);

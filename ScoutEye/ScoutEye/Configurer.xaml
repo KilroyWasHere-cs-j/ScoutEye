@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ScoutEye"
         mc:Ignorable="d"
         Title="Configurer" Height="450" Width="877">
-    <Grid x:Name="Grid" Background="#212121">
+    <Grid x:Name="Grid" Background="#FF080707">
         <!--Needed a name to iterate through it-->
         <Grid.RowDefinitions>
             <RowDefinition/>

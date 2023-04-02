@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoutEye"
         mc:Ignorable="d"
-        Title="ScoutEye" Height="395" Width="361" Background="Black"
+        Title="ScoutEye" Height="265" Width="361" Background="Black"
         ResizeMode="CanMinimize">
-    <Grid Background="#212121" Height="395" Width="361" VerticalAlignment="Center" MaxHeight="395" MaxWidth="361">
+    <Grid Background="#212121" Height="249" Width="361" VerticalAlignment="Center" MaxHeight="395" MaxWidth="361">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="ScoutOption2" Content="Scout" HorizontalAlignment="Left" Margin="116,61,0,0" VerticalAlignment="Top" Height="72" Width="116" AutomationProperties.IsColumnHeader="True" Click="ScoutOption2_Click" FontFamily="Courier New" BorderThickness="3">
+        <Button x:Name="ScoutOption2" Content="Scout" HorizontalAlignment="Left" Margin="114,52,0,0" VerticalAlignment="Top" Height="72" Width="116" AutomationProperties.IsColumnHeader="True" Click="ScoutOption2_Click" FontFamily="Courier New" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -24,36 +24,10 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Label Content="Please Select Scouting Level" HorizontalAlignment="Center" Margin="0,17,0,0" VerticalAlignment="Top" Height="25" Width="210" FontFamily="Courier New" Foreground=" #e9e6f0"/>
-        <TextBox x:Name="NameTB" HorizontalAlignment="Left" Margin="114,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" TextChanged="NameTB_TextChanged"/>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="71,148,0,0" VerticalAlignment="Top" Width="46" Height="26" FontFamily="Courier New" Foreground=" #e9e6f0"/>
-        <Button x:Name="contactBTN" Content="Contact Us" HorizontalAlignment="Left" Height="24" Margin="86,192,0,0" VerticalAlignment="Top" Width="72" Click="contactBTN_Click" BorderThickness="3">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="8"></Setter>
-                </Style>
-            </Button.Resources>
-            <Button.BorderBrush>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color=" #410da1" Offset="0"/>
-                    <GradientStop Color=" #410da1" Offset="1.0"/>
-                </LinearGradientBrush>
-            </Button.BorderBrush>
-        </Button>
-        <Button x:Name="helpBTN" Content="Help" HorizontalAlignment="Left" Height="24" Margin="201,191,0,0" VerticalAlignment="Top" Width="51" Click="helpBTN_Click" BorderThickness="3">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="8"/>
-                </Style>
-            </Button.Resources>
-            <Button.BorderBrush>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color=" #410da1" Offset="0"/>
-                    <GradientStop Color=" #410da1" Offset="1.0"/>
-                </LinearGradientBrush>
-            </Button.BorderBrush>
-        </Button>
-        <Button x:Name="openConfigBTN" Content="Configure ScoutEye" HorizontalAlignment="Center" Height="24" Margin="0,223,0,0" VerticalAlignment="Top" Width="118" Click="configureBTN_Click" BorderThickness="3">
+        <Label Content="Please Select Scouting Level" HorizontalAlignment="Center" Margin="0,12,0,0" VerticalAlignment="Top" Height="25" Width="210" FontFamily="Courier New" Foreground=" #e9e6f0"/>
+        <TextBox x:Name="NameTB" HorizontalAlignment="Left" Margin="114,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" TextChanged="NameTB_TextChanged"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="71,142,0,0" VerticalAlignment="Top" Width="46" Height="26" FontFamily="Courier New" Foreground=" #e9e6f0"/>
+        <Button x:Name="openConfigBTN" Content="Configure ScoutEye" HorizontalAlignment="Left" Height="24" Margin="116,178,0,0" VerticalAlignment="Top" Width="118" Click="configureBTN_Click" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>
@@ -66,7 +40,7 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="createShortcutBTN" Content="Create Shortcut" HorizontalAlignment="Left" Height="24" Margin="130,258,0,0" VerticalAlignment="Top" Width="96" Click="createShortcutBTN_Click" BorderThickness="3">
+        <Button x:Name="createShortcutBTN" Content="Create Shortcut" HorizontalAlignment="Left" Height="24" Margin="129,212,0,0" VerticalAlignment="Top" Width="96" Click="createShortcutBTN_Click" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>

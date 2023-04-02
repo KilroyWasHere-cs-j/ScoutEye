@@ -133,7 +133,13 @@
         <Label x:Name="ClickCounterCountCountLB" Content="0" HorizontalAlignment="Left" Margin="334,106,0,0" VerticalAlignment="Top" Height="26" Width="80" Foreground="#e9e6f0"/>
         <Label x:Name="StopwatchLB" Content="Stopwatch 0.0ms" HorizontalAlignment="Left" Margin="451,106,0,0" VerticalAlignment="Top" Height="26" Width="100" Foreground="#e9e6f0"/>
         <Label x:Name="TeamNumberChangerLB" Content="Team Number" HorizontalAlignment="Left" Margin="203,29,0,0" VerticalAlignment="Top" Height="26" Width="85" Foreground="#e9e6f0"/>
-        <TextBox x:Name="TeamNumberTB" HorizontalAlignment="Left" Margin="209,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" TextChanged="TeamNumberTB_TextChanged_1" Height="18"/>
+        <TextBox x:Name="TeamNumberTB" HorizontalAlignment="Left" Margin="209,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" TextChanged="TeamNumberTB_TextChanged_1" Height="18">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
         <Button x:Name="ResetClickCounterBTN" Content="Reset Click Counter" HorizontalAlignment="Left" Margin="693,158,0,0" VerticalAlignment="Top" Height="42" Width="122" Click="ResetClickCounterBTN_Click" ToolTip="Clear all of the match data" ClipToBounds="True" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -148,7 +154,13 @@
             </Button.BorderBrush>
         </Button>
         <Label x:Name="MatchNumberChangerLB" Content="Match Number" HorizontalAlignment="Left" Margin="346,29,0,0" VerticalAlignment="Top" Height="26" Width="90" Foreground="#e9e6f0"/>
-        <TextBox x:Name="MatchNumberChangerTB" HorizontalAlignment="Left" Margin="351,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Height="18" TextChanged="MatchNumberChangerTB_TextChanged"/>
+        <TextBox x:Name="MatchNumberChangerTB" HorizontalAlignment="Left" Margin="351,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Height="18" TextChanged="MatchNumberChangerTB_TextChanged">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
         <Label x:Name="AllianceLB" Content="Alliance" HorizontalAlignment="Left" Margin="472,29,0,0" VerticalAlignment="Top" Height="26" Width="90" Foreground="#e9e6f0"/>
         <ComboBox x:Name="AllianceCB" HorizontalAlignment="Left" Margin="476,55,0,0" VerticalAlignment="Top" Width="103" Height="18"/>
         <Label x:Name="Auto4LB" Content="NULL" HorizontalAlignment="Left" Margin="98,273,0,0" VerticalAlignment="Top" Height="26" Width="77" Foreground="#e9e6f0"/>

@@ -25,7 +25,13 @@
             </Button.BorderBrush>
         </Button>
         <Label Content="Please Select Scouting Level" HorizontalAlignment="Center" Margin="0,12,0,0" VerticalAlignment="Top" Height="25" Width="210" FontFamily="Courier New" Foreground=" #e9e6f0"/>
-        <TextBox x:Name="NameTB" HorizontalAlignment="Left" Margin="114,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" TextChanged="NameTB_TextChanged"/>
+        <TextBox x:Name="NameTB" HorizontalAlignment="Left" Margin="114,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" TextChanged="NameTB_TextChanged">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
         <Label Content="Name" HorizontalAlignment="Left" Margin="71,142,0,0" VerticalAlignment="Top" Width="46" Height="26" FontFamily="Courier New" Foreground=" #e9e6f0"/>
         <Button x:Name="openConfigBTN" Content="Configure ScoutEye" HorizontalAlignment="Left" Height="24" Margin="116,178,0,0" VerticalAlignment="Top" Width="118" Click="configureBTN_Click" BorderThickness="3">
             <Button.Resources>

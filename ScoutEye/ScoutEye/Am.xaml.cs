@@ -15,6 +15,7 @@ using QRCoder;
 
 namespace ScoutEye
 {
+    // Testing branch protection
     /// <summary>
     /// Interaction logic for Am.xaml
     /// </summary>

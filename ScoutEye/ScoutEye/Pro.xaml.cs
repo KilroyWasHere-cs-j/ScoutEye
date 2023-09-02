@@ -27,7 +27,7 @@ namespace ScoutEye
         private bool stopwatchEnabled = false;
         private int clickCount = 0, matchNumber = 0;
         private string name = "", scoutingLevel = "Pro", comboDefault = "0";
-        private static readonly NLog.Logger _log_ = NLog.LogManager.GetCurrentClassLogger();
+        private static readonly Logger _log_ = NLog.LogManager.GetCurrentClassLogger();
 
         public Pro(string scoutname)
         {

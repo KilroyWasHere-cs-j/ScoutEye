@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:ScoutEye"
         mc:Ignorable="d"
         WindowStyle="None"
-        Title="ScoutEye" Height="395" Width="361" Background="Black">
-    <Grid Background="#212121" Height="395" VerticalAlignment="Center">
+        Title="ScoutEye" Height="289" Width="361" Background="Black">
+    <Grid Background="#212121" Height="293" VerticalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -79,6 +79,5 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Image x:Name="horus" HorizontalAlignment="Left" Height="111" Margin="142,259,0,0" VerticalAlignment="Top" Width="80" Source="/images/ScoutEyeHorusTransparent-02.png"/>
     </Grid>
 </Window>

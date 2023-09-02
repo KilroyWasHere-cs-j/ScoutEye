@@ -80,6 +80,9 @@ namespace ScoutEye
                     {
                         VersionTB.Content = node.SelectSingleNode("AppVersion").InnerText;
                         versionNumb = node.SelectSingleNode("AppVersion").InnerText;
+                        DefaultValueLB.Text = node.SelectSingleNode("DefaultComboValue").InnerText;
+                        DefaultClickCountLB.Text = node.SelectSingleNode("ClickCounterLabel").InnerText;
+
                         A0labelTB.Text = node.SelectSingleNode("Auto0").InnerText;
                         A0contentsTB.Text = node.SelectSingleNode("Auto0Items").InnerText;
                         A0VisableCB.IsChecked = isTrue(node.SelectSingleNode("Auto0Hide").InnerText);
@@ -96,6 +99,14 @@ namespace ScoutEye
                         A3contentsTB.Text = node.SelectSingleNode("Auto3Items").InnerText;
                         A3VisableCB.IsChecked = isTrue(node.SelectSingleNode("Auto3Hide").InnerText);
 
+                        A4labelTB.Text = node.SelectSingleNode("Auto4").InnerText;
+                        A4contentsTB.Text = node.SelectSingleNode("Auto4Items").InnerText;
+                        A4VisableCB.IsChecked = isTrue(node.SelectSingleNode("Auto4Hide").InnerText);
+
+                        A5labelTB.Text = node.SelectSingleNode("Auto5").InnerText;
+                        A5contentsTB.Text = node.SelectSingleNode("Auto5Items").InnerText;
+                        A5VisableCB.IsChecked = isTrue(node.SelectSingleNode("Auto5Hide").InnerText);
+
                         T0labelTB.Text = node.SelectSingleNode("Teleop0").InnerText;
                         T0contentsTB.Text = node.SelectSingleNode("Teleop0Items").InnerText;
                         T0VisableCB.IsChecked = isTrue(node.SelectSingleNode("Teleop0Hide").InnerText);
@@ -104,7 +115,6 @@ namespace ScoutEye
                         T1contentsTB.Text = node.SelectSingleNode("Teleop1Items").InnerText;
                         T1VisableCB.IsChecked = isTrue(node.SelectSingleNode("Teleop1Hide").InnerText);
 
-
                         T2labelTB.Text = node.SelectSingleNode("Teleop2").InnerText;
                         T2contentsTB.Text = node.SelectSingleNode("Teleop2Items").InnerText;
                         T2VisableCB.IsChecked = isTrue(node.SelectSingleNode("Teleop2Hide").InnerText);
@@ -112,11 +122,19 @@ namespace ScoutEye
                         T3labelTB.Text = node.SelectSingleNode("Teleop3").InnerText;
                         T3contentsTB.Text = node.SelectSingleNode("Teleop3Items").InnerText;
                         T3VisableCB.IsChecked = isTrue(node.SelectSingleNode("Teleop3Hide").InnerText);
+
+                        T4labelTB.Text = node.SelectSingleNode("Teleop4").InnerText;
+                        T4contentsTB.Text = node.SelectSingleNode("Teleop4Items").InnerText;
+                        T4VisableCB.IsChecked = isTrue(node.SelectSingleNode("Teleop4Hide").InnerText);
+
+                        T5labelTB.Text = node.SelectSingleNode("Teleop5").InnerText;
+                        T5contentsTB.Text = node.SelectSingleNode("Teleop5Items").InnerText;
+                        T5VisableCB.IsChecked = isTrue(node.SelectSingleNode("Teleop5Hide").InnerText);
                     }
                 }
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show($"{filePath} could not be opened", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"Courtland {ex.ToString()}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             catch (Exception w)
@@ -127,7 +145,7 @@ namespace ScoutEye
 
         private void setConfig(string filePath)
         {
-            List<string> headers = new List<string>() { "Auto0", "Auto1", "Auto2", "Auto3", "Teleop0", "Teleop1", "Teleop2", "Teleop3" };
+            List<string> headers = new List<string>() { "Auto0", "Auto1", "Auto2", "Auto3", "Auto4", "Auto5", "Teleop0", "Teleop1", "Teleop2", "Teleop3", "Teleop4", "Teleop5"};
             // Proabably should be global
             XmlDocument xmlDoc = new XmlDocument();
             XmlNode rootNode = xmlDoc.CreateElement("settings");
@@ -142,7 +160,11 @@ namespace ScoutEye
             rootNode.AppendChild(node);
 
             node = xmlDoc.CreateElement("DefaultComboValue");
-            node.InnerText = defaultComboValue;
+            node.InnerText = DefaultValueLB.Text;
+            rootNode.AppendChild(node);
+
+            node = xmlDoc.CreateElement("ClickCounterLabel");
+            node.InnerText = DefaultClickCountLB.Text;
             rootNode.AppendChild(node);
 
             foreach (var head in headers)
@@ -205,6 +227,34 @@ namespace ScoutEye
                         rootNode.AppendChild(node);
                         break;
 
+                    case "Auto4":
+                        node = xmlDoc.CreateElement(head);
+                        node.InnerText = A4labelTB.Text;
+                        rootNode.AppendChild(node);
+
+                        node = xmlDoc.CreateElement(head + "Items");
+                        node.InnerText = A4contentsTB.Text;
+                        rootNode.AppendChild(node);
+
+                        node = xmlDoc.CreateElement(head + "Hide");
+                        node.InnerText = A4VisableCB.IsChecked.ToString().ToLower();
+                        rootNode.AppendChild(node);
+                        break;
+
+                    case "Auto5":
+                        node = xmlDoc.CreateElement(head);
+                        node.InnerText = A5labelTB.Text;
+                        rootNode.AppendChild(node);
+
+                        node = xmlDoc.CreateElement(head + "Items");
+                        node.InnerText = A5contentsTB.Text;
+                        rootNode.AppendChild(node);
+
+                        node = xmlDoc.CreateElement(head + "Hide");
+                        node.InnerText = A5VisableCB.IsChecked.ToString().ToLower();
+                        rootNode.AppendChild(node);
+                        break;
+
                     case "Teleop0":
                         node = xmlDoc.CreateElement(head);
                         node.InnerText = T0labelTB.Text;
@@ -258,6 +308,34 @@ namespace ScoutEye
 
                         node = xmlDoc.CreateElement(head + "Hide");
                         node.InnerText = T3VisableCB.IsChecked.ToString().ToLower();
+                        rootNode.AppendChild(node);
+                        break;
+
+                    case "Teleop4":
+                        node = xmlDoc.CreateElement(head);
+                        node.InnerText = T4labelTB.Text;
+                        rootNode.AppendChild(node);
+
+                        node = xmlDoc.CreateElement(head + "Items");
+                        node.InnerText = T4contentsTB.Text;
+                        rootNode.AppendChild(node);
+
+                        node = xmlDoc.CreateElement(head + "Hide");
+                        node.InnerText = T4VisableCB.IsChecked.ToString().ToLower();
+                        rootNode.AppendChild(node);
+                        break;
+
+                    case "Teleop5":
+                        node = xmlDoc.CreateElement(head);
+                        node.InnerText = T5labelTB.Text;
+                        rootNode.AppendChild(node);
+
+                        node = xmlDoc.CreateElement(head + "Items");
+                        node.InnerText = T5contentsTB.Text;
+                        rootNode.AppendChild(node);
+
+                        node = xmlDoc.CreateElement(head + "Hide");
+                        node.InnerText = T5VisableCB.IsChecked.ToString().ToLower();
                         rootNode.AppendChild(node);
                         break;
                 }

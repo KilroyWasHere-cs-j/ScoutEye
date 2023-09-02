@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("apioutputlog.txt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("matchdatalog.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("settingsprofessional.xml")]
 
 

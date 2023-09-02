@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="ScoutEye.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
-  <description asmv2:iconFile="ScoutEyeHorus-03.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <asmv1:assemblyIdentity name="ScoutEye.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="ScoutEye Logo dark.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
     <assemblyIdentity name="ScoutEye" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -67,33 +67,42 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ScoutEye.exe" size="79840">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ScoutEye.exe" size="2443744">
       <assemblyIdentity name="ScoutEye" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6e4wmpXVo6LSNoeCuidglCqeTVn+HEXl8bTPfNj5RYI=</dsig:DigestValue>
+        <dsig:DigestValue>I/faOYinG5EVH8EwQMxM9waV4nvfO+cEdGe7ejW54rA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="ScoutEye.exe.config" size="187">
+  <file name="ScoutEye Logo dark.ico" size="2834">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>+CM46OnHRrXZXNLMx7+U3V3iubiYL//d8hGOR13lDhU=</dsig:DigestValue>
+      <dsig:DigestValue>4HoYn4pbbvcCeR/dxDxo8rtYWURrf957ABLAbfrl7d8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="ScoutEyeHorus-03.ico" size="4286">
+  <file name="ScoutEye.exe.config" size="1054">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>gCbJ+NjFM45VNIYTXvgrPo4Z+qKZMU8s17IGhKUlj28=</dsig:DigestValue>
+      <dsig:DigestValue>mAe6EIbKfVcR7uHdUDac2RbuXeB2yXE4HVf1yvkzmtc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="SettingsProfessional.xml" size="1430" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>aUrIEf+mlSBo+JkBvL6/pUQqiraZ36D2deqc5E7QL74=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

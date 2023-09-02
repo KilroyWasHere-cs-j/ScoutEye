@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoutEye"
         mc:Ignorable="d"
-        Title="Configurer" Height="450" Width="800">
-    <Grid x:Name="Grid" Background="#212121">
+        Title="Configurer" Height="450" Width="877">
+    <Grid x:Name="Grid" Background="#FF080707">
         <!--Needed a name to iterate through it-->
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button x:Name="LoadConfigFileBTN" Content="Load Configuration" HorizontalAlignment="Left" Height="54" Margin="44,69,0,0" VerticalAlignment="Top" Width="160" Click="LoadConfigFileBTN_Click" BorderThickness="3">
+        <Button x:Name="LoadConfigFileBTN" Content="Load Configuration" HorizontalAlignment="Left" Height="54" Margin="44,58,0,0" VerticalAlignment="Top" Width="160" Click="LoadConfigFileBTN_Click" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -25,24 +25,120 @@
             </Button.BorderBrush>
         </Button>
         <Label x:Name="SelectedFilePathLB" Content="Path" HorizontalAlignment="Left" Height="27" Margin="45,26,0,0" VerticalAlignment="Top" Width="732" Foreground="#e9e6f0"/>
-        <TextBox x:Name="A0labelTB" HorizontalAlignment="Left" Height="25" Margin="44,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="A0contentsTB" HorizontalAlignment="Left" Height="25" Margin="44,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="A1labelTB" HorizontalAlignment="Left" Height="25" Margin="191,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="A1contentsTB" HorizontalAlignment="Left" Height="25" Margin="191,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <Label x:Name="VersionTB" Content="v.0.0" HorizontalAlignment="Left" Height="27" Margin="631,53,0,0" VerticalAlignment="Top" Width="159" Foreground="#e9e6f0"/>
-        <TextBox x:Name="A2labelTB" HorizontalAlignment="Left" Height="25" Margin="332,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="A2contentsTB" HorizontalAlignment="Left" Height="25" Margin="332,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="A3labelTB" HorizontalAlignment="Left" Height="25" Margin="466,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="A3contentsTB" HorizontalAlignment="Left" Height="25" Margin="466,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="T0labelTB" HorizontalAlignment="Left" Height="25" Margin="44,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="T0contentsTB" HorizontalAlignment="Left" Height="25" Margin="44,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="T1labelTB" HorizontalAlignment="Left" Height="25" Margin="191,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="T1contentsTB" HorizontalAlignment="Left" Height="25" Margin="191,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="T2labelTB" HorizontalAlignment="Left" Height="25" Margin="332,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="T2contentsTB" HorizontalAlignment="Left" Height="25" Margin="332,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="T3labelTB" HorizontalAlignment="Left" Height="25" Margin="466,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <TextBox x:Name="T3contentsTB" HorizontalAlignment="Left" Height="25" Margin="466,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <Button x:Name="SetConfigBTN" Content="Set Configuration" HorizontalAlignment="Left" Height="54" Margin="220,68,0,0" VerticalAlignment="Top" Width="160" Click="SetConfigBTN_Click" BorderThickness="3">
+        <TextBox x:Name="A0labelTB" HorizontalAlignment="Left" Height="25" Margin="44,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="A0contentsTB" HorizontalAlignment="Left" Height="25" Margin="44,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="A1labelTB" HorizontalAlignment="Left" Height="25" Margin="191,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="A1contentsTB" HorizontalAlignment="Left" Height="25" Margin="191,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Label x:Name="VersionTB" Content="v.0.0" HorizontalAlignment="Left" Height="27" Margin="45,396,0,0" VerticalAlignment="Top" Width="159" Foreground="#e9e6f0"/>
+        <TextBox x:Name="A2labelTB" HorizontalAlignment="Left" Height="25" Margin="332,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="A2contentsTB" HorizontalAlignment="Left" Height="25" Margin="332,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="A3labelTB" HorizontalAlignment="Left" Height="25" Margin="466,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="A3contentsTB" HorizontalAlignment="Left" Height="25" Margin="466,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="T0labelTB" HorizontalAlignment="Left" Height="25" Margin="44,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="T0contentsTB" HorizontalAlignment="Left" Height="25" Margin="44,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="T1labelTB" HorizontalAlignment="Left" Height="25" Margin="191,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="T1contentsTB" HorizontalAlignment="Left" Height="25" Margin="191,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="T2labelTB" HorizontalAlignment="Left" Height="25" Margin="332,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="T2contentsTB" HorizontalAlignment="Left" Height="25" Margin="332,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="T3labelTB" HorizontalAlignment="Left" Height="25" Margin="466,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="T3contentsTB" HorizontalAlignment="Left" Height="25" Margin="466,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Button x:Name="SetConfigBTN" Content="Set Configuration" HorizontalAlignment="Left" Height="54" Margin="220,58,0,0" VerticalAlignment="Top" Width="160" Click="SetConfigBTN_Click" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -55,7 +151,7 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="ClearBTN" Content="Clear" HorizontalAlignment="Left" Height="54" Margin="400,69,0,0" VerticalAlignment="Top" Width="160" Click="ClearBTN_Click" BorderThickness="3">
+        <Button x:Name="ClearBTN" Content="Clear" HorizontalAlignment="Left" Height="54" Margin="400,58,0,0" VerticalAlignment="Top" Width="160" Click="ClearBTN_Click" BorderThickness="3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -68,13 +164,91 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <CheckBox x:Name="A0VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="48,229,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
-        <CheckBox x:Name="A1VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="204,231,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
-        <CheckBox x:Name="A2VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="343,231,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
-        <CheckBox x:Name="A3VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="466,231,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
-        <CheckBox x:Name="T0VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="44,352,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
-        <CheckBox x:Name="T1VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="191,352,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
-        <CheckBox x:Name="T2VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="332,352,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
-        <CheckBox x:Name="T3VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="466,352,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
+        <CheckBox x:Name="A0VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="48,234,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
+        <CheckBox x:Name="A1VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="204,236,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
+        <CheckBox x:Name="A2VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="343,236,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
+        <CheckBox x:Name="A3VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="466,236,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
+        <CheckBox x:Name="T0VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="44,371,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
+        <CheckBox x:Name="T1VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="191,371,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
+        <CheckBox x:Name="T2VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="332,371,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
+        <CheckBox x:Name="T3VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="466,371,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
+        <TextBox x:Name="DefaultValueLB" ToolTip="Default value for dropdowns" HorizontalAlignment="Left" Height="25" Margin="643,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="DefaultClickCountLB" ToolTip="Label for click count" HorizontalAlignment="Left" Height="26" Margin="643,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="A4labelTB" HorizontalAlignment="Left" Height="25" Margin="595,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="A4contentsTB" HorizontalAlignment="Left" Height="25" Margin="595,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <CheckBox x:Name="A4VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="595,235,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
+        <TextBox x:Name="T4labelTB" HorizontalAlignment="Left" Height="25" Margin="595,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="T4contentsTB" HorizontalAlignment="Left" Height="25" Margin="595,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <CheckBox x:Name="T4VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="595,371,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
+        <TextBox x:Name="A5labelTB" HorizontalAlignment="Left" Height="25" Margin="722,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="A5contentsTB" HorizontalAlignment="Left" Height="25" Margin="722,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <CheckBox x:Name="A5VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="722,234,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
+        <TextBox x:Name="T5labelTB" HorizontalAlignment="Left" Height="25" Margin="722,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="T5contentsTB" HorizontalAlignment="Left" Height="25" Margin="722,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <CheckBox x:Name="T5VisableCB" Content="Hide" HorizontalAlignment="Left" Margin="722,371,0,0" VerticalAlignment="Top" IsChecked="True" Foreground="#e9e6f0"/>
+        <Label x:Name="DefaultDropdown" Content="Dropdown Default" HorizontalAlignment="Left" Height="27" Margin="758,26,0,0" VerticalAlignment="Top" Width="109" Foreground="#e9e6f0"/>
+        <Label x:Name="ClickCountLabel" Content="Click Count Label" HorizontalAlignment="Left" Height="27" Margin="758,67,0,0" VerticalAlignment="Top" Width="109" Foreground="#e9e6f0"/>
+        <Label x:Name="AutosFields" Content="Autos" HorizontalAlignment="Left" Height="27" Margin="44,118,0,0" VerticalAlignment="Top" Width="109" Foreground="#e9e6f0"/>
+        <Label x:Name="TeleopFields" Content="Teleop" HorizontalAlignment="Left" Height="27" Margin="44,254,0,0" VerticalAlignment="Top" Width="109" Foreground="#e9e6f0"/>
     </Grid>
 </Window>

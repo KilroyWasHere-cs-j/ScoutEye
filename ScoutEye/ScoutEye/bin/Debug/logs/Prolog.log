@@ -1,0 +1,59 @@
+2023-03-29 10:46:15.5152|DEBUG|ScoutEye.Pro|Start
+2023-03-29 10:47:38.9727|DEBUG|ScoutEye.Pro|Start
+2023-03-29 10:48:45.6360|DEBUG|ScoutEye.Pro|Start
+2023-03-29 10:50:00.4180|DEBUG|ScoutEye.Pro|Start
+2023-03-29 10:52:38.3613|DEBUG|ScoutEye.Pro|Start
+2023-03-29 10:54:19.6471|DEBUG|ScoutEye.Pro|Start
+2023-03-29 10:55:34.4678|DEBUG|ScoutEye.Pro|Start
+2023-03-29 10:56:03.4292|DEBUG|ScoutEye.Pro|Start
+2023-03-29 10:56:12.3887|DEBUG|ScoutEye.Pro|Start
+2023-03-29 10:57:35.1315|DEBUG|ScoutEye.Pro|Start
+2023-03-29 11:06:52.9391|DEBUG|ScoutEye.Pro|Start
+2023-03-29 11:07:02.4331|DEBUG|ScoutEye.Pro|Start
+2023-03-29 11:40:25.2438|DEBUG|ScoutEye.Pro|Start
+2023-03-29 11:40:30.6412|ERROR|ScoutEye.Pro|Missing fields -> enter match
+2023-03-29 11:41:04.8897|DEBUG|ScoutEye.Pro|Start
+2023-03-29 11:41:09.3541|ERROR|ScoutEye.Pro|Missing fields -> enter match
+2023-03-29 11:43:17.2364|DEBUG|ScoutEye.Pro|Start
+2023-03-29 11:43:21.1229|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-29 11:44:34.5663|DEBUG|ScoutEye.Pro|Start
+2023-03-29 11:44:38.6336|ERROR|ScoutEye.Pro|Missing fields -> enter match
+2023-03-31 16:12:13.0000|DEBUG|ScoutEye.Pro|Start
+2023-03-31 16:12:15.6062|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-31 16:12:28.4239|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-31 16:12:39.3035|ERROR|ScoutEye.Pro|Missing fields -> enter match
+2023-03-31 16:13:18.2203|DEBUG|ScoutEye.Pro|Start
+2023-03-31 16:13:25.3362|DEBUG|ScoutEye.Pro|QR Code made
+2023-03-31 16:13:25.3672|DEBUG|ScoutEye.Pro|Match data logged
+2023-03-31 16:13:25.3672|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-31 16:13:25.3672|DEBUG|ScoutEye.Pro|NextMatch
+2023-03-31 16:13:25.3672|DEBUG|ScoutEye.Pro|Match entered
+2023-03-31 16:16:49.3909|DEBUG|ScoutEye.Pro|Start
+2023-03-31 16:16:56.2786|ERROR|ScoutEye.Pro|Missing fields -> enter match
+2023-03-31 16:17:44.5642|DEBUG|ScoutEye.Pro|Start
+2023-03-31 16:17:50.2062|ERROR|ScoutEye.Pro|Missing fields -> enter match
+2023-03-31 16:17:58.2870|ERROR|ScoutEye.Pro|Missing fields -> enter match
+2023-03-31 16:19:01.6799|DEBUG|ScoutEye.Pro|Start
+2023-03-31 16:19:06.1376|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-31 16:19:11.0192|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-31 16:25:07.5187|DEBUG|ScoutEye.Pro|Start
+2023-03-31 16:25:14.9796|DEBUG|ScoutEye.Pro|QR Code made
+2023-03-31 16:25:15.0006|DEBUG|ScoutEye.Pro|Match data logged
+2023-03-31 16:25:15.0126|DEBUG|ScoutEye.Pro|Match Reset
+2023-03-31 16:25:15.0126|DEBUG|ScoutEye.Pro|NextMatch
+2023-03-31 16:25:15.0126|DEBUG|ScoutEye.Pro|Match entered
+2023-04-01 13:13:09.1091|DEBUG|ScoutEye.Pro|Start
+2023-04-01 13:13:16.5421|DEBUG|ScoutEye.Pro|QR Code made
+2023-04-01 13:13:16.5722|DEBUG|ScoutEye.Pro|Match data logged
+2023-04-01 13:13:16.5862|DEBUG|ScoutEye.Pro|Match Reset
+2023-04-01 13:13:16.5862|DEBUG|ScoutEye.Pro|NextMatch
+2023-04-01 13:13:16.5862|DEBUG|ScoutEye.Pro|Match entered
+2023-04-01 13:13:19.6545|DEBUG|ScoutEye.Pro|Match Reset
+2023-04-01 20:31:45.9352|DEBUG|ScoutEye.Pro|Start
+2023-04-01 20:42:22.6582|DEBUG|ScoutEye.Pro|Start
+2023-04-01 20:42:39.2360|ERROR|ScoutEye.Pro|Missing fields -> enter match
+2023-04-01 20:42:43.3170|DEBUG|ScoutEye.Pro|QR Code made
+2023-04-01 20:42:43.3390|DEBUG|ScoutEye.Pro|Match data logged
+2023-04-01 20:42:43.3520|DEBUG|ScoutEye.Pro|Match Reset
+2023-04-01 20:42:43.3520|DEBUG|ScoutEye.Pro|NextMatch
+2023-04-01 20:42:43.3520|DEBUG|ScoutEye.Pro|Match entered

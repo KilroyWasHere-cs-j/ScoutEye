@@ -2,7 +2,8 @@
 using System.IO;
 using System.Media;
 using System.Windows;
-using System.Windows.Media.Imaging;
+using IWshRuntimeLibrary;
+using NLog;
 
 namespace ScoutEye
 {
@@ -12,21 +13,31 @@ namespace ScoutEye
     public partial class MainWindow : Window
     {
         Pro pro;
-        Am am;
-        Configurer configer;
+        Configurer configuer;
 
         private SoundPlayer player;
         private string userName = "";
+        private static readonly NLog.Logger _log_ = NLog.LogManager.GetCurrentClassLogger();
 
         public MainWindow()
         {
             InitializeComponent();
-            player = new SoundPlayer(Directory.GetCurrentDirectory() + "/wavs/taco.wav");
+            var config = new NLog.Config.LoggingConfiguration();
+
+            // Targets where to log to: File and Console
+            var logfile = new NLog.Targets.FileTarget("logfile") { FileName = "logs\\Mainlog.log" };
+            var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
+
+            // Rules for mapping loggers to targets            
+            config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
+            config.AddRule(LogLevel.Debug, LogLevel.Fatal, logfile);
+
+            // Apply config           
+            NLog.LogManager.Configuration = config;
+            _log_.Debug("Start");
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             userName = Environment.UserName;
             NameTB.Text = userName;
-            BitmapImage image = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "/images/ScoutEyeHorusTransparent-02.png", UriKind.Relative));
-            horus.Source = image;
         }
 
         //<summary>
@@ -41,11 +52,12 @@ namespace ScoutEye
                 {
                     try
                     {
-                        player.Play();
+                        SoundPlayer sndplayr = new SoundPlayer();
+                        sndplayr.Play();
                     }
-                    catch
+                    catch (Exception ex)
                     {
-
+                        _log_.Error(ex.ToString());
                     }
                     pro = new Pro(NameTB.Text);
                     pro.Show();
@@ -54,40 +66,6 @@ namespace ScoutEye
                 else
                 {
                     //Something was missing
-                    MessageBox.Show("Name field found to be missing of invalid.", "Missing fields", MessageBoxButton.OK, MessageBoxImage.Hand);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        //<summary>
-        //The user has picked the amateur level of scouting
-        //<summary>
-        private void ScoutOption1_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                //Open the amateur window and closes the current window
-                if (NameTB.Text != string.Empty)
-                {
-                    //Might need different sound
-                    try
-                    {
-                        player.Play();
-                    }
-                    catch
-                    {
-
-                    }
-                    am = new Am(NameTB.Text);
-                    am.Show();
-                    this.Close();
-                }
-                else
-                {
                     MessageBox.Show("Name field found to be missing of invalid.", "Missing fields", MessageBoxButton.OK, MessageBoxImage.Hand);
                 }
             }
@@ -109,14 +87,26 @@ namespace ScoutEye
         }
         private void configureBTN_Click(object sender, RoutedEventArgs e)
         {
-            configer = new Configurer();
-            configer.Show();
+            configuer = new Configurer();
+            configuer.Show();
         }
         #endregion
 
         private void NameTB_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
 
+        }
+
+        private void createShortcutBTN_Click(object sender, RoutedEventArgs e)
+        {
+            object shDesktop = (object)"Desktop";
+            WshShell shell = new WshShell();
+            string shortcutAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + @"\ScoutEye.lnk";
+            IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutAddress);
+            shortcut.Description = "ScoutEye link";
+            shortcut.Hotkey = "Ctrl+Shift+Q";
+            shortcut.TargetPath = Directory.GetCurrentDirectory() + @"\ScoutEye.exe";
+            shortcut.Save();
         }
     }
 }

@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Media;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -13,6 +12,7 @@ using System.Windows.Threading;
 using System.Xml;
 using QRCoder;
 using NLog;
+using System.Media;
 
 namespace ScoutEye
 {
@@ -26,8 +26,9 @@ namespace ScoutEye
         private Stopwatch stopwatch;
         private bool stopwatchEnabled = false;
         private int clickCount = 0, matchNumber = 0;
-        private string name = "", scoutingLevel = "Pro", comboDefault = "0";
+        private string name = "", scoutingLevel = "Win", comboDefault = "0";
         private static readonly NLog.Logger _log_ = NLog.LogManager.GetCurrentClassLogger();
+        private string versionNumber = "0.0";
 
         public Pro(string scoutname)
         {
@@ -43,13 +44,10 @@ namespace ScoutEye
             ScoutNameLB.Content = "Scout Name: " + name;
             //Set the current match number so the scout can start at anypoint
             matchNumber = 0;
-            MatchNumTB.Content = "Match Number: " + 0;
-            BitmapImage image = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "/images/ScoutEyeHorusTransparent-02.png", UriKind.Relative));
-            horus.Source = image;
             var config = new NLog.Config.LoggingConfiguration();
 
             // Targets where to log to: File and Console
-            var logfile = new NLog.Targets.FileTarget("logfile") { FileName = "logs/Pro_log.txt" };
+            var logfile = new NLog.Targets.FileTarget("logfile") { FileName = "logs/Prolog.log" };
             var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
 
             // Rules for mapping loggers to targets            
@@ -69,9 +67,18 @@ namespace ScoutEye
             MessageBoxResult result = MessageBox.Show("Are you sure you want to enter this match? This action cannot be undone.", "Just checking in.", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes && TeamNumberTB.Text != String.Empty && MatchNumberChangerTB.Text != String.Empty && AllianceCB.Text != "0")
             {
+                try
+                {
+                    SoundPlayer player = new SoundPlayer(Properties.Resources.garand);
+                    player.Play();
+                }
+                catch (Exception ex)
+                {
+                    _log_.Error(ex);
+                }
                 //This should be fixed there has got to be a better way to do this. Let's be real I'm never going to fix it...
-                string compiledDataForLogging = name + "~" + scoutingLevel + "~" + matchNumber.ToString() + "~" + AllianceCB.Text + "~" + TeamNumberTB.Text.ToString() + "~" + Auto0.Text + "~" + Auto1.Text + "~" + Auto2.Text + "~" + Auto3.Text + "~" + Teleop0.Text + "~" + Teleop1.Text + "~" + Teleop2.Text + "~" + Teleop3.Text + "~" + RobotDiedCB.IsChecked.ToString() + "~" + FieldFaultCB.IsChecked.ToString() + "~" + stopwatch.Elapsed.ToString() + "~" + clickCount.ToString();
-                string compiledData = name + "\t" + scoutingLevel + "\t" + matchNumber.ToString() + "\t" + AllianceCB.Text + "\t" + TeamNumberTB.Text.ToString() + "\t" + Auto0.Text + "\t" + Auto1.Text + "\t" + Auto2.Text + "\t" + Auto3.Text + "\t" + Teleop0.Text + "\t" + Teleop1.Text + "\t" + Teleop2.Text + "\t" + Teleop3.Text + "\t" + RobotDiedCB.IsChecked.ToString() + "\t" + FieldFaultCB.IsChecked.ToString() + "\t" + stopwatch.Elapsed.ToString() + "\t" + clickCount.ToString();
+                string compiledDataForLogging = name + "~" + scoutingLevel + "~" + matchNumber.ToString() + "~" + AllianceCB.Text + "~" + TeamNumberTB.Text.ToString() + "~" + Auto0.Text + "~" + Auto1.Text + "~" + Auto2.Text + "~" + Auto3.Text + "~" + Auto4.Text + "~" + Auto5.Text + "~" + Teleop0.Text + "~" + Teleop1.Text + "~" + Teleop2.Text + "~" + Teleop3.Text + "~" + Teleop4.Text + "~" + Teleop5.Text + "~" + RobotDiedCB.IsChecked.ToString() + "~" + FieldFaultCB.IsChecked.ToString() + "~" + stopwatch.Elapsed.ToString() + "~" + clickCount.ToString() + "~" + SpeedCB.Text + "~" + GiveDefenseCB.Text + "~" + TakeDefenseCB.Text + "~" + versionNumber;
+                string compiledData = name + "\t" + scoutingLevel + "\t" + matchNumber.ToString() + "\t" + AllianceCB.Text + "\t" + TeamNumberTB.Text.ToString() + "\t" + Auto0.Text + "\t" + Auto1.Text + "\t" + Auto2.Text + "\t" + Auto3.Text + "\t" + Auto4.Text + "\t" + Auto5.Text + "\t" + Teleop0.Text + "\t" + Teleop1.Text + "\t" + Teleop2.Text + "\t" + Teleop3.Text + "\t" + Teleop4.Text + "\t" + Teleop5.Text + "\t" + RobotDiedCB.IsChecked.ToString() + "\t" + FieldFaultCB.IsChecked.ToString() + "\t" + stopwatch.Elapsed.ToString() + "\t" + clickCount.ToString() + "\t" + SpeedCB.Text + "\t" + GiveDefenseCB.Text + "\t" + TakeDefenseCB.Text + "\t" + versionNumber;
                 QRCodeDisplayPB.Source = BitmapToImageSource(GenerateQRCode(compiledData));
                 LogMatchData(compiledDataForLogging);
                 NextMatch();
@@ -92,7 +99,6 @@ namespace ScoutEye
             matchNumber = Int32.Parse(MatchNumberChangerTB.Text);
             matchNumber++;
             MatchNumberChangerTB.Text = matchNumber.ToString();
-            MatchNumTB.Content = "Match number: " + matchNumber.ToString();
             ResetMatch();
             _log_.Debug("NextMatch");
         }
@@ -105,14 +111,21 @@ namespace ScoutEye
             TeamNumberTB.Text = String.Empty;
             stopwatch.Stop();
             stopwatch.Reset();
-            ClickCounterCountLB.Content = "Click count: 0";
             clickCount = 0;
             foreach (UIElement element in Grid.Children)
             {
+                // Reset all combo boxes except the alliance combo box
                 if (element is ComboBox)
                 {
                     ComboBox cb = (ComboBox)element;
-                    cb.SelectedIndex = 0;
+                    if (cb.Text.Contains("Red") || cb.Text.Contains("Blue"))
+                    {
+                        // Simply don't do anything
+                    }
+                    else
+                    {
+                        cb.SelectedIndex = 0;
+                    }
                 }
                 if (element is CheckBox)
                 {
@@ -183,6 +196,7 @@ namespace ScoutEye
                 foreach(XmlNode node in nodeList)
                 {
                     comboDefault = node.SelectSingleNode("DefaultComboValue").InnerText;
+                    ClickCounterCountLB.Content = node.SelectSingleNode("ClickCounterLabel").InnerText;
                 }
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
@@ -200,17 +214,37 @@ namespace ScoutEye
                 AllianceCB.Items.Add("Red");
                 AllianceCB.Items.Add("Blue");
 
+                SpeedCB.Items.Add("Slow");
+                SpeedCB.Items.Add("Medium");
+                SpeedCB.Items.Add("Fast");
+
+                
+                for(int i = 1; i < 6; i++)
+                {
+                    GiveDefenseCB.Items.Add(i.ToString());
+                }
+
+                for (int i = 1; i < 6; i++)
+                {
+                    TakeDefenseCB.Items.Add(i.ToString());
+                }
+
                 foreach (XmlNode node in nodeList)
                 {
                     VersionLB.Content = node.SelectSingleNode("AppVersion").InnerText;
+                    versionNumber = node.SelectSingleNode("AppVersion").InnerText;
                     Auto0LB.Content = node.SelectSingleNode("Auto0").InnerText;
                     Auto1LB.Content = node.SelectSingleNode("Auto1").InnerText;
                     Auto2LB.Content = node.SelectSingleNode("Auto2").InnerText;
                     Auto3LB.Content = node.SelectSingleNode("Auto3").InnerText;
+                    Auto4LB.Content = node.SelectSingleNode("Auto4").InnerText;
+                    Auto5LB.Content = node.SelectSingleNode("Auto5").InnerText;
                     Teleop0LB.Content = node.SelectSingleNode("Teleop0").InnerText;
                     Teleop1LB.Content = node.SelectSingleNode("Teleop1").InnerText;
                     Teleop2LB.Content = node.SelectSingleNode("Teleop2").InnerText;
                     Teleop3LB.Content = node.SelectSingleNode("Teleop3").InnerText;
+                    Teleop4LB.Content = node.SelectSingleNode("Teleop4").InnerText;
+                    Teleop5LB.Content = node.SelectSingleNode("Teleop5").InnerText;
 
 
 
@@ -307,6 +341,52 @@ namespace ScoutEye
                             }
                         }
                     }
+                    foreach (string item in node.SelectSingleNode("Auto4Items").InnerText.Split(',').ToList())
+                    {
+                        if (node.SelectSingleNode("Auto4Hide").InnerText == "true")
+                        {
+                            Auto4.Visibility = Visibility.Hidden;
+                        }
+                        else
+                        {
+                            if (item == "NumFill")
+                            {
+                                foreach (int num in values)
+                                {
+                                    Auto4.IsEditable = true;
+                                    Auto4.Items.Add(num);
+                                }
+                            }
+                            else
+                            {
+                                Auto4.IsEditable = false;
+                                Auto4.Items.Add(item);
+                            }
+                        }
+                    }
+                    foreach (string item in node.SelectSingleNode("Auto5Items").InnerText.Split(',').ToList())
+                    {
+                        if (node.SelectSingleNode("Auto5Hide").InnerText == "true")
+                        {
+                            Auto5.Visibility = Visibility.Hidden;
+                        }
+                        else
+                        {
+                            if (item == "NumFill")
+                            {
+                                foreach (int num in values)
+                                {
+                                    Auto5.IsEditable = true;
+                                    Auto5.Items.Add(num);
+                                }
+                            }
+                            else
+                            {
+                                Auto5.IsEditable = false;
+                                Auto5.Items.Add(item);
+                            }
+                        }
+                    }
                     foreach (string item in node.SelectSingleNode("Teleop0Items").InnerText.Split(',').ToList())
                     {
                         if(node.SelectSingleNode("Teleop0Hide").InnerText == "true")
@@ -399,14 +479,60 @@ namespace ScoutEye
                             }
                         }
                     }
+                    foreach (string item in node.SelectSingleNode("Teleop4Items").InnerText.Split(',').ToList())
+                    {
+                        if (node.SelectSingleNode("Teleop4Hide").InnerText == "true")
+                        {
+                            Teleop4.Visibility = Visibility.Hidden;
+                        }
+                        else
+                        {
+                            if (item == "NumFill")
+                            {
+                                foreach (int num in values)
+                                {
+                                    Teleop4.IsEditable = true;
+                                    Teleop4.Items.Add(num);
+                                }
+                            }
+                            else
+                            {
+                                Teleop4.IsEditable = false;
+                                Teleop4.Items.Add(item);
+                            }
+                        }
+                    }
+                    foreach (string item in node.SelectSingleNode("Teleop5Items").InnerText.Split(',').ToList())
+                    {
+                        if (node.SelectSingleNode("Teleop5Hide").InnerText == "true")
+                        {
+                            Teleop5.Visibility = Visibility.Hidden;
+                        }
+                        else
+                        {
+                            if (item == "NumFill")
+                            {
+                                foreach (int num in values)
+                                {
+                                    Teleop5.IsEditable = true;
+                                    Teleop5.Items.Add(num);
+                                }
+                            }
+                            else
+                            {
+                                Teleop5.IsEditable = false;
+                                Teleop5.Items.Add(item);
+                            }
+                        }
+                    }
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
                 }
                 _log_.Info("UI Loaded");
             }
             catch (Exception ex)
             {
-                // logger.Log("Could not load settings. " + ex.Message);
-                MessageBox.Show("Granny Smith", "Fatal error", MessageBoxButton.OK, MessageBoxImage.Error);
+                _log_.Info("Could not load settings. " + ex.Message.ToString());
+                MessageBox.Show($"Granny Smith {ex.ToString()}", "Fatal error", MessageBoxButton.OK, MessageBoxImage.Error);
                 _log_.Fatal("Granny Smith");
                 _log_.Fatal(ex);
                 Environment.Exit(0);
@@ -417,32 +543,50 @@ namespace ScoutEye
         public void increaseClickCounter()
         {
             clickCount++;
-            ClickCounterCountLB.Content = "Click count " + clickCount.ToString();
+            ClickCounterCountCountLB.Content = clickCount.ToString();
         }
 
         public void decreaseClickCounter()
         {
             clickCount--;
-            ClickCounterCountLB.Content = "Click count " + clickCount.ToString();
+            ClickCounterCountCountLB.Content = clickCount.ToString();
         }
         #endregion
 
         #region EventHandlers
         private void dt_Tick(object sender, EventArgs e)
         {
-            MatchNumTB.Content = "Match Number: " + MatchNumberChangerTB.Text;
-            TeamNumberLB.Content = "Team Number: " + TeamNumberTB.Text;
             StopwatchLB.Content = "Stopwatch: " + stopwatch.Elapsed.TotalSeconds.ToString() + "ms";
+            ClickCounterCountCountLB.Content = clickCount.ToString();
         }
 
         private void EnterBTN_Click(object sender, RoutedEventArgs e)
         {
+            stopwatch.Stop();
             EnterMatch();
         }
 
         private void ResetBTN_Click(object sender, RoutedEventArgs e)
         {
-            ResetMatch();
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to reset this match? This action cannot be undone.", "Just checking in.", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    try
+                    {
+                        SoundPlayer player = new SoundPlayer(Properties.Resources.brrrr);
+                        player.Play();
+                    }
+                    catch (Exception ex)
+                    {
+                        _log_.Error(ex);
+                    }
+                    stopwatch.Stop();
+                    ResetMatch();
+                    break;
+                case MessageBoxResult.No:
+                    break;
+            }
         }
 
         private void ToggleStopwatch()
@@ -476,7 +620,6 @@ namespace ScoutEye
         private void ResetClickCounterBTN_Click(object sender, RoutedEventArgs e)
         {
             clickCount = 0;
-            ClickCounterCountLB.Content = "Click count " + clickCount.ToString();
         }
 
         //<summary>

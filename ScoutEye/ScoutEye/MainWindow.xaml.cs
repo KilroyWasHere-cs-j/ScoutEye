@@ -25,8 +25,6 @@ namespace ScoutEye
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             userName = Environment.UserName;
             NameTB.Text = userName;
-            BitmapImage image = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "/images/ScoutEyeHorusTransparent-02.png", UriKind.Relative));
-            horus.Source = image;
         }
 
         //<summary>
